@@ -19,19 +19,52 @@ void batch_test_1() {
     assert(p->get_x() == 3 && p->get_y() == 5);
 
 
+}
 
-    Position pos_one = Position(T1);
 
-    Piece p1 = pos_one.the_board[1][1];
-    Piece p2 = pos_one.the_board[6][1];
+void batch_test_2() {
+    Position pos_one = Position(T1); //T1 is for test position 1. 
+
+    for (int i = 0; i < 8; i++) {
+        Piece p1 = pos_one.the_board[1][i];
+        Piece p2 = pos_one.the_board[6][i];
+
+        assert(p1.get_color() == BLACK);
+        assert(p1.get_piece_type() == PAWN);
+
+        assert(p2.get_color() == WHITE);
+        assert(p1.get_piece_type() == PAWN);
+
+        assert(p1.get_x_diff() == 1);
+
+    } 
+
+    for (int k = 0; k < 8; k++) {
+        Piece p3 = pos_one.the_board[0][k];
+        Piece p4 = pos_one.the_board[5][k];
+        Piece p5 = pos_one.the_board[3][k];
+
+        assert(p3.get_null_piece() && p4.get_null_piece() && p5.get_null_piece());
+
+    }
+}
+
+void ut_pawn_push_f1() {
+    Position pos = Position(T1);
+    Piece pawn_a7 = pos.the_board[1][0];
+
+    vector<Move>moves = pawn_a7.get_moves(1, 0, &pos);
 }
 
 int main()
 {
     cout << "Hello Sauce Engine v1.0" << endl;
     batch_test_1();
-    
+    cout << "batch test 1 success." << endl;
+    batch_test_2();
+    cout << "batch test 2 success." << endl;
 
+    cout << "ALL TESTS PASSED" << endl;
     return 0;
 }
 
