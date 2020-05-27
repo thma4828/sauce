@@ -1,13 +1,17 @@
 #include "Position.h"
-
+#include "Piece.h"
+#include "Pawn.h"
 using namespace std;
 
+Position::Position() {
+	//
+}
 
 Position::Position(int b) {
 
 	for (int ii = 0; ii < 8; ii++) {
 		for (int jj = 0; jj < 8; jj++) {
-			A[ii][jj] = Piece();
+			the_board[ii][jj] = Piece();
 		}
 	}
 	
@@ -21,15 +25,15 @@ Position::Position(int b) {
 	else if (b == EMPTY) {
 		for (x; x < 8; x++) {
 			for (y; y < 8; y++) {
-				A[x][y] = Piece(x, y);
+				the_board[x][y] = Piece(x, y);
 			}
 		}
 	}
 	else if (b == T1) { //test position.
 		
 		for (y; y < 8; y++) {
-			A[1][y] = Pawn(x, y, BLACK, PAWN);
-			A[6][y] = Pawn(x, y, WHITE, PAWN);
+			the_board[1][y] = Pawn(x, y, BLACK, PAWN);
+			the_board[6][y] = Pawn(x, y, WHITE, PAWN);
 		}
 	}
 }

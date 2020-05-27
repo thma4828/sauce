@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Piece.h"
-#include "Pawn.h"
+
 
 #define START 5
 #define EMPTY 6
@@ -10,9 +10,10 @@
 
 class Position {
 public:
+	Position();
 	Position(int);
 
-	Piece A[8][8];
+	Piece the_board[8][8];
 
 private:
 	int board_pos;

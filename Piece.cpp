@@ -1,5 +1,4 @@
 #include "Piece.h"
-#include "Position.h"
 #include <iostream>
 
 using namespace std;

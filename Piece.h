@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include "Position.h"
 using namespace std;
 #define WHITE 0
 #define BLACK 1

@@ -1,5 +1,4 @@
 #include "Pawn.h"
-#include "Piece.h"
 #include <iostream>
 
 using namespace std;
