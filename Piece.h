@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include "Position.h"
+
 
 using namespace std;
 #define WHITE -1
@@ -31,7 +33,8 @@ public:
 	int get_piece_type();
 	int get_x_diff();
 	int get_y_diff();
-	vector<Move> get_moves(int, int, void*);
+	void set_pos(Position*);
+	//TODO add in move calculation functionality again now that problem with class dep. resolved. 
 
 	
 protected:
@@ -43,6 +46,6 @@ protected:
 	int piece_type;
 	int x_diff;
 	int y_diff;
-	vector<Move>moves;
+	Position* pos;
 };
 

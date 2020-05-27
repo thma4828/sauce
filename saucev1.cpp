@@ -6,6 +6,11 @@
 #include "Piece.h"
 #include "Pawn.h"
 #include "Position.h"
+
+#define WPAWN 31
+#define BPAWN 34
+#define NULCELL 58
+
 using namespace std;
 
 void batch_test_1() {
@@ -26,35 +31,18 @@ void batch_test_2() {
     Position pos_one = Position(T1); //T1 is for test position 1. 
 
     for (int i = 0; i < 8; i++) {
-        Piece p1 = pos_one.the_board[1][i];
-        Piece p2 = pos_one.the_board[6][i];
-
-        assert(p1.get_color() == BLACK);
-        assert(p1.get_piece_type() == PAWN);
-
-        assert(p2.get_color() == WHITE);
-        assert(p1.get_piece_type() == PAWN);
-
-        assert(p1.get_x_diff() == 1);
+        int p1 = pos_one.the_board[1][i];
+        int p2 = pos_one.the_board[6][i];
+        assert(p1 == BPAWN && p2 == WPAWN);
+        //now for each square we can create a class instance of that type on the appropriate square
+        //then we can use the classes to calculate the lists of possible moves again. 
+        Pawn pawn1 = Pawn(1, i, BLACK, PAWN, 1, 1);
+        pawn1.set_pos(&pos_one);
 
     } 
 
-    for (int k = 0; k < 8; k++) {
-        Piece p3 = pos_one.the_board[0][k];
-        Piece p4 = pos_one.the_board[5][k];
-        Piece p5 = pos_one.the_board[3][k];
-
-        assert(p3.get_null_piece() && p4.get_null_piece() && p5.get_null_piece());
-
-    }
 }
 
-void ut_pawn_push_f1() {
-    Position pos = Position(T1);
-    Piece pawn_a7 = pos.the_board[1][0];
-
-    vector<Move>moves = pawn_a7.get_moves(1, 0, &pos);
-}
 
 int main()
 {
@@ -63,7 +51,7 @@ int main()
     cout << "batch test 1 success." << endl;
     batch_test_2();
     cout << "batch test 2 success." << endl;
-
+    //I need to have some sort of API where each piece can view the entire position
     cout << "ALL TESTS PASSED" << endl;
     return 0;
 }

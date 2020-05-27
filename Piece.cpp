@@ -91,7 +91,6 @@ int Piece::get_piece_type() {
 	return piece_type;
 }
 
-vector<Move> Piece::get_moves(int a, int b, void *) {
-	vector<Move>res;
-	return res;
+void Piece::set_pos(Position* p) {
+	pos = p;
 }
