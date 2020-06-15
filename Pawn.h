@@ -10,8 +10,12 @@ class Pawn :
 public:
     using Piece::Piece;
     Pawn(); 
-    Pawn(int, int, int, int, int, int);
+    
     int get_piece_type(); //overloaded method
+    vector<Move> set_moves();
+
+protected:
+    //inherited members of piece are present. 
 };
 
 

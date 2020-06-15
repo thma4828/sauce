@@ -12,6 +12,8 @@ Piece::Piece(int c) {
 	piece_type = NUL;
 	x_diff = 0;
 	y_diff = 0;
+	is_pos_set = false;
+	pos = nullptr;
 }
 
 Piece::Piece() {
@@ -23,6 +25,8 @@ Piece::Piece() {
 	piece_type = NUL;
 	x_diff = 0;
 	y_diff = 0;
+	is_pos_set = false;
+	pos = nullptr;
 }
 
 Piece::Piece(int a, int b) {
@@ -34,6 +38,8 @@ Piece::Piece(int a, int b) {
 	piece_type = NUL;
 	x_diff = 0;
 	y_diff = 0;
+	is_pos_set = false;
+	pos = nullptr;
 }
 
 Piece::Piece(int a, int b, int c, int p, int yd, int xd) {
@@ -45,6 +51,8 @@ Piece::Piece(int a, int b, int c, int p, int yd, int xd) {
 	y = b;
 	x_diff = xd;
 	y_diff = yd;
+	is_pos_set = false;
+	pos = nullptr;
 }
 
 int Piece::get_x_diff() {
@@ -93,4 +101,67 @@ int Piece::get_piece_type() {
 
 void Piece::set_pos(Position* p) {
 	pos = p;
+	is_pos_set = true;
 }
+
+vector<Move> Piece::get_moves() {
+	return curr_moves;
+}
+
+void Piece::clear_moves() {
+	curr_moves.clear();
+}
+
+int Piece::get_pos_status() {
+	return is_pos_set;
+}
+
+vector<Move> Piece::set_moves() {
+	vector<Move>a;
+	return a;
+}
+
+int Piece::is_enemy_piece_type(int pc) {
+	if (is_color_set) {
+		if (color == BLACK) {
+			if (pc == WPAWN || pc == WBISH || pc == WROOK) { //add rest of enemy pieces. just Q, K and Night
+				return 1;
+			}
+			else {
+				return 0;
+			}
+		}
+		else {
+			if (pc == BPAWN || pc == BBISH || pc == BROOK) { //add rest of enemy pieces. just Q, K and Night
+				return 1;
+			}
+			else {
+				return 0;
+			}
+		}
+	}
+	return -1;
+}
+
+int Piece::is_enemy_king(int pc) {
+	if (is_color_set) {
+		if (color == BLACK) {
+			if (pc == WKING) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			if (pc == BKING) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+	return -1;
+}
+
