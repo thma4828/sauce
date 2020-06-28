@@ -2,6 +2,17 @@
 #define TREE_H
 #include "Node.h"
 
+
+struct valIndex{
+	float val;
+	int index;
+
+	valIndex(float f, int i){
+		val = f;
+		index = i;
+	}
+}
+
 class Tree
 {
 public:

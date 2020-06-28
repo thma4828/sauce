@@ -12,26 +12,32 @@ Tree::Tree(Node* r) {
 	curr_move = nullptr;
 }
 
-float Tree::get_min(vector<float>f){
+
+
+valIndex Tree::get_min(vector<float>f){
 	int s = f.size();
 	float min = f[0];
+	int i = 0;
 	for(int j=1; j<s; j++){
 		if(f[j] < min){
 			min = f[j]
+			i = j
 		}
 	}
-	return min;
+	return valIndex(min, i);
 }
 
-float Tree::get_max(vector<float>f){
+valIndex Tree::get_max(vector<float>f){
 	int s = f.size();
 	float max = f[0];
+	int i = 0;
 	for(int j=1; j<s; j++){
 		if(f[j] > max){
 			max = f[j]
+			i = j
 		}
 	}
-	return max;
+	return valIndex(max, i);
 }
 
 vector<float> Tree::get_vals(Node *ni){
@@ -52,27 +58,31 @@ void Tree::eval_tree_white(Node *r, int depth, int max, int wb, int isr) {
 		for(int i=0; i<curr->children.size(); i++){
 			eval_tree_white(curr->children[i], depth++, max, 1, 0)
 		}
-		curr->wb_ratio = get_max(get_vals(curr));
+		valIndex vi = get_max(get_vals(curr));
+		curr->wb_ratio = vi.value;
+		curr->best_child = curr->children[vi.index];
 		return;
 	}
 	if(depth < max){
 		for (int i = 0; i < curr->children.size(); i++) {
 			Node *ni = curr->children[i];
-			if(wb == 1){ //blacks move
-				  for(int j=0; j<ni->children.size(); j++){
-						 Node *nij = ni->chidren[j];
-						 eval_tree(nij, depth++, max, 0, 0);
-				  }
-			 	  ni->wb_ratio = get_min(get_vals(ni)); //blacks best move
-			}else{ //whites move
-					for(int z=0; z<ni->children.size(); z++){
-						Node *nij = ni->chidren[j];
-						eval_tree(nij, depth++, max, 1, 0);
-					}
-					ni->wb_ratio = get_max(get_vals(ni)); //whites best move.
-			}
+			eval_tree_white(ni, depth++, max, (wb + 1) % 2, 0);
 		}
+		if(wb == 1){
+			valIndex vi = get_min(get_vals(curr));
+			curr->wb_ratio = vi.value;
+			curr->best_child = curr->children[vi.index];
+		}else{
+			valIndex vi = get_max(get_vals(curr));
+			curr->wb_ratio = vi.value;
+			curr->best_child = curr->children[vi.index];
+		}
+
 	}else{
-		return; //depth of max has been reached so the algorithm halts further analys.
+		if(wb == 1){
+			curr->wb_ratio = get_min(get_vals(curr));
+		}else{
+			curr->wb_ratio = get_max(get_vals(curr));
+		}
 	}
 }
