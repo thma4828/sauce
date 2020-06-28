@@ -12,41 +12,67 @@ Tree::Tree(Node* r) {
 	curr_move = nullptr;
 }
 
-struct move {
-	Node* n;
-	float wb_ratio;
-	int move_index;
-};
-
-int Tree::calculate_move_white() {
-	Node* curr = root;
-	float wb_curr = curr->wb_ratio;
-	std::vector<move>moves; //each possible move gives rise to a branch to follow. 
-	for (int j = 0; j < curr->children.size(); j++) {
-		Node* child = curr->children[j];
-		float wb_ratio_j = child->wb_ratio;
-		move m;
-		m.wb_ratio = wb_ratio_j;
-		m.move_index = j;
-		m.n = child;
-		moves.push_back(m);
+float Tree::get_min(vector<float>f){
+	int s = f.size();
+	float min = f[0];
+	for(int j=1; j<s; j++){
+		if(f[j] < min){
+			min = f[j]
+		}
 	}
-	for (int i = 0; i < moves.size(); i++) {
-		move m1 = moves[i];
-		float thresh = curr->wb_ratio;
-		for (int k = 0; k < m1.n->children.size(); k++) {
-			float wb_ratio_ik = m1.n->white_value / m1.n->black_value;
-			if (wb_ratio_ik < curr->wb_ratio) {
-				moves[i].wb_ratio = wb_ratio_ik; //new value because on this branch black can force this value. 
-				m1.n->wb_ratio = wb_ratio_ik; //change the value in the tree. 
+	return min;
+}
+
+float Tree::get_max(vector<float>f){
+	int s = f.size();
+	float max = f[0];
+	for(int j=1; j<s; j++){
+		if(f[j] > max){
+			max = f[j]
+		}
+	}
+	return max;
+}
+
+vector<float> Tree::get_vals(Node *ni){
+	vector<float>wbs;
+	for (int k = 0; k < ni->children.size(); k++) {
+			Node *child_k = ni->chilldren[k]; //current move black could make.
+			float wb_ik = child_k->wb_ratio;
+			wbs.push_back(wb_ik);
+	}
+	return wbs;
+}
+//white code 0 black code 1
+void Tree::eval_tree_white(Node *r, int depth, int max, int wb, int isr) {
+
+	Node* curr = r;
+
+	if(isr){
+		for(int i=0; i<curr->children.size(); i++){
+			eval_tree_white(curr->children[i], depth++, max, 1, 0)
+		}
+		curr->wb_ratio = get_max(get_vals(curr));
+		return;
+	}
+	if(depth < max){
+		for (int i = 0; i < curr->children.size(); i++) {
+			Node *ni = curr->children[i];
+			if(wb == 1){ //blacks move
+				  for(int j=0; j<ni->children.size(); j++){
+						 Node *nij = ni->chidren[j];
+						 eval_tree(nij, depth++, max, 0, 0);
+				  }
+			 	  ni->wb_ratio = get_min(get_vals(ni)); //blacks best move
+			}else{ //whites move
+					for(int z=0; z<ni->children.size(); z++){
+						Node *nij = ni->chidren[j];
+						eval_tree(nij, depth++, max, 1, 0);
+					}
+					ni->wb_ratio = get_max(get_vals(ni)); //whites best move.
 			}
 		}
-	}
-	move move_chosen = moves[0];
-	for (int z = 1; z < moves.size(); z++) {
-		move move_z = moves[z];
-		if (move_z.wb_ratio > move_chosen.wb_ratio) {
-			move_chosen = move_z;
-		}
+	}else{
+		return; //depth of max has been reached so the algorithm halts further analys.
 	}
 }
