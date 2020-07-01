@@ -1,17 +1,11 @@
 #ifndef TREE_H
 #define TREE_H
 #include "Node.h"
+#include "Valindex.h"
+#include <vector>
+using namespace std;
 
-
-struct valIndex{
-	float val;
-	int index;
-
-	valIndex(float f, int i){
-		val = f;
-		index = i;
-	}
-}
+class Valindex;
 
 class Tree
 {
@@ -21,11 +15,11 @@ public:
 	Node* root;
 	Node* curr_move;
 	Node* curr_node;
-	float get_min(vector<float>);
-	float get_max(vector<float>);
+	Valindex *get_min(vector<float>);
+	Valindex *get_max(vector<float>);
 	vector<float> get_vals(Node *);
 
-	void eval_tree_white(Node *, int, int, int, int);
+	void eval_tree_white(Node *, int, int, int, bool);
 };
 
 #endif //TREE_H

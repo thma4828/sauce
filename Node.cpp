@@ -1,5 +1,6 @@
 #include "Node.h"
-
+#include <vector>
+using namespace std;
 
 Node::Node() {
 	color = WHITE;
@@ -14,13 +15,13 @@ Node::Node(Node* p, int c, float b, float w) {
 	color = c;
 	black_value = b;
 	white_value = w;
-	wb_ratio = w / b;
+	wb_ratio = w / (b + .01);
 }
 
 void Node::set_values(float b, float w){
 	black_value = b;
 	white_value = w;
-	wb_ratio = w / b;
+	wb_ratio = w / (b + .01);
 }
 void Node::set_color(int col){
 	color = col;
@@ -31,5 +32,3 @@ void Node::add_child(Node* child){
 void Node::set_parent(Node* p) {
 	parent = p;
 }
-
-

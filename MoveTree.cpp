@@ -4,6 +4,10 @@
 #include <iostream>
 #include "Tree.h"
 #include "Node.h"
+#include "Valindex.h"
+#include <vector>
+#include <stdio.h>
+
 using namespace std;
 
 int main()
@@ -14,33 +18,72 @@ int main()
   //then starting at the current position, we update the values
   //for each move choice based on recursively going deeper into the tree
   //and finding the best reply for the other player...
-    Tree* T = new Tree();
-    Node* root = new Node(nullptr, WHITE, 1.0, 1.0);
+    Tree* T = new Tree(NULL);
+    Node* root = new Node(NULL, WHITE, 1.0, 1.0);
     T->root = root;
+    //root
 
-    Node* n1 = new Node(T->root, BLACK, 1.0, 1.0);
-    Node* n2 = new Node(T->root, BLACK, 1.0, 1.0);
+    //layer n=1 children
+    Node* n11 = new Node(root, BLACK, 1.0, 1.0);
+    Node* n12 = new Node(root, BLACK, 1.0, 2.0);
+    Node* n13 = new Node(root, BLACK, 3.0, 1.0);
+    root->add_child(n11);
+    root->add_child(n12);
+    root->add_child(n13);
+    //layer n=2 children
+    //n11's chilldren
+    Node *n111 = new Node(n11, WHITE, 3.0, 1.0);
+    Node *n112 = new Node(n11, WHITE, 1.0, 1.0);
+    n11->add_child(n111);
+    n11->add_child(n112);
+    //n12's children
+    Node *n121 = new Node(n12, WHITE, 6.0, 1.0);
+    Node *n122 = new Node(n12, WHITE, 2.0, 1.0);
+    Node *n123 = new Node(n12, WHITE, 1.0, 1.0);
+    n12->add_child(n121);
+    n12->add_child(n122);
+    n12->add_child(n123);
+    //n13's children
+    Node *n131 = new Node(n13, WHITE, 3.0, 1.0);
+    Node *n132 = new Node(n13, WHITE, 1.0, 10.0);
+    n13->add_child(n131);
+    n13->add_child(n132);
+    //layer n=3
+    //n111's children
+    Node *n1111 = new Node(n111, BLACK, 4.0, 1.0);
+    Node *n1112 = new Node(n111, BLACK, 1.0, 8.0);
+    n111->add_child(n1111);
+    n111->add_child(n1112);
+    //n112's
+    Node *n1121 = new Node(n112, BLACK, 1.0, 4.0);
+    Node *n1122 = new Node(n112, BLACK, 1.0, 8.0);
+    n112->add_child(n1121);
+    n112->add_child(n1122);
+    ///n121s
+    Node *n1211 = new Node(n121, BLACK, 6.0, 1.0);
+    Node *n1212 = new Node(n121, BLACK, 5.0, 1.0);
+    n121->add_child(n1211);
+    n121->add_child(n1212);
+    //n122s children
+    Node *n1221 = new Node(n122, BLACK, 2.0, 1.0);
+
+    n122->add_child(n1221);
+    //n123s children
+    //NONE
+    //layer n=4
+    //n131s children
+    Node *n1311 = new Node(n131, BLACK, 3.0, 10.0);
+    n131->add_child(n1311);
+
+    //n132s chidlren
+    Node *n1321 = new Node(n132, BLACK, 1.0, 10.0);
+    n132->add_child(n1321);
+
+    T->eval_tree_white(root, 0, 2, WHITE, true);
 
 
-    Node* n11 = new Node(n1, WHITE, 0.0, 1.0);
-    Node* n12 = new Node(n1, WHITE, 1.0, 1.0);
 
-    Node* n21 = new Node(n2, WHITE, 1.0, 1.0);
-    Node* n22 = new Node(n2, WHITE, 1.0, 1.0);
 
-    n1->add_child(n11);
-    n1->add_child(n12);
-
-    n2->add_child(n21);
-    n2->add_child(n22);
-
-    T->root->add_child(n1);
-    T->root->add_child(n2);
-
-    T->eval_tree_white(T->root, 0, 2, 0, 1);
-
-    valIndex theMove = T->get_max(get_vals(T->root));
-    cout << "Move with index: " << theMove.index << " and valued at: " << theMove.value << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
