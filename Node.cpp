@@ -10,7 +10,7 @@ Node::Node() {
 	wb_ratio = 0.0;
 }
 
-Node::Node(Node* p, int c, float b, float w) {
+Node::Node(Node* p, int c, float w, float b) {
 	parent = p;
 	color = c;
 	black_value = b;
@@ -18,7 +18,7 @@ Node::Node(Node* p, int c, float b, float w) {
 	wb_ratio = w / (b + .01);
 }
 
-void Node::set_values(float b, float w){
+void Node::set_values(float w, float b){
 	black_value = b;
 	white_value = w;
 	wb_ratio = w / (b + .01);

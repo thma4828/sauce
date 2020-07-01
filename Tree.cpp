@@ -74,6 +74,7 @@ void Tree::eval_tree_white(Node *r, int depth, int max, int wb, bool isr) {
 
 	if(isr){
 		cout << "In root case." << endl;
+		cout << "root position currently valued at: " << curr->wb_ratio << endl;
 		cout << "root has: " << curr->children.size() << " children " << endl;
 		for(int i=0; i<curr->children.size(); i++){
 			eval_tree_white(curr->children[i], depth + 1, max, 1, false);
@@ -83,6 +84,7 @@ void Tree::eval_tree_white(Node *r, int depth, int max, int wb, bool isr) {
 		if(vi != NULL){
 			curr->wb_ratio = vi->value;
 			curr->best_child = curr->children[vi->index];
+			cout << "position now valued at: " << curr->wb_ratio << endl;
 		}
 
 		return;
@@ -112,6 +114,7 @@ void Tree::eval_tree_white(Node *r, int depth, int max, int wb, bool isr) {
 
 	}else{
 		cout << "hit max depth. simple eval." << endl;
+		cout << "wb is: " << wb << endl;
 		if(wb == 1){
 			Valindex *vi = get_min(get_vals(curr));
 			if(vi != NULL)

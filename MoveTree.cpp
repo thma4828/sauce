@@ -19,7 +19,7 @@ int main()
   //for each move choice based on recursively going deeper into the tree
   //and finding the best reply for the other player...
     Tree* T = new Tree(NULL);
-    Node* root = new Node(NULL, WHITE, 1.0, 1.0);
+    Node* root = new Node(NULL, WHITE, 2.0, 1.0);
     T->root = root;
     //root
 
