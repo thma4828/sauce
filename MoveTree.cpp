@@ -5,10 +5,14 @@
 #include "Tree.h"
 #include "Node.h"
 #include "Valindex.h"
+#include "Testrunner.h"
 #include <vector>
 #include <stdio.h>
+#include <cassert>
 
 using namespace std;
+
+class Testrunner;
 
 int main()
 {
@@ -80,10 +84,24 @@ int main()
     n132->add_child(n1321);
 
     T->eval_tree_white(root, 0, 2, WHITE, true);
+    // cout << T->root->wb_ratio << endl;
+    // cout << T->root->children[0]->wb_ratio << endl;
+    // cout << T->root->children[1]->wb_ratio << endl;
+    // cout << T->root->children[2]->wb_ratio << endl;
+    // cout << T->root->children[0]->children[0]->wb_ratio << endl;
+    // cout << T->root->children[0]->children[1]->wb_ratio << endl;
+    // cout << T->root->children[0]->children[0]->children[0]->wb_ratio << endl;
+    // cout << T->root->children[0]->children[1]->children[0]->wb_ratio << endl;
+    //
+    // cout << T->root->children[1]->wb_ratio << endl;
+    // cout << T->root->children[1]->children[0]->wb_ratio << endl;
+    //
+    // cout << T->root->children[1]->children[1]->wb_ratio << endl;
 
-
-
-
+    Testrunner *tr = new Testrunner();
+    tr->pawn_t();
+    tr->run_all_batch_tests();
+    tr->run_all_bishop_unit_tests();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

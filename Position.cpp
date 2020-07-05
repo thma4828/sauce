@@ -22,8 +22,8 @@ Position::Position(int b) {
 			the_board[ii][jj] = NULCELL;
 		}
 	}
-	
-	
+
+
 	int x = 0;
 	int y = 0;
 
@@ -31,10 +31,10 @@ Position::Position(int b) {
 		//TODO: build chess starting position.
 	}
 	else if (b == EMPTY) {
-		//nothing needs to be done. 
+		//nothing needs to be done.
 	}
 	else if (b == T1) { //test position.
-		
+
 		for (y; y < 8; y++) {
 			the_board[1][y] = BPAWN;
 			the_board[6][y] = WPAWN;
@@ -47,7 +47,7 @@ Position::Position(int b) {
 		the_board[0][1] = BBISH;
 		the_board[0][6] = BBISH;
 		for (y; y < 8; y++) {
-			
+
 			the_board[6][y] = WPAWN;
 		}
 	}

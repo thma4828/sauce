@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PIECE_H
+#define PIECE_H
 #include <iostream>
 #include <vector>
 #include "Position.h"
@@ -6,8 +7,8 @@
 
 
 using namespace std;
-#define WHITE -1
 #define BLACK 1
+#define WHITE 0
 #define NUL 3
 #define PAWN 11
 #define BISHOP 37
@@ -49,9 +50,9 @@ public:
 	int is_enemy_piece_type(int);
 	int is_enemy_king(int);
 	vector<Move>curr_moves;
-	//TODO add in move calculation functionality again now that problem with class dep. resolved. 
+	//TODO add in move calculation functionality again now that problem with class dep. resolved.
 
-	
+
 protected:
 	int color;
 	int is_color_set;
@@ -63,6 +64,7 @@ protected:
 	int x_diff;
 	int y_diff;
 	Position* pos;
-	
+
 };
 
+#endif //PIECE_H
