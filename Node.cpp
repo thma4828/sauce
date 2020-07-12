@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+
 Node::Node() {
 	color = WHITE;
 	parent = nullptr;
@@ -23,12 +24,32 @@ void Node::set_values(float w, float b){
 	white_value = w;
 	wb_ratio = w / (b + .01);
 }
+
 void Node::set_color(int col){
 	color = col;
 }
+
 void Node::add_child(Node* child){
 	children.push_back(child);
 }
+
 void Node::set_parent(Node* p) {
 	parent = p;
+}
+
+void Node::set_board(Board *b){
+	node_pos = b;
+	board_set = true;
+}
+
+bool Node::assign_board_val(){
+	if(board_set){
+		node_pos->calc_final_eval();
+		black_value = node_pos->get_black();
+		white_value = node_pos->get_white();
+		wb_ratio = (white_value / (black_value + .01));
+		return true;
+	}else{
+		return false;
+	}
 }

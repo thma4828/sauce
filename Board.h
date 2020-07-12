@@ -1,11 +1,20 @@
-#pragma once
+#ifndef BOARD_H
+#define BOARD_H
 #include "Position.h"
-#include "Piece.h"
+#include "Move.h"
 #include <vector>
+
+using namespace std;
+
 class Board //this interface will taken a position, get all the moves of both sides and organize them
 {
 public:
 	Board();
+	void set_position(Position *);
+	void calc_final_eval();
+	float get_wb_ratio();
+	float get_black();
+	float get_white();
 private:
 	Position* position;
 	//needs to:
@@ -14,15 +23,17 @@ private:
 	vector<Move>black_moves;
 	vector<Move>white_moves;
 
-	double black_piece_value;
-	double white_piece_value;
-	double black_threat_value;
-	double white_threat_value;
-	double black_structure_value;
-	double white_structure_value;
+	float black_piece_value;
+	float white_piece_value;
+	float black_threat_value;
+	float white_threat_value;
+	float black_structure_value;
+	float white_structure_value;
 
-	double final_eval_white;
-	double final_eval_black;
-	//TODO add score mechanism for threats and piece value. 
+	float final_eval_white;
+	float final_eval_black;
+
+	bool white_move;
+	//TODO add score mechanism for threats and piece value.
 };
-
+#endif //BOARD_H

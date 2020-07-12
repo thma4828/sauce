@@ -7,6 +7,7 @@
 
 
 using namespace std;
+#define NONE 88
 #define BLACK 1
 #define WHITE 0
 #define NULLCELL 3

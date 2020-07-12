@@ -9,7 +9,7 @@ Piece::Piece(int c) {
 	is_null_piece = false;
 	x = -1;
 	y = -1;
-	piece_type = NUL;
+	piece_type = NONE;
 	x_diff = 0;
 	y_diff = 0;
 	is_pos_set = false;
@@ -17,12 +17,12 @@ Piece::Piece(int c) {
 }
 
 Piece::Piece() {
-	color = NUL;
+	color = NONE;
 	is_color_set = false;
 	is_null_piece = true;
 	x = -1;
 	y = -1;
-	piece_type = NUL;
+	piece_type = NONE;
 	x_diff = 0;
 	y_diff = 0;
 	is_pos_set = false;
@@ -30,12 +30,12 @@ Piece::Piece() {
 }
 
 Piece::Piece(int a, int b) {
-	color = NUL;
+	color = NONE;
 	is_color_set = false;
 	is_null_piece = true;
 	x = a;
 	y = b;
-	piece_type = NUL;
+	piece_type = NONE;
 	x_diff = 0;
 	y_diff = 0;
 	is_pos_set = false;
@@ -164,4 +164,3 @@ int Piece::is_enemy_king(int pc) {
 	}
 	return -1;
 }
-

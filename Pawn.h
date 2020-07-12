@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PAWN_H
+#define PAWN_H
 #include "Piece.h"
 
 
@@ -19,4 +20,4 @@ protected:
 };
 
 
-
+#endif //PAWN_H

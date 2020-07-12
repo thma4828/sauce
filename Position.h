@@ -2,11 +2,6 @@
 #define POSITION_H
 #include <iostream>
 
-
-
-
-
-
 class Position {
 public:
 	Position();
