@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Tree.h"
 #include "Node.h"
+
 #include "Valindex.h"
 #include "Testrunner.h"
 #include <vector>
@@ -99,9 +100,8 @@ int main()
     // cout << T->root->children[1]->children[1]->wb_ratio << endl;
 
     Testrunner *tr = new Testrunner();
-    tr->pawn_t();
     tr->run_all_batch_tests();
-    tr->run_all_bishop_unit_tests();
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

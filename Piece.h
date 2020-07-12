@@ -9,7 +9,7 @@
 using namespace std;
 #define BLACK 1
 #define WHITE 0
-#define NUL 3
+#define NULLCELL 3
 #define PAWN 11
 #define BISHOP 37
 #define ROOK 87
@@ -24,6 +24,13 @@ using namespace std;
 #define BBISH 8112
 #define WKING 7655
 #define BKING 1232
+#define WKNIGHT 7171
+#define BKNIGHT 8712
+#define START 5
+#define EMPTY 6
+#define T1 7
+#define TEST_2 314556
+#define TEST_3 0x78aa
 
 class Piece
 {

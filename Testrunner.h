@@ -4,6 +4,7 @@
 #include "Board.h"
 #include "Pawn.h"
 #include "Bishop.h"
+#include "Knight.h"
 using namespace std;
 
 
@@ -14,15 +15,15 @@ public:
 	Testrunner(Position*);
 	Testrunner(int);
 	void run_all_batch_tests();
-	void run_all_bishop_unit_tests();
-	void pawn_t();
+
+
 
 
 private:
 	Position* position;
-	void batch_test_1();
-	void batch_test_2();
 
-	void bishop_unit_test_02();
+	void simple_pawn_lines();
+	void knight_01();
+	void bishop_unit_test_01();
 };
 #endif //TESTRUNNER_H

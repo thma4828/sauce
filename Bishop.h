@@ -1,8 +1,9 @@
-#pragma once
+#ifndef BISHOP_H
+#define BISHOP_H
 #include "Piece.h"
 
 using namespace std;
-class Bishop : 
+class Bishop :
 	public Piece
 {
 public:
@@ -14,3 +15,4 @@ public:
 protected:
 };
 
+#endif //BISHOP_H

@@ -1,5 +1,5 @@
 #include "Pawn.h"
-
+#define NULLCELL 3
 
 using namespace std;
 
@@ -14,12 +14,14 @@ vector<Move> Pawn::set_moves() {
 	vector<Move>moves;
 	if (is_pos_set && is_color_set && !is_null_piece) {
 		if (color == BLACK) {
+			cout << "in pawn set moves black" << endl;
 			if (x < 6) {
 					if (y > 0 && y < 7) {
-						if (pos->the_board[x + 1][y] == NULCELL) {
+						cout << "x < 6 and y not on 1st or 8th rank" << endl;
+						if (pos->the_board[x + 1][y] == NULLCELL) {
 							Move m1(x + 1, y, BLACK, false, false, PAWN, x, y);
 							moves.push_back(m1);
-							if (pos->the_board[x + 2][y] == NULCELL) {
+							if (pos->the_board[x + 2][y] == NULLCELL) {
 									Move m2(x + 2, y, BLACK, false, false, PAWN, x, y);
 									moves.push_back(m2);
 							}
@@ -47,16 +49,23 @@ vector<Move> Pawn::set_moves() {
 					} //x is still less than 6 and y is 7 or 0
 					else {
 						if (y == 0) { // just cant take to any y to the left
-								if(pos->the_board[x+1][y] == NULCELL){
+								cout << "in x<6 and y == 0" << endl;
+								if(pos->the_board[x+1][y] == NULLCELL){
+									cout <<"empty square for a move x+1 ahead." << endl;
+									cout << "in x<6 and y == 0" << endl;
 									Move ma(x+1, y, BLACK, false, false, PAWN, x, y);
 									moves.push_back(ma);
 
-									if(pos->the_board[x+2][y] == NULCELL){
+									if(pos->the_board[x+2][y] == NULLCELL){
 										Move mb(x+2, y, BLACK, false, false, PAWN, x, y);
 
 										moves.push_back(mb);
 									}
 									moves.push_back(ma);
+								}else{
+									//pawn cannot move forward.
+									cout << "pawn is obstructed" << endl;
+									cout << "by piece with code: " << pos->the_board[x+1][y] << endl;
 								}
 								int enemy_s1 = pos->the_board[x+1][y+1];
 								if(is_enemy_piece_type(enemy_s1) && !is_enemy_king(enemy_s1)){
@@ -65,11 +74,11 @@ vector<Move> Pawn::set_moves() {
 								}
 						}
 						else { //y is 7 cant take to the right. x still less than 6
-							if(pos->the_board[x+1][y] == NULCELL){
+							if(pos->the_board[x+1][y] == NULLCELL){
 								Move ma(x+1, y, BLACK, false, false, PAWN, x, y);
 								moves.push_back(ma);
 
-								if(pos->the_board[x+2][y] == NULCELL){
+								if(pos->the_board[x+2][y] == NULLCELL){
 									Move mb(x+2, y, BLACK, false, false, PAWN, x, y);
 
 									moves.push_back(mb);
@@ -90,7 +99,7 @@ vector<Move> Pawn::set_moves() {
 				//also breaks into subcases of y...
 				int e;
 				Move m_promote(x + 1, y, BLACK, false, true, PAWN, x, y);
-				if(pos->the_board[x+1][y] == NULCELL){
+				if(pos->the_board[x+1][y] == NULLCELL){
 					moves.push_back(m_promote);
 				}
 
@@ -127,13 +136,14 @@ vector<Move> Pawn::set_moves() {
 			}
 		}
 		else { // color is WHITE
+			cout << "in pawn set moves black" << endl;
 			//TODO same thing as done for black but reversed index transform.
 			if (x > 1) {
 					if (y > 0 && y < 7) {
-						if (pos->the_board[x - 1][y] == NULCELL) {
+						if (pos->the_board[x - 1][y] == NULLCELL) {
 							Move m1(x - 1, y, WHITE, false, false, PAWN, x, y);
 							moves.push_back(m1);
-							if (pos->the_board[x - 2][y] == NULCELL) {
+							if (pos->the_board[x - 2][y] == NULLCELL) {
 									Move m2(x - 2, y, WHITE, false, false, PAWN, x, y);
 									moves.push_back(m2);
 							}
@@ -161,11 +171,11 @@ vector<Move> Pawn::set_moves() {
 					} //x is still greater than 1, so not 1 from back rank
 					else {
 						if (y == 0) { // just cant take to any y to the left
-								if(pos->the_board[x-1][y] == NULCELL){
+								if(pos->the_board[x-1][y] == NULLCELL){
 									Move ma(x-1, y, WHITE, false, false, PAWN, x, y);
 									moves.push_back(ma);
 
-									if(pos->the_board[x-2][y] == NULCELL){
+									if(pos->the_board[x-2][y] == NULLCELL){
 										Move mb(x-2, y, WHITE, false, false, PAWN, x, y);
 
 										moves.push_back(mb);
@@ -179,11 +189,11 @@ vector<Move> Pawn::set_moves() {
 								}
 						}
 						else { //y is 7 cant take to the right. x still less than 6
-							if(pos->the_board[x-1][y] == NULCELL){
+							if(pos->the_board[x-1][y] == NULLCELL){
 								Move ma(x-1, y, WHITE, false, false, PAWN, x, y);
 								moves.push_back(ma);
 
-								if(pos->the_board[x-2][y] == NULCELL){
+								if(pos->the_board[x-2][y] == NULLCELL){
 									Move mb(x-2, y, WHITE, false, false, PAWN, x, y);
 
 									moves.push_back(mb);
@@ -204,7 +214,7 @@ vector<Move> Pawn::set_moves() {
 				//also breaks into subcases of y...
 				int e;
 				Move m_promote(x - 1, y, WHITE, false, true, PAWN, x, y);
-				if(pos->the_board[x-1][y] == NULCELL){
+				if(pos->the_board[x-1][y] == NULLCELL){
 					moves.push_back(m_promote);
 				}
 

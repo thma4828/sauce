@@ -18,36 +18,28 @@ Testrunner::Testrunner(Position* pos) {
 	position = pos;
 }
 
-void Testrunner::pawn_t(){
+void Testrunner::knight_01(){
+  cout << "In knight tests." << endl;
+  position = new Position(TEST_2);
+  //white knight on x=2, y=3
+  //black knight on x=3, y=4
+  //white pawns on x=6 rank
+  //black pawns on x=1 rank
+  int wk = position->the_board[2][3];
+  int bk = position->the_board[3][4];
+  assert(wk == WKNIGHT);
+  assert(bk == BKNIGHT);
+  Knight *wk1 = new Knight(2, 3, WHITE, KNIGHT, 2, 3);
+  Knight *bk1 = new Knight(3, 4, BLACK, KNIGHT, 2, 3);
+  wk1->set_pos(position);
+  bk1->set_pos(position);
 
-  Position *posit = new Position(T1);
-
-  int white_pawn_1 = posit->the_board[6][1];
-
-  assert(white_pawn_1 == WPAWN);
-
-  Pawn *wp1 = new Pawn(6, 1, WHITE, PAWN, 1, 1);
-  wp1->set_pos(posit);
-
-  wp1->set_moves();
+  wk1->set_moves();
+  vector<Move>wk1_moves = wk1->get_moves();
+  assert(wk1_moves.size() > 0);
 }
 
-
-
-void Testrunner::batch_test_1() {
-    Pawn* p = new Pawn();
-
-    assert(p->get_x() == -1 && p->get_y() == -1);
-    assert(p->get_color() == NUL);
-    p->set_color(WHITE);
-    assert(p->get_color() == WHITE);
-    p->set_xy(3, 5);
-    assert(p->get_x() == 3 && p->get_y() == 5);
-
-}
-
-
-void Testrunner::batch_test_2() {
+void Testrunner::simple_pawn_lines() {
     Position pos_one = Position(T1); //T1 is for test position 1.
 
     for (int i = 0; i < 8; i++) { //only pawns with all possible moves for this test.
@@ -71,6 +63,7 @@ void Testrunner::batch_test_2() {
 
         vector<Move>p1_moves = pawn1.set_moves();
         cout << "Black Pawn Moves" << endl;
+        assert(p1_moves.size() > 0);
         for (int m = 0; m < p1_moves.size(); m++) {
             Move mv = p1_moves[m];
             cout << "move # " << m << endl;
@@ -78,32 +71,32 @@ void Testrunner::batch_test_2() {
             cout << "end coords: " << mv.x_end << "," << mv.y_end << endl;
             cout << "is take: " << mv.is_take << endl;
         }
-        /*cout << "White Pawn Moves" << endl;
+        assert(pawn2.get_color() == WHITE);
+        assert(pawn2.get_pos_status() == true);
+        assert(pawn2.get_color_set() == true);
+        assert(pawn2.get_null_piece() == false);
+        cout << "White Pawn Moves" << endl;
         vector<Move>p2_moves = pawn2.set_moves();
+        assert(p2_moves.size() > 0);
         for (int m = 0; m < p2_moves.size(); m++) {
             Move mp2 = p2_moves[m];
             cout << "move # " << m << endl;
             cout << "starting coords: " << mp2.x_start << "," << mp2.y_start << endl;
             cout << "end coords: " << mp2.x_end << "," << mp2.y_end << endl;
             cout << "is take: " << mp2.is_take << endl;
-        }*/
+        }
     }
 
 }
 
-void Testrunner::run_all_batch_tests() {
-    batch_test_1();
-    batch_test_2();
-    cout << "batch tests 1&2 passed." << endl;
-}
+void Testrunner::bishop_unit_test_01() {
+    Position *pos_2 = new Position(TEST_3);
 
+    assert(pos_2->the_board[0][0] == BBISH);
+    assert(pos_2->the_board[7][7] == WBISH);
 
-
-void Testrunner::bishop_unit_test_02() {
-    Position *pos_2 = new Position(TEST_2);
-
-    Bishop* b_01 = new Bishop(0, 1, BLACK, BISHOP, 1, 1); ///xdiff and ydiff now defunct params.. .. so 1...
-    Bishop* b_06 = new Bishop(0, 6, BLACK, BISHOP, 1, 1);
+    Bishop* b_01 = new Bishop(0, 0, BLACK, BISHOP, 1, 1); ///xdiff and ydiff now defunct params.. .. so 1...
+    Bishop* b_06 = new Bishop(7, 7, WHITE, BISHOP, 1, 1);
 
     b_01->set_pos(pos_2);
     b_06->set_pos(pos_2);
@@ -111,14 +104,15 @@ void Testrunner::bishop_unit_test_02() {
 
     vector<Move> b1_moves = b_01->set_moves();
     vector<Move> b6_moves = b_06->set_moves();
-    assert(b1_moves.size() != 0);
-    assert(b6_moves.size() != 0);
-
 
 }
 
-void Testrunner::run_all_bishop_unit_tests() {
-    cout << "Running all bishop unit tests. 01." << endl;
-    bishop_unit_test_02();
-    cout << "Bishop unit test passed. 02." << endl;
+void Testrunner::run_all_batch_tests() {
+
+    simple_pawn_lines();
+    cout << "simple pawn lines passed." << endl;
+    knight_01();
+    cout << "knight test 01 passed." << endl;
+    bishop_unit_test_01();
+    cout << "bishop unit test 01 passed." << endl;
 }

@@ -1,4 +1,5 @@
 #include "Position.h"
+#include "Piece.h"
 
 using namespace std;
 
@@ -7,7 +8,7 @@ Position::Position() {
 	board_pos = T1;
 	for (int ii = 0; ii < 8; ii++) {
 		for (int jj = 0; jj < 8; jj++) {
-			the_board[ii][jj] = NULCELL;
+			the_board[ii][jj] = NULLCELL;
 		}
 	}
 
@@ -19,7 +20,7 @@ Position::Position(int b) {
 
 	for (int ii = 0; ii < 8; ii++) {
 		for (int jj = 0; jj < 8; jj++) {
-			the_board[ii][jj] = NULCELL;
+			the_board[ii][jj] = NULLCELL;
 		}
 	}
 
@@ -40,15 +41,22 @@ Position::Position(int b) {
 			the_board[6][y] = WPAWN;
 		}
 
-		the_board[2][3] = WPAWN;
-		the_board[3][4] = BBISH;
+
 	}
 	else if (b == TEST_2) {
-		the_board[0][1] = BBISH;
-		the_board[0][6] = BBISH;
 		for (y; y < 8; y++) {
-
+			the_board[1][y] = BPAWN;
 			the_board[6][y] = WPAWN;
 		}
+		the_board[2][3] = WKNIGHT;
+		the_board[3][4] = BKNIGHT;
+
+	}else if (b == TEST_3){
+		for (y; y < 8; y++) {
+			the_board[1][y] = BPAWN;
+			the_board[6][y] = WPAWN;
+		}
+		the_board[0][0] = BBISH;
+		the_board[7][7] = WBISH;
 	}
 }

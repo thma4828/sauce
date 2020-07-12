@@ -1,18 +1,9 @@
-#pragma once
+#ifndef POSITION_H
+#define POSITION_H
 #include <iostream>
 
-#define NULCELL 5800
-#define WPAWN 3123
-#define BPAWN 3422
-#define WROOK 8756
-#define BROOK 9867
-#define WBISH 9788
-#define BBISH 8112
 
-#define START 5
-#define EMPTY 6
-#define T1 7
-#define TEST_2 314556
+
 
 
 
@@ -26,3 +17,5 @@ public:
 private:
 	int board_pos;
 };
+
+#endif //POSITION_H
