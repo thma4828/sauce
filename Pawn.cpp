@@ -17,7 +17,7 @@ vector<Move> Pawn::set_moves() {
 			cout << "in pawn set moves black" << endl;
 			if (x < 6) {
 					if (y > 0 && y < 7) {
-						cout << "x < 6 and y not on 1st or 8th rank" << endl;
+						cout << "in x < 6 and y > 0 && y < 7" << endl;
 						if (pos->the_board[x + 1][y] == NULLCELL) {
 							Move m1(x + 1, y, BLACK, false, false, PAWN, x, y);
 							moves.push_back(m1);
@@ -47,33 +47,45 @@ vector<Move> Pawn::set_moves() {
 							//it cannot be your turn unless the game is over.
 						}
 					} //x is still less than 6 and y is 7 or 0
-					else {
+					else if(x < 6 && (y == 7 || y == 0)){
+						cout << "entering case (2)" << endl;
 						if (y == 0) { // just cant take to any y to the left
 								cout << "in x<6 and y == 0" << endl;
 								if(pos->the_board[x+1][y] == NULLCELL){
 									cout <<"empty square for a move x+1 ahead." << endl;
-									cout << "in x<6 and y == 0" << endl;
+
 									Move ma(x+1, y, BLACK, false, false, PAWN, x, y);
 									moves.push_back(ma);
 
+									cout <<"pawn move +1 in x direction added." << endl;
 									if(pos->the_board[x+2][y] == NULLCELL){
-										Move mb(x+2, y, BLACK, false, false, PAWN, x, y);
+										cout << "empty square for a move x+2 ahead." << endl;
 
+										Move mb(x+2, y, BLACK, false, false, PAWN, x, y);
 										moves.push_back(mb);
+
+										cout << "pawn move +2 in x direction added." << endl;
 									}
-									moves.push_back(ma);
 								}else{
 									//pawn cannot move forward.
 									cout << "pawn is obstructed" << endl;
 									cout << "by piece with code: " << pos->the_board[x+1][y] << endl;
 								}
+								cout << "pawn checking for enemies to attack on: x,y == "
+								<< x+1 << ","<< y+1 << endl;
+
 								int enemy_s1 = pos->the_board[x+1][y+1];
+
+								cout << "enemy square s1 has piece with code: " << enemy_s1 << endl;
 								if(is_enemy_piece_type(enemy_s1) && !is_enemy_king(enemy_s1)){
+									cout << "pawn has enemy square on x+1, y+1" << endl;
 									Move ta(x+1, y+1, BLACK, true, false, PAWN, x, y);
 									moves.push_back(ta);
 								}
+								cout << "leaving case (1)" << endl;
 						}
-						else { //y is 7 cant take to the right. x still less than 6
+						else if(y == 7){ //y is 7 cant take to the right. x still less than 6
+							cout << "in x<6 and y == 7" << endl;
 							if(pos->the_board[x+1][y] == NULLCELL){
 								Move ma(x+1, y, BLACK, false, false, PAWN, x, y);
 								moves.push_back(ma);
@@ -83,7 +95,7 @@ vector<Move> Pawn::set_moves() {
 
 									moves.push_back(mb);
 								}
-								moves.push_back(ma);
+								
 							}
 							int enemy_s1 = pos->the_board[x+1][y-1];
 							if(is_enemy_piece_type(enemy_s1) && !is_enemy_king(enemy_s1)){
@@ -92,12 +104,16 @@ vector<Move> Pawn::set_moves() {
 							}
 
 						}
+					}else{
+						cout << "error: x < 6 and y not in range at all" << endl;
 					}
 			}
 			else if(x == 6){ // black pawn one move from being on the back rank and promoting
 				//a pawn promotion.
 				//also breaks into subcases of y...
+				cout << "in x == 6" << endl;
 				int e;
+
 				Move m_promote(x + 1, y, BLACK, false, true, PAWN, x, y);
 				if(pos->the_board[x+1][y] == NULLCELL){
 					moves.push_back(m_promote);
@@ -132,11 +148,12 @@ vector<Move> Pawn::set_moves() {
 
 			}//X is 7
 			else {
+				cout << "in x = 7" << endl;
 				//pawn on backrank that didn't choose to promote? or promoted to a pawn...?
 			}
 		}
 		else { // color is WHITE
-			cout << "in pawn set moves black" << endl;
+			cout << "in pawn set moves white" << endl;
 			//TODO same thing as done for black but reversed index transform.
 			if (x > 1) {
 					if (y > 0 && y < 7) {
@@ -180,7 +197,7 @@ vector<Move> Pawn::set_moves() {
 
 										moves.push_back(mb);
 									}
-									moves.push_back(ma);
+
 								}
 								int enemy_s1 = pos->the_board[x-1][y+1];
 								if(is_enemy_piece_type(enemy_s1) && !is_enemy_king(enemy_s1)){
@@ -190,15 +207,15 @@ vector<Move> Pawn::set_moves() {
 						}
 						else { //y is 7 cant take to the right. x still less than 6
 							if(pos->the_board[x-1][y] == NULLCELL){
-								Move ma(x-1, y, WHITE, false, false, PAWN, x, y);
-								moves.push_back(ma);
+								Move maa(x-1, y, WHITE, false, false, PAWN, x, y);
+								moves.push_back(maa);
 
 								if(pos->the_board[x-2][y] == NULLCELL){
-									Move mb(x-2, y, WHITE, false, false, PAWN, x, y);
+									Move mbb(x-2, y, WHITE, false, false, PAWN, x, y);
 
-									moves.push_back(mb);
+									moves.push_back(mbb);
 								}
-								moves.push_back(ma);
+
 							}
 							int enemy_s1 = pos->the_board[x-1][y-1];
 							if(is_enemy_piece_type(enemy_s1) && !is_enemy_king(enemy_s1)){

@@ -11,10 +11,13 @@ class Board //this interface will taken a position, get all the moves of both si
 public:
 	Board();
 	void set_position(Position *);
+	Position *get_position();
 	void calc_final_eval();
 	float get_wb_ratio();
 	float get_black();
 	float get_white();
+	bool get_check_white();
+	bool get_check_black();
 private:
 	Position* position;
 	//needs to:
