@@ -2,6 +2,7 @@
 #include "Position.h"
 #include "Piece.h"
 #include <cstdlib>
+#include <sys/time.h>
 
 #include <iostream>
 

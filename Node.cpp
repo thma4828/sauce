@@ -43,11 +43,11 @@ void Node::set_board(Board *b){
 }
 
 bool Node::assign_board_val(){
-	if(board_set){
+	if(board_set){ //board is called node_pos... (stupid!)
 		node_pos->calc_final_eval();
 		black_value = node_pos->get_black();
 		white_value = node_pos->get_white();
-		wb_ratio = (white_value / (black_value + .01));
+		wb_ratio = ((0.1 + white_value)  / (black_value + .01));
 		return true;
 	}else{
 		return false;

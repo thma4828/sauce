@@ -18,6 +18,9 @@ public:
 	float get_white();
 	bool get_check_white();
 	bool get_check_black();
+	void set_color(int);
+	bool is_white();
+	bool is_black();
 private:
 	Position* position;
 	//needs to:
@@ -36,7 +39,7 @@ private:
 	float final_eval_white;
 	float final_eval_black;
 
-	bool white_move;
+	int color;
 	//TODO add score mechanism for threats and piece value.
 };
 #endif //BOARD_H

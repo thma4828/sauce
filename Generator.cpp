@@ -9,6 +9,7 @@ Generator::Generator(Position *start, int start_color){
   Node *root = new Node(nullptr, start_color, 0.1, 0.1);
   Board *root_board = new Board();
   root_board->set_position(start);
+  root_board->set_color(start_color);
   root->set_board(root_board);
   //now node needs to use the board to get
   //the default (naive) evaluation on the position.
@@ -78,7 +79,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                 cout << "in generator: new nodes created." << endl;
                 for(int k=0; k<tnodes.size(); k++){
                   Node *n1 = tnodes[k];
-
+                  curr->add_child(n1);
                   if(wb == BLACK)
                     check = n1->node_pos->get_check_white();
                   else
@@ -98,7 +99,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                 cout << "in generator: new nodes created." << endl;
                 for(int k=0; k<tnodes.size(); k++){
                   Node *n1 = tnodes[k];
-
+                  curr->add_child(n1);
                   if(wb == BLACK)
                     check = n1->node_pos->get_check_white();
                   else
@@ -121,8 +122,56 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 
 
           }else if(value == WKNIGHT || value == BKNIGHT){
-            //TODO + all other piece types.
-          }
+            cout << "in generator: knight" << endl;
+            Knight *knight;
+            vector<Move>kmoves;
+            vector<Node*>tnodes;
+            if(value == BKNIGHT && wb == BLACK){
+                knight = new Knight(x, y, BLACK, KNIGHT, 2, 3);
+                knight->set_pos(p);
+                knight->set_moves();
+                kmoves = knight->get_moves();
+                tnodes = get_nodes(kmoves, p, curr, !wb);
+                for(int t=0; t<tnodes.size(); t++){
+                  Node *n1 = tnodes[t];
+                  curr->add_child(n1);
+                  if(wb == BLACK)
+                    check = n1->node_pos->get_check_white();
+                  else
+                    check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  if(depth+1 <= max_depth)
+                    build_tree(n1, depth+1, !wb, max_depth, check);
+
+
+                }
+
+            }else if(value == WKNIGHT && wb == WHITE){
+              knight = new Knight(x, y, WHITE, KNIGHT, 2, 3);
+              knight->set_pos(p);
+              knight->set_moves();
+              kmoves = knight->get_moves();
+              tnodes = get_nodes(kmoves, p, curr, !wb);
+
+              for(int t=0; t<tnodes.size(); t++){
+                Node *n1 = tnodes[t];
+                curr->add_child(n1);
+                if(wb == BLACK)
+                  check = n1->node_pos->get_check_white();
+                else
+                  check = n1->node_pos->get_check_black();
+
+                //node should be added with correct parent and naive wb_eval value.
+                if(depth+1 <= max_depth)
+                  build_tree(n1, depth+1, !wb, max_depth, check);
+
+              }
+
+
+              }
+            //TODO BELOW + all other piece types.
+            }
         }else{ //check on the board.
                   //only king moves possible for person in check....
                   //if no king moves then mate is on the board.
