@@ -131,6 +131,8 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                 knight->set_pos(p);
                 knight->set_moves();
                 kmoves = knight->get_moves();
+		if(kmoves.size() < 1)
+			cout << "in generator: knight, black knight has no moves" << endl;
                 tnodes = get_nodes(kmoves, p, curr, !wb);
                 for(int t=0; t<tnodes.size(); t++){
                   Node *n1 = tnodes[t];
@@ -152,6 +154,8 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
               knight->set_pos(p);
               knight->set_moves();
               kmoves = knight->get_moves();
+	      if(kmoves.size() < 1)
+		      cout << "in generator: knight: white night has no moves." << endl;
               tnodes = get_nodes(kmoves, p, curr, !wb);
 
               for(int t=0; t<tnodes.size(); t++){

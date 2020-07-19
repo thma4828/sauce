@@ -27,6 +27,8 @@ using namespace std;
 #define BKING 1232
 #define WKNIGHT 7171
 #define BKNIGHT 8712
+#define BQUEEN 171710
+#define WQUEEN 171720
 #define START 5
 #define EMPTY 6
 #define T1 7
