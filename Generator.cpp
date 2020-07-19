@@ -32,8 +32,16 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     m.x_start << "," << m.y_start << ")"<<endl;
     cout << "------>iter " << j << ": move has x_end, y_end = (" <<
     m.x_end << "," << m.y_end << ")"<<endl;
+    if(m.is_take){
+    	cout << "------>iter " << j << ": move takes enemy piece." << endl;
+    }
+    
     int piece2move = p->the_board[m.x_start][m.y_start];
+    int piece_taken = p->the_board[m.x_end][m.y_end];
     cout << "------>iter " << j << ": Piece to move is of code: " << piece2move << endl;
+    if(m.is_take){
+    	cout << "------>iter " << j << ": Piece taken is of code: " << piece_taken << endl;
+    }
     Position *pnew = new Position();
     cout << "------>iter " << j << ": going into 8x8 double for loop to copy most of position over." << endl;
     for(int x=0; x<8; x++){

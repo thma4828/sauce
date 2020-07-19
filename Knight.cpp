@@ -34,11 +34,26 @@ vector<Move> Knight::set_moves(){
         Move m1(x+1, y+2, color, false, false, KNIGHT, x, y);
         moves.push_back(m1);
       }else if(is_enemy_piece_type(square12) && !is_enemy_king(square12)){
+	cout << "------>knight takes on non-empty square. " << endl;
         Move t1(x+1, y+2, color, true, false, KNIGHT, x, y);
         moves.push_back(t1);
       }else if(is_enemy_king(square12)){
           //unanswered check on the board...
       }
+    }
+    if(c2){
+    	cout << "------>move x+1, y-2 is supposed to be in bounds" << endl;
+	int squarec2 = pos->the_board[x+1][y-2];
+	if(squarec2 == NULLCELL){
+		cout << "------>knight move to empty square. " << endl;
+		Move m1(x+1, y-2, color, false, false, KNIGHT, x, y);
+		moves.push_back(m1);
+	}else if(is_enemy_piece_type(squarec2) && !is_enemy_king(squarec2)){
+		cout << "------>knight takes on non-empty square. " << endl;
+		Move t1(x+1, y-2, color, true, false, KNIGHT, x, y);
+	}else if(is_enemy_king(squarec2)){
+		//unanswered check...
+	}
     }
 
   }else{
