@@ -121,7 +121,7 @@ vector<Move> Piece::set_moves() {
 	return a;
 }
 
-int Piece::is_enemy_piece_type(int pc) {
+bool Piece::is_enemy_piece_type(int pc) {
 	if (is_color_set) {
 		if (color == BLACK) {
 			if (pc == WPAWN || pc == WBISH || 
@@ -147,7 +147,7 @@ int Piece::is_enemy_piece_type(int pc) {
 	return -1;
 }
 
-int Piece::is_enemy_king(int pc) {
+bool Piece::is_enemy_king(int pc) {
 	if (is_color_set) {
 		if (color == BLACK) {
 			if (pc == WKING) {

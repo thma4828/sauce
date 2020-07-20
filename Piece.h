@@ -57,8 +57,8 @@ public:
 	vector<Move> set_moves();
 	void clear_moves();
 	int get_pos_status();
-	int is_enemy_piece_type(int);
-	int is_enemy_king(int);
+	bool is_enemy_piece_type(int);
+	bool is_enemy_king(int);
 	vector<Move>curr_moves;
 	//TODO add in move calculation functionality again now that problem with class dep. resolved.
 
