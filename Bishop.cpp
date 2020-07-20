@@ -29,7 +29,7 @@ vector<Move> Bishop::set_moves() {
 				Y++;
 			}
 
-			if (X < 7 && Y < 7 && is_enemy_piece_type(pos->the_board[X + 1][Y + 1]) && !is_enemy_king(pos->the_board[X + 1][Y + 1])) {
+			if (X < 7 && Y < 7 && is_enemy_piece_type(pos->the_board[X + 1][Y + 1])) {
 				Move t(X + 1, Y + 1, color, true, false, BISHOP, X, Y);
 				moves.push_back(t);
 			}
@@ -45,7 +45,7 @@ vector<Move> Bishop::set_moves() {
 				Y--;
 			}
 
-			if (X > 0 && Y > 0 && is_enemy_piece_type(pos->the_board[X - 1][Y - 1]) && !is_enemy_king(pos->the_board[X - 1][Y - 1])) {
+			if (X > 0 && Y > 0 && is_enemy_piece_type(pos->the_board[X - 1][Y - 1])) {
 				Move t1(X - 1, Y - 1, color, true, false, BISHOP, X, Y);
 				moves.push_back(t1);
 			}
@@ -60,7 +60,7 @@ vector<Move> Bishop::set_moves() {
 				X--;
 				Y++;
 			}
-			if (X > 0 && Y < 7 && is_enemy_piece_type(pos->the_board[X - 1][Y + 1]) && !is_enemy_king(pos->the_board[X - 1][Y + 1])) {
+			if (X > 0 && Y < 7 && is_enemy_piece_type(pos->the_board[X - 1][Y + 1])) {
 				Move t1(X - 1, Y + 1, color, true, false, BISHOP, X, Y);
 				moves.push_back(t1);
 			}
@@ -75,7 +75,7 @@ vector<Move> Bishop::set_moves() {
 				X++;
 				Y--;
 			}
-			if (is_enemy_piece_type(pos->the_board[X + 1][Y - 1]) && !is_enemy_king(pos->the_board[X + 1][Y - 1])) {
+			if (is_enemy_piece_type(pos->the_board[X + 1][Y - 1])) {
 				Move t2(X + 1, Y - 1, color, true, false, BISHOP, X, Y);
 				moves.push_back(t2);
 			}
@@ -85,6 +85,7 @@ vector<Move> Bishop::set_moves() {
 		}
 
 	}
+	curr_moves = moves;
 	return moves;
 
 }

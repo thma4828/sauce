@@ -132,16 +132,13 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
           }else if(value == WKNIGHT || value == BKNIGHT){
             cout << "in generator: knight" << endl;
             Knight *knight;
-            vector<Move>kmoves;
-            vector<Node*>tnodes;
             if(value == BKNIGHT && wb == BLACK){
                 knight = new Knight(x, y, BLACK, KNIGHT, 2, 3);
                 knight->set_pos(p);
-                knight->set_moves();
-                kmoves = knight->get_moves();
+                vector<Move>kmoves = knight->set_moves();
 		if(kmoves.size() < 1)
 			cout << "in generator: knight, black knight has no moves" << endl;
-                tnodes = get_nodes(kmoves, p, curr, !wb);
+                vector<Node*>tnodes = get_nodes(kmoves, p, curr, !wb);
                 for(int t=0; t<tnodes.size(); t++){
                   Node *n1 = tnodes[t];
                   curr->add_child(n1);
@@ -160,11 +157,11 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
             }else if(value == WKNIGHT && wb == WHITE){
               knight = new Knight(x, y, WHITE, KNIGHT, 2, 3);
               knight->set_pos(p);
-              knight->set_moves();
-              kmoves = knight->get_moves();
+              vector<Move> kmoves = knight->set_moves();
+             // kmoves = knight->get_moves()
 	      if(kmoves.size() < 1)
 		      cout << "in generator: knight: white night has no moves." << endl;
-              tnodes = get_nodes(kmoves, p, curr, !wb);
+              vector<Node*>tnodes = get_nodes(kmoves, p, curr, !wb);
 
               for(int t=0; t<tnodes.size(); t++){
                 Node *n1 = tnodes[t];
@@ -181,21 +178,69 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
               }
 
 
-              }
-            //TODO BELOW + all other piece types.
             }
-        }else{ //check on the board.
+            //TODO BELOW + all other piece types.
+        }else if(value == WBISH || value == BBISH){
+		cout << "in generator: in bishop." << endl;
+		Bishop *bishop;
+		if(value == BBISH && wb == BLACK){
+			cout << "in generator: in bishop: black bishop setting pos and moves" << endl;
+			bishop = new Bishop(x, y, BLACK, BISHOP, 1, 1);
+			bishop->set_pos(p);
+			bishop->set_moves();
+			vector<Move>bmoves = bishop->get_moves();
+			if(bmoves.size() < 1){
+				cout << "in generator: bishop: bishop has no moves." << endl;
+			}
+			vector<Node *>tnodes = get_nodes(bmoves, p, curr, !wb);
+			
+			for(int t=0; t<tnodes.size(); t++){
+				Node *n1 = tnodes[t];
+				curr->add_child(n1);
+
+				check = n1->node_pos->get_check_white();
+
+				if(depth+1 <= max_depth){ 
+					build_tree(n1, depth+1, !wb, max_depth, check);
+				}
+			}
+	
+		}else if(value == WBISH && wb == WHITE){
+			cout << "in generator: in bishop: white bishop setting pos and moves." << endl;
+			bishop = new Bishop(x, y, WHITE, BISHOP, 1, 1);
+			bishop->set_pos(p);
+		//	bishop->set_moves();
+			vector<Move>bmoves = bishop->set_moves();
+			vector<Node*>tnodes = get_nodes(bmoves, p, curr, !wb);
+			if(bmoves.size() < 1){
+				cout << "in generator: bishop: (white) bishop has no moves." << endl;
+			}
+			for(int t=0; t<tnodes.size(); t++){
+				Node *n1 = tnodes[t];
+				curr->add_child(n1);
+
+				check = n1->node_pos->get_check_black();
+
+				if(depth+1 <= max_depth){
+					build_tree(n1, depth+1, !wb, max_depth, check);
+				}
+			}
+		}
+
+
+	}//ROOK UP NEXT!!!!!
+     }else{ //check on the board.
                   //only king moves possible for person in check....
                   //if no king moves then mate is on the board.
                   //board could have a functionality to check for mate in these situations.
                   //or I suppose if simply it is check and the king move vector comes
                   //back empty.
-          }
+     }
 
-        }
-
-      }
     }
+
+    }
+   }
   }else{
     cout << "depth reached." << endl;
     return;
