@@ -40,9 +40,11 @@ Position::Position(int b) {
 			the_board[1][y] = BPAWN;
 			the_board[6][y] = WPAWN;
 		}
-		the_board[4][5] = BKNIGHT;
-		the_board[3][1] = WKNIGHT;
+		the_board[0][1] = BKNIGHT;
+		the_board[0][6] = BKNIGHT;
 
+		the_board[7][1] = WKNIGHT;
+		the_board[7][6] = WKNIGHT;
 	}
 	else if (b == TEST_2) {
 		for (y; y < 8; y++) {

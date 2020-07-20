@@ -124,15 +124,19 @@ vector<Move> Piece::set_moves() {
 int Piece::is_enemy_piece_type(int pc) {
 	if (is_color_set) {
 		if (color == BLACK) {
-			if (pc == WPAWN || pc == WBISH || pc == WROOK) { //add rest of enemy pieces. just Q, K and Night
+			if (pc == WPAWN || pc == WBISH || 
+			    pc == WROOK || pc == WKNIGHT ||
+			    pc == WQUEEN) { //add rest of enemy pieces. just Q, K and Night
 				return 1;
 			}
 			else {
 				return 0;
 			}
 		}
-		else {
-			if (pc == BPAWN || pc == BBISH || pc == BROOK) { //add rest of enemy pieces. just Q, K and Night
+		else { //color is white, so enemy piece would be black piece....
+			if (pc == BPAWN || pc == BBISH ||
+			    pc == BROOK || pc == BKNIGHT || 
+			    pc == BQUEEN) { //add rest of enemy pieces. just Q, K and Night
 				return 1;
 			}
 			else {
