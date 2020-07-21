@@ -17,5 +17,7 @@ int main(int argc, char**argv){
   Position *pstart = new Position(T1);
   Generator G(pstart, BLACK);
   G.build_tree(G.get_tree_root(), 0, BLACK, atoi(argv[1]), false);
+  int ncount = G.count_tree_nodes(G.get_tree_root(), 0);
+  cout << "Tree has: " << ncount << " nodes!" << endl;
   return 0;
 }

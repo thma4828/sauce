@@ -17,6 +17,15 @@ Generator::Generator(Position *start, int start_color){
   move_tree = new Tree(root);
 }
 
+int Generator::count_tree_nodes(Node *n, int c){
+	c++;
+	for(int j=0; j<n->children.size(); j++){
+		Node *child = n->children[j];
+		c += count_tree_nodes(child, c);
+	}
+	return c;
+}
+
 vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, int wb){
   vector<Node*>nodes;
   cout << "in generator: get_nodes(): entering routine." << endl;

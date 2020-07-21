@@ -19,6 +19,7 @@ public:
   Generator(Position*, int);
   void build_tree(Node*, int, int, int, bool);
   Node *get_tree_root();
+  int count_tree_nodes(Node *, int);
 
 
 private:
