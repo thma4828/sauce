@@ -25,6 +25,8 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     Move m = moves[j];
     //create a node in the tree for position created by this move.
     Node *n1 = new Node(curr, wb, 0.1, 0.1);
+    n1->move_string = m.get_move_string();
+    cout << "------>iter " << j << ": move " << n1->move_string << " on the board." << endl;
     Board *b1 = new Board();
     //need a new position same as *p but with move m added
     cout << "------>iter " << j << ": node and board initialized in memory" << endl;

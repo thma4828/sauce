@@ -5,7 +5,7 @@
 
 using namespace std;
 #include <vector>
-
+#include <string>
 
 
 #define BLACK 1
@@ -37,7 +37,8 @@ public:
 
 	Board *node_pos;
 	bool board_set;
-
+	
+	string move_string;
 
 };
 #endif //NODE_H

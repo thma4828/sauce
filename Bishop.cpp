@@ -27,11 +27,13 @@ vector<Move> Bishop::set_moves() {
 				moves.push_back(d);
 				X++;
 				Y++;
+				cout << "bishop added move" << endl;
 			}
 
 			if (X < 7 && Y < 7 && is_enemy_piece_type(pos->the_board[X + 1][Y + 1])) {
 				Move t(X + 1, Y + 1, color, true, false, BISHOP, X, Y);
 				moves.push_back(t);
+				cout << "bishop added take" << endl;
 			}
 			else if (X < 7 && Y < 7 && is_enemy_king(pos->the_board[X + 1][Y + 1])) {
 				//bishop is putting the king in check.
