@@ -126,8 +126,61 @@ vector<Move> Knight::set_moves(){
     }
     if(c6){
     	cout << "------>move x+2, y-1 in bounds." << endl;
+	int squarec6 = pos->the_board[x+2][y-1];
+	if(squarec6 == NULLCELL){
+		cout << "------>knight moves to empty square." << endl;
+		Move m6(x+2, y-1, color, false, false, KNIGHT, x, y);
+		moves.push_back(m6);
+	}else if(is_enemy_piece_type(squarec6)){
+		cout << "------>knight takes enemy piece." << endl;
+		Move t6(x+2, y-1, color, true, false, KNIGHT, x, y);
+		moves.push_back(t6);
+	}else if(is_enemy_king(squarec6)){
+		//check
+	}else{
+		cout << "------>knight obstructed by friendly piece." << endl;
+	}
 
     }
+    if(c7){
+	cout << "------>move x-2,y+1 supposed to be in bounds." << endl;
+    	int squarec7 = pos->the_board[x-2][y+1];
+	if(squarec7 == NULLCELL){
+		cout << "------>knight moves to empty square." << endl;
+		Move m7(x-2, y+1, color, false, false, KNIGHT, x, y);
+		moves.push_back(m7);
+	}else if(is_enemy_piece_type(squarec7)){
+		cout << "------>knight takes enemy piece." << endl;
+		Move t7(x-2, y+1, color, true, false, KNIGHT, x, y);
+		moves.push_back(t7);
+	}else if(is_enemy_king(squarec7)){
+		//check
+	}else{
+		cout << "------>knight obstructed by friendly piece." << endl;
+	}
+
+    }
+    if(c8){
+	cout << "------>move x-2,y-1 supposed to be in bounds." << endl;
+	int squarec8 = pos->the_board[x-2][y-1];
+	if(squarec8 == NULLCELL){
+		cout << "------>knight moves to empty square." << endl;
+		Move m8(x-2, y-1, color, false, false, KNIGHT, x , y);
+		moves.push_back(m8);
+	
+	}else if(is_enemy_piece_type(squarec8)){
+		cout << "------>knight takes enemy piece." << endl;
+		Move t8(x-2, y-1, color, true, false, KNIGHT, x, y);
+		moves.push_back(t8);
+	
+	}else if(is_enemy_king(squarec8)){
+		//check
+	}else{
+		cout << "------>knight obstructed by friendly piece." << endl;
+	}
+    
+    }
+
   }else{
     cout << "knight piece not initilized." << endl;
   }
