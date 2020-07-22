@@ -1,0 +1,2121 @@
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 3: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 3: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 5: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 5: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 5: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 5: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 4: 37 takes enemy piece.
+------>iter 3: 37 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 1: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 3: 11 takes enemy piece.
+------>iter 1: 11 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>iter 1: 37 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 0: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 2: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 5: 313 takes enemy piece.
+------>knight takes enemy piece.
+------>iter 4: 313 takes enemy piece.
+------>iter 0: 313 takes enemy piece.
+------>iter 2: 11 takes enemy piece.

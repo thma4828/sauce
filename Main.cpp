@@ -33,5 +33,9 @@ int main(int argc, char**argv){
 	cout << "--->roots child #" << i << " naive valued at: " << ch->wb_ratio<< endl;
 	cout << "--->roots child #" << i << " has: " << ch->children.size() << " 	children" << endl;
   }
+
+  cout << "--Entering Tree Eval--" << endl;
+  G.eval_tree(G.get_tree_root(), 0, 3, BLACK, true);
+  cout << "root node now valued at: " << root->wb_ratio << endl;
   return 0;
 }

@@ -26,6 +26,12 @@ int Generator::count_tree_nodes(Node *n, int c){
 	return c;
 }
 
+void Generator::eval_tree(Node *start, int depth, int max, int color, bool isroot){
+	cout << "in generator: eval_tree()" << endl;
+	move_tree->eval_tree_white(start, depth, max, color, isroot);
+	cout << "in generator: eval_tree(): tree evaluation complete." << endl;
+}
+
 vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, int wb){
   vector<Node*>nodes;
   cout << "in generator: get_nodes(): entering routine." << endl;
@@ -44,7 +50,7 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     cout << "------>iter " << j << ": move has x_end, y_end = (" <<
     m.x_end << "," << m.y_end << ")"<<endl;
     if(m.is_take){
-    	cout << "------>iter " << j << ": move takes enemy piece." << endl;
+    	cout << "------>iter " << j << ": " << m.piece_type <<" takes enemy piece." << endl;
     }
     
     int piece2move = p->the_board[m.x_start][m.y_start];
