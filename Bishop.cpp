@@ -15,7 +15,7 @@ Bishop::Bishop() {
 
 vector<Move> Bishop::set_moves() {
 	vector<Move>moves;
-	if (pos != nullptr) {
+	if (is_color_set && is_pos_set && !is_null_piece) {
 
 		cout << "in bishop's version of get moves" << endl;
 		if (is_color_set) {

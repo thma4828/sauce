@@ -31,11 +31,12 @@ int main(int argc, char**argv){
   for(int i=0; i<rnc; i++){
   	Node *ch = root->children[i];
 	cout << "--->roots child #" << i << " naive valued at: " << ch->wb_ratio<< endl;
+	cout << "--->roots child #" << i << " created with move: " << ch->move_string << endl;
 	cout << "--->roots child #" << i << " has: " << ch->children.size() << " 	children" << endl;
   }
 
-  cout << "--Entering Tree Eval--" << endl;
-  G.eval_tree(G.get_tree_root(), 0, 3, BLACK, true);
-  cout << "root node now valued at: " << root->wb_ratio << endl;
+//  cout << "--Entering Tree Eval--" << endl;
+//  G.eval_tree(G.get_tree_root(), 0, 3, BLACK, true);
+//  cout << "root node now valued at: " << root->wb_ratio << endl;
   return 0;
 }
