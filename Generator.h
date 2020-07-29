@@ -10,6 +10,7 @@
 #include "Bishop.h"
 #include "Knight.h"
 #include "Move.h"
+#include "Rook.h"
 
 using namespace std;
 

@@ -23,7 +23,9 @@ string Move::get_move_string(){
 	}else if(piece_type == KNIGHT){
 		s.push_back('k');
 	}
-
+	if(is_take){
+		s.push_back('x');
+	}
 	if(y_end == 0){
 		s.push_back('a');	
 	}

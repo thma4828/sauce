@@ -245,7 +245,19 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		}
 
 
-	}//ROOK UP NEXT!!!!!
+	}else if(value == WROOK || value == BROOK){
+		cout << "in generator: rook" << endl;
+		Rook *rook;
+		if(value == WROOK && wb == WHITE){
+			rook = new Rook(x, y, WHITE, ROOK, 8, 8);
+			rook->set_pos(p);
+		}else if(value == BROOK && wb == BLACK){
+			rook = new Rook(x, y, BLACK, ROOK, 8, 8);
+			rook->set_pos(p);
+		}
+
+	
+	}//queen up next, then add king. 
      }else{ //check on the board.
                   //only king moves possible for person in check....
                   //if no king moves then mate is on the board.
