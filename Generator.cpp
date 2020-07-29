@@ -17,11 +17,11 @@ Generator::Generator(Position *start, int start_color){
   move_tree = new Tree(root);
 }
 
-int Generator::count_tree_nodes(Node *n, int c){
-	c++;
+unsigned long Generator::count_tree_nodes(Node *n, unsigned long c){
+	c = c + 1;
 	for(int j=0; j<n->children.size(); j++){
 		Node *child = n->children[j];
-		c += count_tree_nodes(child, c);
+		c = count_tree_nodes(child, c);
 	}
 	return c;
 }
