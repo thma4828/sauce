@@ -29,10 +29,20 @@ int main(int argc, char**argv){
 
  
   for(int i=0; i<rnc; i++){
-  	Node *ch = root->children[i];
+ 	Node *ch = root->children[i];
 	cout << "--->roots child #" << i << " naive valued at: " << ch->wb_ratio<< endl;
 	cout << "--->roots child #" << i << " created with move: " << ch->move_string << endl;
 	cout << "--->roots child #" << i << " has: " << ch->children.size() << " 	children" << endl;
+  }
+
+  cout << "exploring move pf4 (black) " << endl;
+  if(root->children.size() >= 5){
+  	Node *pf4 = root->children[4];
+	for(int k=0; k<pf4->children.size(); k++){
+		Node *ch = pf4->children[k];
+		cout << "--->pf4s child #" << k << " created with move: " << ch->move_string << endl;
+		cout << "--->pf4s child #" << k << " naive valued at: " << ch->wb_ratio << endl;
+	}
   }
 
 //  cout << "--Entering Tree Eval--" << endl;

@@ -13,3 +13,5 @@ public:
 	int get_piece_type();
 	vector<Move> set_moves();
 };
+
+#endif //ROOK_H
