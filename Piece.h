@@ -73,6 +73,7 @@ protected:
 	int piece_type;
 	int x_diff;
 	int y_diff;
+	bool been_moved;
 	Position* pos;
 
 };
