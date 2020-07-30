@@ -21,7 +21,8 @@ vector<Move> Pawn::set_moves() {
 						if (pos->the_board[x + 1][y] == NULLCELL) {
 							Move m1(x + 1, y, BLACK, false, false, PAWN, x, y);
 							moves.push_back(m1);
-							if (pos->the_board[x + 2][y] == NULLCELL) {
+							if (pos->the_board[x + 2][y] == NULLCELL
+									&& !been_moved) {
 									Move m2(x + 2, y, BLACK, false, false, PAWN, x, y);
 									moves.push_back(m2);
 							}
@@ -58,7 +59,8 @@ vector<Move> Pawn::set_moves() {
 									moves.push_back(ma);
 
 									cout <<"pawn move +1 in x direction added." << endl;
-									if(pos->the_board[x+2][y] == NULLCELL){
+									if(pos->the_board[x+2][y] == NULLCELL
+											&& !been_moved){
 										cout << "empty square for a move x+2 ahead." << endl;
 
 										Move mb(x+2, y, BLACK, false, false, PAWN, x, y);
@@ -90,7 +92,8 @@ vector<Move> Pawn::set_moves() {
 								Move ma(x+1, y, BLACK, false, false, PAWN, x, y);
 								moves.push_back(ma);
 
-								if(pos->the_board[x+2][y] == NULLCELL){
+								if(pos->the_board[x+2][y] == NULLCELL
+										&& !been_moved){
 									Move mb(x+2, y, BLACK, false, false, PAWN, x, y);
 
 									moves.push_back(mb);
@@ -160,7 +163,7 @@ vector<Move> Pawn::set_moves() {
 						if (pos->the_board[x - 1][y] == NULLCELL) {
 							Move m1(x - 1, y, WHITE, false, false, PAWN, x, y);
 							moves.push_back(m1);
-							if (pos->the_board[x - 2][y] == NULLCELL) {
+							if (pos->the_board[x - 2][y] == NULLCELL && !been_moved) {
 									Move m2(x - 2, y, WHITE, false, false, PAWN, x, y);
 									moves.push_back(m2);
 							}
@@ -192,7 +195,7 @@ vector<Move> Pawn::set_moves() {
 									Move ma(x-1, y, WHITE, false, false, PAWN, x, y);
 									moves.push_back(ma);
 
-									if(pos->the_board[x-2][y] == NULLCELL){
+									if(pos->the_board[x-2][y] == NULLCELL && !been_moved){
 										Move mb(x-2, y, WHITE, false, false, PAWN, x, y);
 
 										moves.push_back(mb);
@@ -210,7 +213,7 @@ vector<Move> Pawn::set_moves() {
 								Move maa(x-1, y, WHITE, false, false, PAWN, x, y);
 								moves.push_back(maa);
 
-								if(pos->the_board[x-2][y] == NULLCELL){
+								if(pos->the_board[x-2][y] == NULLCELL && !been_moved){
 									Move mbb(x-2, y, WHITE, false, false, PAWN, x, y);
 
 									moves.push_back(mbb);

@@ -96,6 +96,11 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
               Pawn *pawn;
               if(value == BPAWN && wb == BLACK){
                 pawn = new Pawn(x, y, BLACK, PAWN, 1, 1);
+
+		if(x > 1){
+			pawn->set_been_moved(true);
+		}
+
                 pawn->set_pos(p);
                 pawn->set_moves();
                 cout << "in generator: pawn has set moves." << endl;
@@ -116,6 +121,9 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                 }
               }else if(value == WPAWN && wb == WHITE){
                 pawn = new Pawn(x, y, WHITE, PAWN, 1, 1);
+		if(x < 6){
+			pawn->set_been_moved(true);
+		}
                 pawn->set_pos(p);
                 pawn->set_moves();
                 cout << "in generator: pawn has set moves." << endl;

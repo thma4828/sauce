@@ -27,6 +27,7 @@ Piece::Piece() {
 	y_diff = 0;
 	is_pos_set = false;
 	pos = nullptr;
+	been_moved = false;
 }
 
 Piece::Piece(int a, int b) {
@@ -40,6 +41,7 @@ Piece::Piece(int a, int b) {
 	y_diff = 0;
 	is_pos_set = false;
 	pos = nullptr;
+	been_moved = false;
 }
 
 Piece::Piece(int a, int b, int c, int p, int yd, int xd) {
@@ -53,6 +55,11 @@ Piece::Piece(int a, int b, int c, int p, int yd, int xd) {
 	y_diff = yd;
 	is_pos_set = false;
 	pos = nullptr;
+	been_moved = false;
+}
+
+void Piece::set_been_moved(bool bm){
+	been_moved = bm;
 }
 
 int Piece::get_x_diff() {

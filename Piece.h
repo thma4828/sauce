@@ -59,6 +59,7 @@ public:
 	int get_pos_status();
 	bool is_enemy_piece_type(int);
 	bool is_enemy_king(int);
+	void set_been_moved(bool);
 	vector<Move>curr_moves;
 	//TODO add in move calculation functionality again now that problem with class dep. resolved.
 
