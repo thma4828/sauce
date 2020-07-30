@@ -35,14 +35,16 @@ Position::Position(int b) {
 		//nothing needs to be done.
 	}
 	else if (b == T1) { //test position.
-		//two black pawns
+		//two black pawns and a black rook
 		the_board[3][3] = BPAWN;
 		the_board[3][4] = BPAWN;
-		//white panwns a knight and a bishop. 
+		the_board[1][3] = BROOK;
+		//white panwns a knight and a bishop and rook. 
 		the_board[4][5] = WPAWN;
 		the_board[4][6] = WPAWN;
 		the_board[5][2] = WKNIGHT;
 		the_board[5][5] = WBISH;
+		the_board[7][3] = WROOK;
 
 	}
 	else if (b == TEST_2) {

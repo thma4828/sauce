@@ -22,7 +22,10 @@ string Move::get_move_string(){
 		s.push_back('b');
 	}else if(piece_type == KNIGHT){
 		s.push_back('k');
+	}else if(piece_type == ROOK){
+		s.push_back('r');
 	}
+
 	if(is_take){
 		s.push_back('x');
 	}

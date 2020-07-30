@@ -243,20 +243,43 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 				}
 			}
 		}
-
-
 	}else if(value == WROOK || value == BROOK){
 		cout << "in generator: rook" << endl;
 		Rook *rook;
 		if(value == WROOK && wb == WHITE){
 			rook = new Rook(x, y, WHITE, ROOK, 8, 8);
 			rook->set_pos(p);
+			vector<Move>rmoves_white = rook->set_moves();
+			vector<Node*>rnodes = get_nodes(rmoves_white, p, curr, !wb);
+			if(rnodes.size() < 1)
+				cout << "in generator: rook has no moves." << endl;
+
+			for(int t=0; t<rnodes.size(); t++){
+				Node *n1 = rnodes[t];
+				curr->add_child(n1);
+				check = n1->node_pos->get_check_black();
+				if(depth+1 <= max_depth){
+					build_tree(n1, depth+1, !wb, max_depth, check);	
+				}
+
+			}
 		}else if(value == BROOK && wb == BLACK){
 			rook = new Rook(x, y, BLACK, ROOK, 8, 8);
 			rook->set_pos(p);
+			vector<Move>rmoves_black = rook->set_moves();
+			vector<Node*>rnodes = get_nodes(rmoves_black, p, curr, !wb);
+			if(rnodes.size() < 1){
+				cout << "in generator: rook has no moves." << endl;
+			}
+			for(int t=0; t<rnodes.size(); t++){
+				Node *n1 = rnodes[t];
+				curr->add_child(n1);
+				check = n1->node_pos->get_check_white();
+				if(depth+1 <= max_depth){
+					build_tree(n1, depth+1, !wb, max_depth, check);
+				}
+			}
 		}
-
-	
 	}//queen up next, then add king. 
      }else{ //check on the board.
                   //only king moves possible for person in check....
