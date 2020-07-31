@@ -105,7 +105,7 @@ void Board::calc_final_eval(){
   }
 }
 float Board::get_wb_ratio(){
-  return (0.1 + final_eval_white) / (0.1 + final_eval_black);
+  return final_eval_white - final_eval_black;
 }
 float Board::get_black(){
   return final_eval_black;
