@@ -10,8 +10,8 @@ using namespace std;
 
 
 int main(int argc, char**argv){
-  if(argc < 2){
-    cout << "usage: ./build <int: tree depth>" << endl;
+  if(argc < 3){
+    cout << "usage: ./build <int: tree depth> <int : eval depth>" << endl;
     return -1;
   }
   Position *pstart = new Position(T1);
@@ -36,7 +36,7 @@ int main(int argc, char**argv){
   }***/
 
   cout << "Tree evaluation:" << endl;
-  G.eval_tree(root, 0, 3, BLACK, true);
+  G.eval_tree_local(root, 0, BLACK, atoi(argv[2]));
   cout << "root now valued at: " << root->wb_ratio << endl;
 
   /***
@@ -44,7 +44,7 @@ int main(int argc, char**argv){
   	Node *ch = root->children[i];
 	cout << ch->move_string << " valued at: " << ch->wb_ratio << " (" << i << ")" << endl;
   }***/
-  cout << "====line computed====" << endl;
+  cout << "====line 1 computed (naive) ====" << endl;
   vector<string>line = G.get_line(BLACK);
   int wb_curr = BLACK;
   for(int k=0; k<line.size(); k++){
@@ -52,17 +52,17 @@ int main(int argc, char**argv){
 	wb_curr = !wb_curr;
   }
   cout << "====-------------====" << endl;
-  cout << "===line 2 (faulty====" << endl;
+  cout << "===line 2 computed (best play) ====" << endl;
   Node *c = root;
   while(c->best_child){
   	c = c->best_child;
 	cout << c->move_string << ", " << endl;
   }
   cout << "===--------------====" << endl;
-  /***Node *pxf4 = root->best_child;
-  cout << "on node: " << pxf4->move_string <<" it is now whites move." << endl;
+  Node *pxf4 = root->best_child;
+  cout << "on node: " << pxf4->move_string << " valued at: " << pxf4->wb_ratio  << " it is now whites move." << endl;
   for(int i=0; i<pxf4->children.size(); i++){
   	Node *child = pxf4->children[i];
-	cout << "pxf4->"<<child->move_string<<" valued at: " << child->wb_ratio << endl;
-  }***/
+	cout << child->move_string<<" valued at: " << child->wb_ratio << endl;
+  }
 }

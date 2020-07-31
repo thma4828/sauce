@@ -17,6 +17,77 @@ Generator::Generator(Position *start, int start_color){
   move_tree = new Tree(root);
 }
 
+void Generator::eval_tree_local(Node *n, int depth, int color, int max){
+	if(depth < max){
+		for(int j=0; j<n->children.size(); j++){
+			Node *nj = n->children[j];
+			eval_tree_local(nj, depth+1, !color, max);
+		}
+		if(color == BLACK){
+			Node *min_node;
+			if(n->children.size() > 0){
+				min_node = n->children[0];
+				n->best_child = min_node;
+				n->wb_ratio = min_node->wb_ratio;
+				for(int x=1; x<n->children.size(); x++){
+					Node *nx = n->children[x];
+					if(nx->wb_ratio < min_node->wb_ratio){
+						n->best_child = nx;
+						n->wb_ratio = nx->wb_ratio;
+					}
+				}
+			}
+		}else if(color == WHITE){
+			Node *max_node;
+			if(n->children.size() > 0){
+				max_node = n->children[0];
+				n->best_child = max_node;
+				n->wb_ratio = max_node->wb_ratio; 
+				for(int y=1; y<n->children.size(); y++){
+					Node *ny = n->children[y];
+					if(ny->wb_ratio > max_node->wb_ratio){
+						n->best_child = ny;
+						n->wb_ratio = ny->wb_ratio;
+					}
+				}
+			}
+		}
+	}else{
+		if(color == BLACK){
+			Node *min_node;
+			if(n->children.size() > 0){
+				min_node = n->children[0];
+				n->best_child = min_node;
+				n->wb_ratio = min_node->wb_ratio;
+				for(int x=1; x<n->children.size(); x++){
+					Node *nx = n->children[x];
+					if(nx->wb_ratio <  min_node->wb_ratio){
+						n->best_child = nx;
+						n->wb_ratio = nx->wb_ratio;
+					}
+				}
+			}
+		}else if(color == WHITE){
+			Node *max_node;
+			if(n->children.size() > 0){
+				max_node = n->children[0];
+				n->best_child = max_node;
+				n->wb_ratio = max_node->wb_ratio; 
+				for(int y=1; y<n->children.size(); y++){
+					Node *ny = n->children[y];
+					if(ny->wb_ratio > max_node->wb_ratio){
+						n->best_child = ny;
+						n->wb_ratio = ny->wb_ratio; 
+					}
+				}
+			}
+		
+		}
+	
+	}
+
+}
+
 vector<string> Generator::get_line(int wb){
 	vector<string>line;
 	Node *curr = get_tree_root();
