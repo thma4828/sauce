@@ -99,7 +99,6 @@ void Tree::eval_tree_white(Node *r, int depth, int max, int wb, bool isr) {
 			Node *ni = curr->children[i];
 			eval_tree_white(ni, depth + 1, max, (wb + 1) % 2, false);
 		}
-		cout << "non root eval" << endl;
 		if(wb == BLACK){
 			Valindex *vi = get_min(get_vals(curr));
 			if(vi != NULL){

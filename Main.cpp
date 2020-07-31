@@ -52,7 +52,13 @@ int main(int argc, char**argv){
 	wb_curr = !wb_curr;
   }
   cout << "====-------------====" << endl;
-
+  cout << "===line 2 (faulty====" << endl;
+  Node *c = root;
+  while(c->best_child){
+  	c = c->best_child;
+	cout << c->move_string << ", " << endl;
+  }
+  cout << "===--------------====" << endl;
   /***Node *pxf4 = root->best_child;
   cout << "on node: " << pxf4->move_string <<" it is now whites move." << endl;
   for(int i=0; i<pxf4->children.size(); i++){
