@@ -27,21 +27,22 @@ int main(int argc, char**argv){
   int rnc = root->children.size();
   cout << "root node has: " << rnc << " children." << endl;
 
- 
+ /***
   for(int i=0; i<rnc; i++){
  	Node *ch = root->children[i];
 	cout << "--->roots child #" << i << " naive valued at: " << ch->wb_ratio<< endl;
 	cout << "--->roots child #" << i << " created with move: " << ch->move_string << endl;
 	cout << "--->roots child #" << i << " has: " << ch->children.size() << " 	children" << endl;
-  }
+  }***/
 
   cout << "Tree evaluation:" << endl;
-  G.eval_tree(root, 0, 4, BLACK, true);
+  G.eval_tree(root, 0, 5, BLACK, true);
   cout << "root now valued at: " << root->wb_ratio << endl;
+  /***
   for(int i=0; i<rnc; i++){
   	Node *ch = root->children[i];
 	cout << ch->move_string << " valued at: " << ch->wb_ratio << " (" << i << ")" << endl;
-  }
+  }***/
   cout << "====line computed====" << endl;
   vector<string>line = G.get_line(BLACK);
   int wb_curr = BLACK;

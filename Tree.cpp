@@ -80,7 +80,7 @@ void Tree::eval_tree_white(Node *r, int depth, int max, int wb, bool isr) {
 			eval_tree_white(curr->children[i], depth + 1, max, 1, false);
 		}
 		cout << "recursion has returned to root call." << endl;
-		Valindex *vi;
+		Valindex *vi = NULL;
 	       	if(wb == BLACK)
 		       vi = get_min(get_vals(curr));
 		else if(wb == WHITE)
