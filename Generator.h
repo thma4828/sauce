@@ -22,7 +22,7 @@ public:
   Node *get_tree_root();
   unsigned long count_tree_nodes(Node *, unsigned long);
   void eval_tree(Node*, int, int, int, bool);
-
+  vector<string> get_line(int);
 
 private:
   Tree *move_tree; //tree has to be manually build out of nodes by this class.

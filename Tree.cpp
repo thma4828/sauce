@@ -80,7 +80,11 @@ void Tree::eval_tree_white(Node *r, int depth, int max, int wb, bool isr) {
 			eval_tree_white(curr->children[i], depth + 1, max, 1, false);
 		}
 		cout << "recursion has returned to root call." << endl;
-		Valindex *vi = get_max(get_vals(curr));
+		Valindex *vi;
+	       	if(wb == BLACK)
+		       vi = get_min(get_vals(curr));
+		else if(wb == WHITE)
+			vi = get_max(get_vals(curr));
 		if(vi != NULL){
 			curr->wb_ratio = vi->value;
 			curr->best_child = curr->children[vi->index];
@@ -96,14 +100,14 @@ void Tree::eval_tree_white(Node *r, int depth, int max, int wb, bool isr) {
 			eval_tree_white(ni, depth + 1, max, (wb + 1) % 2, false);
 		}
 		cout << "non root eval" << endl;
-		if(wb == 1){
+		if(wb == BLACK){
 			Valindex *vi = get_min(get_vals(curr));
 			if(vi != NULL){
 				curr->wb_ratio = vi->value;
 				curr->best_child = curr->children[vi->index];
 			}
 
-		}else{
+		}else if(wb == WHITE){
 			Valindex *vi = get_max(get_vals(curr));
 			if(vi != NULL){
 				curr->wb_ratio = vi->value;
@@ -115,14 +119,18 @@ void Tree::eval_tree_white(Node *r, int depth, int max, int wb, bool isr) {
 	}else{
 		cout << "hit max depth. simple eval." << endl;
 		cout << "wb is: " << wb << endl;
-		if(wb == 1){
+		if(wb == BLACK){
 			Valindex *vi = get_min(get_vals(curr));
-			if(vi != NULL)
+			if(vi != NULL){
 				curr->wb_ratio = vi->value;
-		}else{
+				curr->best_child = curr->children[vi->index];
+			}
+		}else if(wb == WHITE){
 			Valindex *vi = get_max(get_vals(curr));
-			if(vi != NULL)
+			if(vi != NULL){
 				curr->wb_ratio = vi->value;
+				curr->best_child = curr->children[vi->index];
+			}
 		}
 	}
 }

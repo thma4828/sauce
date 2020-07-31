@@ -23,7 +23,7 @@ int main(int argc, char**argv){
   cout << "--Entering Tree Exploration--" << endl;
  
   Node *root = G.get_tree_root();
-  cout << "root has naive eval at: " << root->wb_ratio << " (wb ratio)" << endl;
+  cout << "root has value of: " << root->wb_ratio << " (wb ratio)" << endl;
   int rnc = root->children.size();
   cout << "root node has: " << rnc << " children." << endl;
 
@@ -35,18 +35,26 @@ int main(int argc, char**argv){
 	cout << "--->roots child #" << i << " has: " << ch->children.size() << " 	children" << endl;
   }
 
-  cout << "exploring move pf4 (black) " << endl;
-  if(root->children.size() >= 5){
-  	Node *pf4 = root->children[4];
-	for(int k=0; k<pf4->children.size(); k++){
-		Node *ch = pf4->children[k];
-		cout << "--->pf4s child #" << k << " created with move: " << ch->move_string << endl;
-		cout << "--->pf4s child #" << k << " naive valued at: " << ch->wb_ratio << endl;
-	}
+  cout << "Tree evaluation:" << endl;
+  G.eval_tree(root, 0, 4, BLACK, true);
+  cout << "root now valued at: " << root->wb_ratio << endl;
+  for(int i=0; i<rnc; i++){
+  	Node *ch = root->children[i];
+	cout << ch->move_string << " valued at: " << ch->wb_ratio << " (" << i << ")" << endl;
   }
+  cout << "====line computed====" << endl;
+  vector<string>line = G.get_line(BLACK);
+  int wb_curr = BLACK;
+  for(int k=0; k<line.size(); k++){
+  	cout << wb_curr << ": " << line[k] << endl;
+	wb_curr = !wb_curr;
+  }
+  cout << "====-------------====" << endl;
 
-  /***cout << "--Entering Tree Eval--" << endl; 
-  G.eval_tree(G.get_tree_root(), 0, 3, BLACK, true);
-  cout << "root node now valued at: " << G.get_tree_root()->wb_ratio << endl;
-  ***/return 0;
+  /***Node *pxf4 = root->best_child;
+  cout << "on node: " << pxf4->move_string <<" it is now whites move." << endl;
+  for(int i=0; i<pxf4->children.size(); i++){
+  	Node *child = pxf4->children[i];
+	cout << "pxf4->"<<child->move_string<<" valued at: " << child->wb_ratio << endl;
+  }***/
 }

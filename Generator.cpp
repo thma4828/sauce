@@ -17,6 +17,38 @@ Generator::Generator(Position *start, int start_color){
   move_tree = new Tree(root);
 }
 
+vector<string> Generator::get_line(int wb){
+	vector<string>line;
+	Node *curr = get_tree_root();
+	while(curr != NULL && curr->children.size() > 0){
+		if(wb == BLACK){
+			Node *min_node = curr->children[0];
+			int n = curr->children.size();
+			for(int j=1; j<n; j++){
+				if(curr->children[j]->wb_ratio < min_node->wb_ratio){
+					min_node = curr->children[j];
+				}
+			}
+			line.push_back(min_node->move_string);	
+			curr = min_node;
+			wb = !wb;
+		}else if(wb == WHITE){
+			Node *max_node = curr->children[0];
+			int n = curr->children.size();
+			for(int j=1; j<n; j++){
+				if(curr->children[j]->wb_ratio > max_node->wb_ratio){
+					max_node = curr->children[j];
+				}
+			}
+			line.push_back(max_node->move_string);
+			curr = max_node;
+			wb = !wb;
+		}
+	}
+	return line;
+
+}
+
 unsigned long Generator::count_tree_nodes(Node *n, unsigned long c){
 	c = c + 1;
 	for(int j=0; j<n->children.size(); j++){
@@ -84,6 +116,9 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
 void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool check){
   cout << "in generator: build_tree(): at depth: " << depth << " / " << max_depth << endl;
   if(depth <= max_depth){
+    if(depth > 0){
+    	cout << "in generator: entering node created with move: " << curr->move_string << endl;
+    }
     Position *p = curr->node_pos->get_position();
     for(int x=0; x<8; x++){
       for(int y=0; y<8; y++){
