@@ -17,13 +17,13 @@ Move::Move(int xe, int ye, int cc, int ist, int isp, int pt, int xs, int ys) {
 string Move::get_move_string(){
 	string s;
 	if(piece_type == PAWN){
-		s.push_back('p');
+		//
 	}else if(piece_type == BISHOP){
-		s.push_back('b');
+		s.push_back('B');
 	}else if(piece_type == KNIGHT){
-		s.push_back('k');
+		s.push_back('N');
 	}else if(piece_type == ROOK){
-		s.push_back('r');
+		s.push_back('R');
 	}
 
 	if(is_take){

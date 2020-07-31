@@ -36,8 +36,9 @@ int main(int argc, char**argv){
   }***/
 
   cout << "Tree evaluation:" << endl;
-  G.eval_tree(root, 0, 5, BLACK, true);
+  G.eval_tree(root, 0, 3, BLACK, true);
   cout << "root now valued at: " << root->wb_ratio << endl;
+
   /***
   for(int i=0; i<rnc; i++){
   	Node *ch = root->children[i];
