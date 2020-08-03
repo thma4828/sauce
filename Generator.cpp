@@ -17,108 +17,11 @@ Generator::Generator(Position *start, int start_color){
   move_tree = new Tree(root);
 }
 
-void Generator::eval_tree_local(Node *n, int depth, int color, int max){
-	if(depth < max){
-		for(int j=0; j<n->children.size(); j++){
-			Node *nj = n->children[j];
-			eval_tree_local(nj, depth+1, !color, max);
-		}
-		if(color == BLACK){
-			Node *min_node;
-			if(n->children.size() > 0){
-				min_node = n->children[0];
-				n->best_child = min_node;
-				n->wb_ratio = min_node->wb_ratio;
-				for(int x=1; x<n->children.size(); x++){
-					Node *nx = n->children[x];
-					if(nx->wb_ratio < min_node->wb_ratio){
-						n->best_child = nx;
-						n->wb_ratio = nx->wb_ratio;
-					}
-				}
-			}
-		}else if(color == WHITE){
-			Node *max_node;
-			if(n->children.size() > 0){
-				max_node = n->children[0];
-				n->best_child = max_node;
-				n->wb_ratio = max_node->wb_ratio; 
-				for(int y=1; y<n->children.size(); y++){
-					Node *ny = n->children[y];
-					if(ny->wb_ratio > max_node->wb_ratio){
-						n->best_child = ny;
-						n->wb_ratio = ny->wb_ratio;
-					}
-				}
-			}
-		}
-	}else{
-		if(color == BLACK){
-			Node *min_node;
-			if(n->children.size() > 0){
-				min_node = n->children[0];
-				n->best_child = min_node;
-				n->wb_ratio = min_node->wb_ratio;
-				for(int x=1; x<n->children.size(); x++){
-					Node *nx = n->children[x];
-					if(nx->wb_ratio <  min_node->wb_ratio){
-						n->best_child = nx;
-						n->wb_ratio = nx->wb_ratio;
-					}
-				}
-			}
-		}else if(color == WHITE){
-			Node *max_node;
-			if(n->children.size() > 0){
-				max_node = n->children[0];
-				n->best_child = max_node;
-				n->wb_ratio = max_node->wb_ratio; 
-				for(int y=1; y<n->children.size(); y++){
-					Node *ny = n->children[y];
-					if(ny->wb_ratio > max_node->wb_ratio){
-						n->best_child = ny;
-						n->wb_ratio = ny->wb_ratio; 
-					}
-				}
-			}
-		
-		}
-	
-	}
-
+void Generator::eval_tree(Node *n, int depth, int color, int max){
 }
 
-vector<string> Generator::get_line(int wb){
-	vector<string>line;
-	Node *curr = get_tree_root();
-	while(curr != NULL && curr->children.size() > 0){
-		if(wb == BLACK){
-			Node *min_node = curr->children[0];
-			int n = curr->children.size();
-			for(int j=1; j<n; j++){
-				if(curr->children[j]->wb_ratio < min_node->wb_ratio){
-					min_node = curr->children[j];
-				}
-			}
-			line.push_back(min_node->move_string);	
-			curr = min_node;
-			wb = !wb;
-		}else if(wb == WHITE){
-			Node *max_node = curr->children[0];
-			int n = curr->children.size();
-			for(int j=1; j<n; j++){
-				if(curr->children[j]->wb_ratio > max_node->wb_ratio){
-					max_node = curr->children[j];
-				}
-			}
-			line.push_back(max_node->move_string);
-			curr = max_node;
-			wb = !wb;
-		}
-	}
-	return line;
 
-}
+
 
 unsigned long Generator::count_tree_nodes(Node *n, unsigned long c){
 	c = c + 1;
@@ -129,11 +32,6 @@ unsigned long Generator::count_tree_nodes(Node *n, unsigned long c){
 	return c;
 }
 
-void Generator::eval_tree(Node *start, int depth, int max, int color, bool isroot){
-	cout << "in generator: eval_tree()" << endl;
-	move_tree->eval_tree_white(start, depth, max, color, isroot);
-	cout << "in generator: eval_tree(): tree evaluation complete." << endl;
-}
 
 vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, int wb){
   vector<Node*>nodes;
@@ -394,7 +292,48 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 				}
 			}
 		}
-	}//queen up next, then add king. 
+	}else if(value == WQUEEN || value == BQUEEN){
+		cout << "in generator: queen" << endl;
+		Queen *queen;
+		if(value == BQUEEN && wb == BLACK){
+			queen = new Queen(x, y, BLACK, QUEEN, 8, 8);
+			queen->set_pos(p);
+			vector<Move>qmoves = queen->set_moves();
+			vector<Node*>tnodes = get_nodes(qmoves, p, curr, !wb);
+			if(tnodes.size() < 1){
+				cout << "in generator: queen has no moves. " << endl;
+			}
+			for(int t=0; t<tnodes.size(); t++){
+				Node *n1 = tnodes[t];
+				curr->add_child(n1); 
+				check = n1->node_pos->get_check_white(); 
+
+				if(depth+1 <= max_depth){
+					build_tree(n1, depth+1, !wb, max_depth, check);
+				}
+			}
+		}else if(value == WQUEEN && wb == WHITE){
+			queen = new Queen(x, y, WHITE, QUEEN, 8, 8);
+			queen->set_pos(p);
+			vector<Move>qmoves = queen->set_moves();
+			vector<Node*>tnodes = get_nodes(qmoves, p, curr, !wb);
+			if(tnodes.size() < 1){
+				cout << "in generator: queen has no moves." << endl;
+			}
+			for(int t=0; t<tnodes.size(); t++){
+				Node *n1 = tnodes[t];
+				curr->add_child(n1);
+				check = n1->node_pos->get_check_black(); 
+
+				if(depth+1 <= max_depth){
+					build_tree(n1, depth+1, !wb, max_depth, check);
+				}
+			}
+		}
+	
+	}else if(value == BKING || value == WKING){
+		//king case
+	} 
      }else{ //check on the board.
                   //only king moves possible for person in check....
                   //if no king moves then mate is on the board.

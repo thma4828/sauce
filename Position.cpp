@@ -39,6 +39,7 @@ Position::Position(int b) {
 		the_board[3][3] = BPAWN;
 		the_board[3][4] = BPAWN;
 		the_board[1][3] = BROOK;
+		the_board[5][0] = BQUEEN; 
 		//white panwns a knight and a bishop and rook. 
 		the_board[4][5] = WPAWN;
 		the_board[4][6] = WPAWN;
