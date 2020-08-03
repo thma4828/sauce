@@ -26,4 +26,10 @@ int main(int argc, char**argv){
   for(int j=0; j<rnc; j++){
   	cout << "Root's child #" << j << " is move: " << root->children[j]->move_string << " and valued at: " << root->children[j]->wb_ratio << endl; 
   }
+  Node *qxc3 = root->children[20];
+  cout << "black makes move Qxc3, which has children #'d" << endl;
+  int qnc = qxc3->children.size();
+  for(int i=0; i<qnc; i++){
+  	cout << i << ": " << qxc3->children[i]->move_string << " valued at: " << qxc3->children[i]->wb_ratio << endl; 
+  }
 }
