@@ -6,6 +6,6 @@ Main.cpp
   -let the generator build out the tree of chess moves to a specific depth with build_tree().
   -many print statements which are for debugging purposes slow down execution. these will be removed with a version in the future where you can suppress the prints. 
   -as tree is built each position (internal to the node) uses the Board.h interface to naively evaluate the position based on a count of piece values. 
-  -then this leads to the tree evaluation algorithm which is still in progress. Right now I have two algorithms that try to find the best line. 
+  -then this leads to the tree evaluation algorithm / line calculator which is the crucial part of the engine, still thinking about this part. 
   
 TODO: will explain project in detail. 
