@@ -20,4 +20,10 @@ int main(int argc, char**argv){
   G.build_tree(root, 0, BLACK, atoi(argv[1]), false);
   unsigned long ncount = G.count_tree_nodes(root, 0);
   cout << "Tree has: " << ncount << " nodes at depth = " << argv[1] << "."  <<  endl;
+
+  cout << "Root position (blacks move) valued at: " << root->wb_ratio << endl;
+  int rnc = root->children.size();
+  for(int j=0; j<rnc; j++){
+  	cout << "Root's child #" << j << " is move: " << root->children[j]->move_string << " and valued at: " << root->children[j]->wb_ratio << endl; 
+  }
 }
