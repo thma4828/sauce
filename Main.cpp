@@ -30,20 +30,11 @@ int main(int argc, char**argv){
   G.eval_tree(root, 0, BLACK, atoi(argv[2])); 
   cout << "after eval position valued at: " << root->wb_ratio << endl; 
   
-  cout << "roots best move is: " << root->best_child->move_string << endl;
-  Node *bxc3 = root->best_child;
-  cout << "Node Bxc3 has the following children: " << endl;
-  int bc = bxc3->children.size();
-  for(int p=0; p<bc; p++){
-  	cout << "move: " << bxc3->children[p]->move_string << endl;
+  cout << "line calculated: " << endl;
+  Node *current = root;
+  while(current != NULL){
+  	current = current->best_child;
+	cout << "(" << current->move_string << " , " << current->wb_ratio << ")" << endl;
+
   }
-  Position *pb = bxc3->node_pos->get_position();
-  cout << "Bxc3's node is supposed to have a bishop on c3..." << endl;
-  if(pb->the_board[5][2] == BISHOP){
-  	cout << "and it does!" << endl;
-  }else{
-  	cout << "instead it has a piece of code: " << pb->the_board[5][2] << endl; 
-  }
- 
-  cout << endl;
 }
