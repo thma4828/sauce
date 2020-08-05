@@ -26,6 +26,8 @@ string Move::get_move_string(){
 		s.push_back('R');
 	}else if(piece_type == QUEEN){
 		s.push_back('Q');
+	}else if(piece_type == KING){
+		s.push_back('K');
 	}
 
 	if(is_take){

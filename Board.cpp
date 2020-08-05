@@ -100,6 +100,12 @@ void Board::calc_final_eval(){
       if(piece_code == BQUEEN){
         final_eval_black += 9.0;
       }
+      if(piece_code == WKING){
+      	final_eval_white += 41.0;
+      }
+      if(piece_code == BKING){
+      	final_eval_black += 41.0; 
+      }
 
     }
   }

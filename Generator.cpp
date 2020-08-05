@@ -333,7 +333,45 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 	
 	}else if(value == BKING || value == WKING){
 		//king case
-	} 
+		King *king;
+		if(value == BKING && wb == BLACK){
+			king = new King(x, y, BLACK, KING, 1, 1);
+			king->set_pos(p);
+			vector<Move>kmoves = king->set_moves();
+			vector<Node *>tnodes = get_nodes(kmoves, p, curr, !wb);
+			if(tnodes.size() < 1){
+				cout << "in generator: king has no moves." << endl;
+			}
+			for(int t=0; t<tnodes.size(); t++){
+				Node *n1 = tnodes[t];
+				curr->add_child(n1);
+				check = n1->node_pos->get_check_white();
+
+				if(depth+1 <= max_depth){
+					build_tree(n1, depth+1, !wb, max_depth, check);
+				}
+			}
+		}else if(value == WKING && wb == WHITE){
+			king = new King(x, y, WHITE, KING, 1, 1);
+			king->set_pos(p);
+			vector<Move>kmoves = king->set_moves();
+			vector<Node*>tnodes = get_nodes(kmoves, p, curr, !wb);
+			if(tnodes.size() < 1){
+				cout << "in generator: king has no moves." << endl;
+			}
+
+			for(int t=0; t<tnodes.size(); t++){
+				Node *n1 = tnodes[t];
+				curr->add_child(n1);
+				check = n1->node_pos->get_check_black();
+
+				if(depth+1 <= max_depth){
+					build_tree(n1, depth+1, !wb, max_depth, check);
+				}
+			}
+		
+		}
+	} //all pieces added. 
      }else{ //check on the board.
                   //only king moves possible for person in check....
                   //if no king moves then mate is on the board.

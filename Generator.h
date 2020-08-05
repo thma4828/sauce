@@ -12,6 +12,7 @@
 #include "Move.h"
 #include "Rook.h"
 #include "Queen.h"
+#include "King.h"
 
 using namespace std;
 
