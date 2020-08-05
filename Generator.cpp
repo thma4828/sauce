@@ -18,6 +18,47 @@ Generator::Generator(Position *start, int start_color){
 }
 
 void Generator::eval_tree(Node *n, int depth, int color, int max){
+	int c = n->children.size();
+
+	if(depth < (max - 1)){
+		//go deeper in tree till bottom level is reached. 
+		for(int i=0; i<c; i++){
+			Node *ni = n->children[i];
+			eval_tree(ni, depth+1, !color, max);
+		}
+		vector<float>children_values = move_tree->get_vals(n);
+		Valindex *v;
+
+		if(color == BLACK){
+			v = move_tree->get_min(children_values);
+			n->best_child = n->children[v->index];
+			n->wb_ratio = v->value;
+		}else if(color == WHITE){
+			v = move_tree->get_max(children_values);
+			n->best_child = n->children[v->index];
+			n->wb_ratio = v->value;
+		}
+		return;
+	
+	}else if(depth == (max - 1)){
+		vector<float>children_values = move_tree->get_vals(n);
+		Valindex *v;
+		
+		if(color == BLACK){
+			v = move_tree->get_min(children_values);
+			n->best_child = n->children[v->index];
+			n->wb_ratio =  v->value;
+		}else if(color == WHITE){
+			v = move_tree->get_max(children_values);
+			n->best_child = n->children[v->index];
+			n->wb_ratio = v->value;
+		}
+		return;
+	
+	}else{
+		cout << "out of bounds." << endl;
+		return;
+	}
 }
 
 
