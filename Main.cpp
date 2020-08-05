@@ -32,9 +32,10 @@ int main(int argc, char**argv){
   
   cout << "line calculated: " << endl;
   Node *current = root;
+  current = current->best_child;
   while(current != NULL){
-  	current = current->best_child;
 	cout << "(" << current->move_string << " , " << current->wb_ratio << ")" << endl;
+	current = current->best_child;
 
   }
 }
