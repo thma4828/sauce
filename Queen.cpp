@@ -27,6 +27,8 @@ vector<Move> Queen::set_moves(){
 				Move t1(X, Y, color, true, false, QUEEN, x, y); 
 				moves.push_back(t1);
 				break;
+			}else if(is_friendly_piece_type(sq)){
+				break;
 			}
 		
 		}
@@ -41,6 +43,8 @@ vector<Move> Queen::set_moves(){
 				Move t1(X, Y, color, true, false, QUEEN, x, y); 
 				moves.push_back(t1);
 				break; 
+			}else if(is_friendly_piece_type(sq)){
+				break;
 			}
 		}
 		X = x;
@@ -55,6 +59,8 @@ vector<Move> Queen::set_moves(){
 				Move t1(X, Y, color, true, false, QUEEN, x, y);
 				moves.push_back(t1); 
 				break;
+			}else if(is_friendly_piece_type(sq)){
+				break;
 			}
 		}
 		Y = y;
@@ -67,6 +73,8 @@ vector<Move> Queen::set_moves(){
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y);
 				moves.push_back(t1);
+				break;
+			}else if(is_friendly_piece_type(sq)){
 				break;
 			}
 		}
@@ -82,6 +90,8 @@ vector<Move> Queen::set_moves(){
 				Move t1(X, Y, color, true, false, QUEEN, x, y); 
 				moves.push_back(t1);
 				break;
+			}else if(is_friendly_piece_type(sq)){
+				break;
 			}
 		}
 		X = x;
@@ -95,6 +105,8 @@ vector<Move> Queen::set_moves(){
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y); 
 				moves.push_back(t1);
+				break;
+			}else if(is_friendly_piece_type(sq)){
 				break;
 			}
 		}
@@ -110,6 +122,8 @@ vector<Move> Queen::set_moves(){
 				Move t1(X, Y, color, true, false, QUEEN, x, y);
 				moves.push_back(t1);
 				break; 
+			}else if(is_friendly_piece_type(sq)){
+				break;
 			}
 		}
 		X = x;
@@ -123,6 +137,8 @@ vector<Move> Queen::set_moves(){
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y);
 				moves.push_back(t1);
+				break;
+			}else if(is_friendly_piece_type(sq)){
 				break;
 			}
 		

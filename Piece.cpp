@@ -127,7 +127,27 @@ vector<Move> Piece::set_moves() {
 	vector<Move>a;
 	return a;
 }
+bool Piece::is_friendly_piece_type(int pc){
+	if(is_color_set){
+		if(color == BLACK){
+			if(pc == BPAWN || BBISH || BROOK || BKNIGHT || BQUEEN || BKING){
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			if(pc == WPAWN || WBISH || WROOK || WKNIGHT || WQUEEN || WKING){
+				return true;
+			}else{
+				return false;
+			}
+		
+		}
+	
+	}
+	return false; 
 
+}
 bool Piece::is_enemy_piece_type(int pc) {
 	if (is_color_set) {
 		if (color == BLACK) {
