@@ -8,6 +8,37 @@ Pawn::Pawn() {
 	y_diff = 1;
 }
 
+vector<Square> Pawn::get_threat_squares(){
+	vector<Square>squares;
+	if(is_pos_set && is_color_set){
+		if(color == BLACK){
+			if(x < 7){
+				if(y < 7){
+					Square s(x+1, y+1);
+					squares.push_back(s);
+				}
+				if(y > 0){
+					Square s(x+1, y-1);
+					squares.push_back(s); 
+				}
+			}
+		}else if(color == WHITE){
+		
+			if(x < 0){
+				if(y < 7){
+					Square s(x-1, y+1);
+					squares.push_back(s);
+				}
+				if(y > 0){
+					Square s(x-1, y-1);
+					squares.push_back(s); 
+				}
+			}
+		}
+	}
+	return squares; 
+}
+
 
 vector<Move> Pawn::set_moves() {
 

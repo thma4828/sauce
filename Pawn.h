@@ -14,6 +14,7 @@ public:
     
     int get_piece_type(); //overloaded method
     vector<Move> set_moves();
+    vector<Square> get_threat_squares(); 
 
 protected:
     //inherited members of piece are present. 

@@ -4,6 +4,7 @@
 #include <vector>
 #include "Position.h"
 #include "Move.h"
+#include "Square.h"
 
 
 using namespace std;
@@ -62,6 +63,7 @@ public:
 	bool is_enemy_king(int);
 	void set_been_moved(bool);
 	vector<Move>curr_moves;
+	vector<Square> get_threat_squares();
 	//TODO add in move calculation functionality again now that problem with class dep. resolved.
 
 
