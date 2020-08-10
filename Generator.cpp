@@ -110,6 +110,8 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
 
       }
     }
+    //TODO: use board cpp to see if move puts enemy king in check. 
+    //then add + to the move string if it does! 
     cout << "------>iter " << j << ": old position copied over." << endl;
     pnew->the_board[m.x_start][m.y_start] =  NULLCELL;
     pnew->the_board[m.x_end][m.y_end] = piece2move;
