@@ -13,8 +13,7 @@ public:
     Pawn(); 
     
     int get_piece_type(); //overloaded method
-    vector<Move> set_moves();
-    vector<Square> get_threat_squares(); 
+    vector<Move> set_moves(); 
 
 protected:
     //inherited members of piece are present. 
