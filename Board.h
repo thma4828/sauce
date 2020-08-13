@@ -2,6 +2,13 @@
 #define BOARD_H
 #include "Position.h"
 #include "Move.h"
+#include "Piece.h"
+#include "Pawn.h"
+#include "Queen.h"
+#include "Knight.h"
+#include "Bishop.h"
+#include "Rook.h" 
+#include "Square.h"
 #include <vector>
 
 using namespace std;
@@ -28,7 +35,8 @@ private:
 		//then get the moves for each piece and store in a big array of moves.
 	vector<Move>black_moves;
 	vector<Move>white_moves;
-
+	vector<Square>white_threat_squares;
+	vector<Square>black_threat_squares; 
 	float black_piece_value;
 	float white_piece_value;
 	float black_threat_value;

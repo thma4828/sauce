@@ -36,7 +36,87 @@ void Board::set_color(int c){
 
 bool Board::get_check_white(){
   //TODO determine if check is in the pos on whites king.
-  return false;
+  int kx, ky;
+  for(int i=0; i<8; i++){
+  	for(int j=0; j<8; j++){
+		int p = position->the_board[i][j];
+		if(p == WKING){
+			kx = i;
+			ky = j;
+		}
+	}
+  }
+  bool is_check = false;
+  for(int i=0; i<8; i++){
+  	for(int j=0; j<8; j++){
+		int p = position->the_board[i][j];
+		if(p == BPAWN){
+			Pawn *bpawn = new Pawn(i, j, BLACK, PAWN, 1, 1);
+			bpawn->set_pos(position);
+			vector<Move>moves = bpawn->set_moves();
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end);
+				black_threat_squares.push_back(s); 
+				if(mi.x_end == kx && mi.y_end == ky){
+					is_check = true; 		
+				}
+			}
+		}else if(p == BKNIGHT){
+			Knight *knight = new Knight(i, j, BLACK, KNIGHT, 2, 3);
+			knight->set_pos(position);
+			vector<Move>moves = knight->set_moves(); 
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end);
+				black_threat_squares.push_back(s); 
+				if(mi.x_end == kx && mi.y_end == ky){
+					is_check = true; 
+				}
+			}
+			
+		}else if(p == BBISH){
+			Bishop *bish = new Bishop(i, j, BLACK, BISHOP, 8, 8);
+			bish->set_pos(position);
+			vector<Move>moves = bish->set_moves();
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end);
+				black_threat_squares.push_back(s); 
+				if(mi.x_end == kx && mi.y_end == ky){
+					is_check = true; 
+				}
+			}
+		}else if(p == BQUEEN){
+			Queen *queen = new Queen(i, j, BLACK, QUEEN, 8, 8);
+			queen->set_pos(position);
+			vector<Move>moves = queen->set_moves();
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end);
+				black_threat_squares.push_back(s); 
+				if(mi.x_end == kx && mi.y_end == ky){
+					is_check = true; 
+				}
+			}
+		
+		}else if(p == BROOK){
+			Rook *rook = new Rook(i, j, BLACK, ROOK, 8, 8);
+			rook->set_pos(position); 
+			vector<Move>moves = rook->set_moves(); 
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end); 
+				black_threat_squares.push_back(s); 
+			
+				if(mi.x_end == kx && mi.y_end == ky){
+					is_check = true; 
+				}
+			}
+		}
+	}
+  }
+  return is_check;
 }
 
 bool Board::get_check_black(){
