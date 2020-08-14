@@ -35,6 +35,8 @@ void Board::set_color(int c){
 }
 
 bool Board::get_check_white(){
+  if(black_threat_squares.size() > 0)
+	  black_threat_squares.clear();
   //TODO determine if check is in the pos on whites king.
   int kx, ky;
   for(int i=0; i<8; i++){
@@ -120,6 +122,8 @@ bool Board::get_check_white(){
 }
 
 bool Board::get_check_black(){
+  if(white_threat_squares.size() > 0)
+	  white_threat_squares.clear(); 
   int kx, ky;
   for(int i=0; i<8; i++){
   	for(int j=0; j<8; j++){

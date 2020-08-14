@@ -418,9 +418,8 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
      }else{ //check on the board.
                   //only king moves possible for person in check....
                   //if no king moves then mate is on the board.
-                  //board could have a functionality to check for mate in these situations.
-                  //or I suppose if simply it is check and the king move vector comes
-                  //back empty.
+                  //if wb == WHITE && is_check then there is a check on the white king. (makes sense)
+		  //
      }
 
     }
