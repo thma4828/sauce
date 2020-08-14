@@ -120,8 +120,88 @@ bool Board::get_check_white(){
 }
 
 bool Board::get_check_black(){
-  //TODO...
-  return false;
+  int kx, ky;
+  for(int i=0; i<8; i++){
+  	for(int j=0; j<8; j++){
+		int p = position->the_board[i][j];
+		if(p == BKING){
+			kx = i; ky = j; 
+		}
+	}
+  }
+
+  bool is_check = false;
+  for(int i=0; i<8; i++){
+  	for(int j=0; j<8; j++){
+		int p = position->the_board[i][j];
+		if(p == WPAWN){
+			Pawn *pawn = new Pawn(i, j, WHITE, PAWN, 1, 1);
+			pawn->set_pos(position);
+			vector<Move>moves = pawn->set_moves(); 
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end); 
+				white_threat_squares.push_back(s);
+				if(mi.x_end == kx && mi.y_end == ky){
+					is_check = true; 
+				}
+			}
+		}else if(p == WKNIGHT){
+			Knight *knight = new Knight(i, j, WHITE, KNIGHT, 2, 3);
+			knight->set_pos(position);
+			vector<Move>moves = knight->set_moves(); 
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end); 
+				white_threat_squares.push_back(s); 
+				if(mi.x_end == kx && mi.y_end == ky){
+					is_check = true; 
+				}
+			}
+		
+		}else if(p == WQUEEN){
+			Queen *queen = new Queen(i, j, WHITE, QUEEN, 8, 8);
+			queen->set_pos(position);
+			vector<Move>moves = queen->set_moves();
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end);
+				white_threat_squares.push_back(s); 
+				if(mi.x_end == kx && mi.y_end == ky){
+					is_check = true; 
+				}
+			}
+		
+		}else if(p == WROOK){
+			Rook *rook = new Rook(i, j, WHITE, ROOK, 8, 8);
+			rook->set_pos(position);
+			vector<Move>moves = rook->set_moves(); 
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end); 
+				white_threat_squares.push_back(s); 
+				if(mi.x_end == kx && mi.y_end == ky){
+					is_check = true; 
+				}
+			}
+		
+		}else if(p == WBISH){
+			Bishop *bishop = new Bishop(i, j, WHITE, BISHOP, 8, 8);
+			bishop->set_pos(position);
+			vector<Move>moves = bishop->set_moves(); 
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end); 
+				white_threat_squares.push_back(s); 
+				if(mi.x_end == kx && mi.y_end == ky){
+					is_check = true; 
+				}
+			}
+		
+		}
+	}
+  }
+  return is_check;
 }
 
 bool Board::is_white(){
