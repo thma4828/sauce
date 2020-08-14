@@ -34,6 +34,14 @@ void Board::set_color(int c){
   color = c;
 }
 
+vector<Square> Board::get_threat_squares(int col){
+	if(col == WHITE){
+		return black_threat_squares;
+	}else{
+		return white_threat_squares; 
+	}
+}
+
 bool Board::get_check_white(){
   if(black_threat_squares.size() > 0)
 	  black_threat_squares.clear();

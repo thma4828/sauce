@@ -28,6 +28,7 @@ public:
 	void set_color(int);
 	bool is_white();
 	bool is_black();
+	vector<Square>get_threat_squares(int); 
 private:
 	Position* position;
 	//needs to:
