@@ -420,6 +420,96 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                   //if no king moves then mate is on the board.
                   //if wb == WHITE && is_check then there is a check on the white king. (makes sense)
 		  //
+		  int kx, ky;
+		  if(wb == WHITE){
+		  	for(int i=0; i<8; i++){
+		  		for(int j=0; j<8; j++){
+					if(p->the_board[i][j] == WKING){
+						kx = i;
+						ky = j;
+					}
+				}
+		  	}
+		  	King *king = new King(kx, ky, WHITE, KING, 1, 1); 
+		  	king->set_pos(p); 
+
+		  
+		  	curr->node_pos->get_check_white(); 
+			vector<Square>black_threats = curr->node_pos->get_threat_squares(wb);
+
+			vector<Move>moves = king->set_moves(); 
+
+			vector<Move>valid_moves;
+
+			for(int i=0; i<moves.size(); i++){
+				Move m = moves[i];
+				for(int j=0; j<black_threats.size(); j++){
+					Square threat = black_threats[j];
+
+					if(!(threat.x == m.x_end && threat.y == m.y_end)){
+						valid_moves.push_back(m);
+					}
+				}
+			}
+			if(valid_moves.size() == 0){
+				cout << "BLACK WINS BY CHECKMATE" << endl;
+				return; 
+			}
+			vector<Node *>nodes = get_nodes(valid_moves, p, curr, !wb);
+			for(int t=0; t<nodes.size(); t++){
+				Node *n1 = nodes[t];
+				curr->add_child(n1);
+				check = false;
+				if(depth+1 <= max_depth){
+					build_tree(n1, depth+1, !wb, max_depth, check); 
+				}
+			}
+
+		  }else{ //wb == BLACK
+			for(int x=0; x<8; x++){
+				for(int y=0; y<8; y++){
+					if(p->the_board[x][y] == BKING){
+						kx = x;
+						ky = y;
+					}
+				}
+			}
+			King *king = new King(kx, ky, BLACK, KING, 1, 1);
+			king->set_pos(p);
+
+			curr->node_pos->get_check_black();
+			vector<Square>white_threats = curr->node_pos->get_threat_squares(wb);
+
+			vector<Move>moves = king->set_moves();
+			
+			vector<Move>valid_moves;
+			for(int i=0; i<moves.size(); i++){
+				Move mi = moves[i];
+				for(int j=0; j<white_threats.size(); j++){
+					Square sj = white_threats[j];
+					if(!(sj.x == mi.x_end && sj.y == mi.y_end)){
+						valid_moves.push_back(mi); 
+					}
+				}
+			}
+			if(valid_moves.size() == 0){
+				cout << "WHITE WINS BY CHECKMATE" << endl;
+				return; 
+			}
+			vector<Node *>nodes = get_nodes(valid_moves, p, curr, !wb);
+			for(int i=0; i<nodes.size(); i++){
+				Node *n1 = nodes[i];
+				curr->add_child(n1); 
+				check = false; //check should always be false if king moves out of check. 				
+				if(depth+1 <= max_depth){
+					build_tree(n1, depth+1, !wb, max_depth, check);
+				}
+
+			}
+
+
+		  
+		  }
      }
 
     }
