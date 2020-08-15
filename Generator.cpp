@@ -453,6 +453,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			}
 			if(valid_moves.size() == 0){
 				cout << "BLACK WINS BY CHECKMATE" << endl;
+				curr->wb_ratio = -999;
 				return; 
 			}
 			vector<Node *>nodes = get_nodes(valid_moves, p, curr, !wb);
@@ -494,6 +495,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			}
 			if(valid_moves.size() == 0){
 				cout << "WHITE WINS BY CHECKMATE" << endl;
+				curr->wb_ratio = 999;
 				return; 
 			}
 			vector<Node *>nodes = get_nodes(valid_moves, p, curr, !wb);
