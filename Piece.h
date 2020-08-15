@@ -34,6 +34,7 @@ using namespace std;
 #define T1 7
 #define TEST_2 314556
 #define TEST_3 0x78aa
+#define TCHECK 0xabcd
 
 class Piece
 {

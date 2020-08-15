@@ -375,13 +375,29 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		}
 	
 	}else if(value == BKING || value == WKING){
-		//king case
+		//king case, kings not in check. 
 		King *king;
 		if(value == BKING && wb == BLACK){
 			king = new King(x, y, BLACK, KING, 1, 1);
 			king->set_pos(p);
 			vector<Move>kmoves = king->set_moves();
-			vector<Node *>tnodes = get_nodes(kmoves, p, curr, !wb);
+			vector<Move>valid_moves;
+			curr->node_pos->get_check_black();
+			vector<Square>white_threats = curr->node_pos->get_threat_squares(wb); 
+			for(int i=0; i<kmoves.size(); i++){
+				Move mi = kmoves[i];
+				bool valid = true;
+				for(int j=0; j<white_threats.size(); j++){
+					Square wt = white_threats[j];
+					//king cannot move into check. 
+					if(wt.x == mi.x_end && wt.y == mi.y_end){
+						valid = false;
+					}
+				}
+				if(valid)
+					valid_moves.push_back(mi); 
+			}
+			vector<Node *>tnodes = get_nodes(valid_moves, p, curr, !wb);
 			if(tnodes.size() < 1){
 				cout << "in generator: king has no moves." << endl;
 			}
@@ -398,7 +414,23 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			king = new King(x, y, WHITE, KING, 1, 1);
 			king->set_pos(p);
 			vector<Move>kmoves = king->set_moves();
-			vector<Node*>tnodes = get_nodes(kmoves, p, curr, !wb);
+			vector<Move>valid_moves;
+			curr->node_pos->get_check_white(); 
+			vector<Square>black_threats = curr->node_pos->get_threat_squares(wb); 
+
+			for(int i=0; i<kmoves.size(); i++){
+				Move mi = kmoves[i];
+				bool valid = true;
+				for(int j=0; j<black_threats.size(); j++){
+					Square bt = black_threats[j];
+					if(bt.x == mi.x_end && bt.y ==  mi.y_end){
+						valid = false;
+					}
+				}
+				if(valid)
+					valid_moves.push_back(mi);
+			}
+			vector<Node*>tnodes = get_nodes(valid_moves, p, curr, !wb);
 			if(tnodes.size() < 1){
 				cout << "in generator: king has no moves." << endl;
 			}
@@ -443,13 +475,16 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 
 			for(int i=0; i<moves.size(); i++){
 				Move m = moves[i];
+				bool valid = true;
 				for(int j=0; j<black_threats.size(); j++){
 					Square threat = black_threats[j];
 
-					if(!(threat.x == m.x_end && threat.y == m.y_end)){
-						valid_moves.push_back(m);
+					if(threat.x == m.x_end && threat.y == m.y_end){
+						valid = false;
 					}
 				}
+				if(valid)
+					valid_moves.push_back(m);
 			}
 			if(valid_moves.size() == 0){
 				cout << "BLACK WINS BY CHECKMATE" << endl;
@@ -460,7 +495,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			for(int t=0; t<nodes.size(); t++){
 				Node *n1 = nodes[t];
 				curr->add_child(n1);
-				check = false;
+				check = curr->node_pos->get_check_black(); 
 				if(depth+1 <= max_depth){
 					build_tree(n1, depth+1, !wb, max_depth, check); 
 				}
@@ -486,12 +521,15 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			vector<Move>valid_moves;
 			for(int i=0; i<moves.size(); i++){
 				Move mi = moves[i];
+				bool valid;
 				for(int j=0; j<white_threats.size(); j++){
 					Square sj = white_threats[j];
-					if(!(sj.x == mi.x_end && sj.y == mi.y_end)){
-						valid_moves.push_back(mi); 
+					if(sj.x == mi.x_end && sj.y == mi.y_end){
+						valid = false;
 					}
 				}
+				if(valid)
+					valid_moves.push_back(mi);
 			}
 			if(valid_moves.size() == 0){
 				cout << "WHITE WINS BY CHECKMATE" << endl;
@@ -502,7 +540,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			for(int i=0; i<nodes.size(); i++){
 				Node *n1 = nodes[i];
 				curr->add_child(n1); 
-				check = false; //check should always be false if king moves out of check. 				
+				check = curr->node_pos->get_check_white(); 			
 				if(depth+1 <= max_depth){
 					build_tree(n1, depth+1, !wb, max_depth, check);
 				}
