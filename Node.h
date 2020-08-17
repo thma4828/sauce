@@ -37,7 +37,8 @@ public:
 
 	Board *node_pos;
 	bool board_set;
-	int MCTS_visits; 	
+	int MCTS_visits; 
+	float Q; //MCTS Q-value is sum of outcomes of sims that passed through this state. 	
 	string move_string;
 
 };

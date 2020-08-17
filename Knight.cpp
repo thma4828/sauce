@@ -10,7 +10,7 @@ Knight::Knight(){
   //
 }
 
-vector<Move> Knight::set_moves(){
+vector<Move> Knight::set_moves(bool threats){
   cout << "in knight: set moves." << endl;
   vector<Move>moves;
   if(is_color_set && is_pos_set && !is_null_piece){

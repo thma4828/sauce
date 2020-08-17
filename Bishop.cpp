@@ -13,7 +13,7 @@ Bishop::Bishop() {
 	y_diff = 8;
 }
 
-vector<Move> Bishop::set_moves() {
+vector<Move> Bishop::set_moves(bool threats){
 	vector<Move>moves;
 	if (is_color_set && is_pos_set && !is_null_piece) {
 

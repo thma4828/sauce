@@ -10,7 +10,7 @@ Queen::Queen(){
 }
 
 
-vector<Move> Queen::set_moves(){
+vector<Move> Queen::set_moves(bool threats){
 	vector<Move>moves;
 	if(is_pos_set && is_color_set){
 		cout << "in queen set moves." << endl;

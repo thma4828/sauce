@@ -17,7 +17,7 @@ int Rook::get_piece_type(){
 	return ROOK;
 }
 
-vector<Move> Rook::set_moves(){
+vector<Move> Rook::set_moves(bool threats){
 	vector<Move>moves;
 	if(is_color_set && is_pos_set && !is_null_piece){
 		cout << "in rook: set moves." << endl;

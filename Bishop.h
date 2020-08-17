@@ -11,7 +11,7 @@ public:
 	using Piece::Piece;
 	Bishop();
 	int get_piece_type();
-	vector<Move> set_moves();
+	vector<Move> set_moves(bool);
 protected:
 };
 

@@ -11,7 +11,7 @@ public:
 	using Piece::Piece;
 	Rook();
 	int get_piece_type();
-	vector<Move> set_moves();
+	vector<Move> set_moves(bool);
 };
 
 #endif //ROOK_H

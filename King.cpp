@@ -9,7 +9,7 @@ King::King(){
 	y_diff = 1;
 }
 
-vector<Move> King::set_moves(){
+vector<Move> King::set_moves(bool threats){
 	vector<Move>moves;
 	if(is_pos_set && is_color_set){
 		cout << "in king set moves." << endl;

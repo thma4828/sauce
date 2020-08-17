@@ -149,9 +149,9 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		}
 
                 pawn->set_pos(p);
-                pawn->set_moves();
+                
                 cout << "in generator: pawn has set moves." << endl;
-                vector<Move>pmoves = pawn->get_moves();
+                vector<Move>pmoves = pawn->set_moves(false);
                 vector<Node*>tnodes = get_nodes(pmoves, p, curr, !wb);
                 cout << "in generator: new nodes created." << endl;
                 for(int k=0; k<tnodes.size(); k++){
@@ -172,9 +172,9 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			pawn->set_been_moved(true);
 		}
                 pawn->set_pos(p);
-                pawn->set_moves();
+                
                 cout << "in generator: pawn has set moves." << endl;
-                vector<Move>pmoves = pawn->get_moves();
+                vector<Move>pmoves = pawn->set_moves(false);
                 vector<Node*>tnodes = get_nodes(pmoves, p, curr, !wb);
                 cout << "in generator: new nodes created." << endl;
                 for(int k=0; k<tnodes.size(); k++){
@@ -207,7 +207,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
             if(value == BKNIGHT && wb == BLACK){
                 knight = new Knight(x, y, BLACK, KNIGHT, 2, 3);
                 knight->set_pos(p);
-                vector<Move>kmoves = knight->set_moves();
+                vector<Move>kmoves = knight->set_moves(false);
 		if(kmoves.size() < 1)
 			cout << "in generator: knight, black knight has no moves" << endl;
                 vector<Node*>tnodes = get_nodes(kmoves, p, curr, !wb);
@@ -229,8 +229,8 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
             }else if(value == WKNIGHT && wb == WHITE){
               knight = new Knight(x, y, WHITE, KNIGHT, 2, 3);
               knight->set_pos(p);
-              vector<Move> kmoves = knight->set_moves();
-             // kmoves = knight->get_moves()
+              vector<Move> kmoves = knight->set_moves(false);
+             
 	      if(kmoves.size() < 1)
 		      cout << "in generator: knight: white night has no moves." << endl;
               vector<Node*>tnodes = get_nodes(kmoves, p, curr, !wb);
@@ -259,8 +259,8 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			cout << "in generator: in bishop: black bishop setting pos and moves" << endl;
 			bishop = new Bishop(x, y, BLACK, BISHOP, 1, 1);
 			bishop->set_pos(p);
-			bishop->set_moves();
-			vector<Move>bmoves = bishop->get_moves();
+			
+			vector<Move>bmoves = bishop->set_moves(false);
 			if(bmoves.size() < 1){
 				cout << "in generator: bishop: bishop has no moves." << endl;
 			}
@@ -281,8 +281,8 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			cout << "in generator: in bishop: white bishop setting pos and moves." << endl;
 			bishop = new Bishop(x, y, WHITE, BISHOP, 1, 1);
 			bishop->set_pos(p);
-		//	bishop->set_moves();
-			vector<Move>bmoves = bishop->set_moves();
+		
+			vector<Move>bmoves = bishop->set_moves(false);
 			vector<Node*>tnodes = get_nodes(bmoves, p, curr, !wb);
 			if(bmoves.size() < 1){
 				cout << "in generator: bishop: (white) bishop has no moves." << endl;
@@ -304,7 +304,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		if(value == WROOK && wb == WHITE){
 			rook = new Rook(x, y, WHITE, ROOK, 8, 8);
 			rook->set_pos(p);
-			vector<Move>rmoves_white = rook->set_moves();
+			vector<Move>rmoves_white = rook->set_moves(false);
 			vector<Node*>rnodes = get_nodes(rmoves_white, p, curr, !wb);
 			if(rnodes.size() < 1)
 				cout << "in generator: rook has no moves." << endl;
@@ -321,7 +321,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		}else if(value == BROOK && wb == BLACK){
 			rook = new Rook(x, y, BLACK, ROOK, 8, 8);
 			rook->set_pos(p);
-			vector<Move>rmoves_black = rook->set_moves();
+			vector<Move>rmoves_black = rook->set_moves(false);
 			vector<Node*>rnodes = get_nodes(rmoves_black, p, curr, !wb);
 			if(rnodes.size() < 1){
 				cout << "in generator: rook has no moves." << endl;
@@ -341,7 +341,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		if(value == BQUEEN && wb == BLACK){
 			queen = new Queen(x, y, BLACK, QUEEN, 8, 8);
 			queen->set_pos(p);
-			vector<Move>qmoves = queen->set_moves();
+			vector<Move>qmoves = queen->set_moves(false);
 			vector<Node*>tnodes = get_nodes(qmoves, p, curr, !wb);
 			if(tnodes.size() < 1){
 				cout << "in generator: queen has no moves. " << endl;
@@ -358,7 +358,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		}else if(value == WQUEEN && wb == WHITE){
 			queen = new Queen(x, y, WHITE, QUEEN, 8, 8);
 			queen->set_pos(p);
-			vector<Move>qmoves = queen->set_moves();
+			vector<Move>qmoves = queen->set_moves(false);
 			vector<Node*>tnodes = get_nodes(qmoves, p, curr, !wb);
 			if(tnodes.size() < 1){
 				cout << "in generator: queen has no moves." << endl;
@@ -380,7 +380,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		if(value == BKING && wb == BLACK){
 			king = new King(x, y, BLACK, KING, 1, 1);
 			king->set_pos(p);
-			vector<Move>kmoves = king->set_moves();
+			vector<Move>kmoves = king->set_moves(false);
 			vector<Move>valid_moves;
 			curr->node_pos->get_check_black();
 			vector<Square>white_threats = curr->node_pos->get_threat_squares(wb); 
@@ -413,7 +413,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		}else if(value == WKING && wb == WHITE){
 			king = new King(x, y, WHITE, KING, 1, 1);
 			king->set_pos(p);
-			vector<Move>kmoves = king->set_moves();
+			vector<Move>kmoves = king->set_moves(false);
 			vector<Move>valid_moves;
 			curr->node_pos->get_check_white(); 
 			vector<Square>black_threats = curr->node_pos->get_threat_squares(wb); 
@@ -449,7 +449,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 	} //all pieces added. 
      }else{ //check on the board.
                   //only king moves possible for person in check....
-                  //if no king moves then mate is on the board.
+                  //if no king moves there may be a blocking move to stop checkmate...
                   //if wb == WHITE && is_check then there is a check on the white king. (makes sense)
 		  //
 		  int kx, ky;
@@ -469,7 +469,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		  	curr->node_pos->get_check_white(); 
 			vector<Square>black_threats = curr->node_pos->get_threat_squares(wb);
 
-			vector<Move>moves = king->set_moves(); 
+			vector<Move>moves = king->set_moves(false); 
 
 			vector<Move>valid_moves;
 
@@ -486,11 +486,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 				if(valid)
 					valid_moves.push_back(m);
 			}
-			if(valid_moves.size() == 0){
-				cout << "BLACK WINS BY CHECKMATE" << endl;
-				curr->wb_ratio = -999;
-				return; 
-			}
+			
 			vector<Node *>nodes = get_nodes(valid_moves, p, curr, !wb);
 			for(int t=0; t<nodes.size(); t++){
 				Node *n1 = nodes[t];
@@ -516,7 +512,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			curr->node_pos->get_check_black();
 			vector<Square>white_threats = curr->node_pos->get_threat_squares(wb);
 
-			vector<Move>moves = king->set_moves();
+			vector<Move>moves = king->set_moves(false);
 			
 			vector<Move>valid_moves;
 			for(int i=0; i<moves.size(); i++){
@@ -530,11 +526,6 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 				}
 				if(valid)
 					valid_moves.push_back(mi);
-			}
-			if(valid_moves.size() == 0){
-				cout << "WHITE WINS BY CHECKMATE" << endl;
-				curr->wb_ratio = 999;
-				return; 
 			}
 			vector<Node *>nodes = get_nodes(valid_moves, p, curr, !wb);
 			for(int i=0; i<nodes.size(); i++){
