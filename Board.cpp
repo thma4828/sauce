@@ -63,7 +63,7 @@ bool Board::get_check_white(){
 		if(p == BPAWN){
 			Pawn *bpawn = new Pawn(i, j, BLACK, PAWN, 1, 1);
 			bpawn->set_pos(position);
-			vector<Move>moves = bpawn->set_moves();
+			vector<Move>moves = bpawn->set_moves(true);
 			for(int m=0; m<moves.size(); m++){
 				Move mi = moves[m];
 				Square s(mi.x_end, mi.y_end);
@@ -75,7 +75,7 @@ bool Board::get_check_white(){
 		}else if(p == BKNIGHT){
 			Knight *knight = new Knight(i, j, BLACK, KNIGHT, 2, 3);
 			knight->set_pos(position);
-			vector<Move>moves = knight->set_moves(); 
+			vector<Move>moves = knight->set_moves(true); 
 			for(int m=0; m<moves.size(); m++){
 				Move mi = moves[m];
 				Square s(mi.x_end, mi.y_end);
@@ -88,7 +88,7 @@ bool Board::get_check_white(){
 		}else if(p == BBISH){
 			Bishop *bish = new Bishop(i, j, BLACK, BISHOP, 8, 8);
 			bish->set_pos(position);
-			vector<Move>moves = bish->set_moves();
+			vector<Move>moves = bish->set_moves(true);
 			for(int m=0; m<moves.size(); m++){
 				Move mi = moves[m];
 				Square s(mi.x_end, mi.y_end);
@@ -100,7 +100,7 @@ bool Board::get_check_white(){
 		}else if(p == BQUEEN){
 			Queen *queen = new Queen(i, j, BLACK, QUEEN, 8, 8);
 			queen->set_pos(position);
-			vector<Move>moves = queen->set_moves();
+			vector<Move>moves = queen->set_moves(true);
 			for(int m=0; m<moves.size(); m++){
 				Move mi = moves[m];
 				Square s(mi.x_end, mi.y_end);
@@ -113,7 +113,7 @@ bool Board::get_check_white(){
 		}else if(p == BROOK){
 			Rook *rook = new Rook(i, j, BLACK, ROOK, 8, 8);
 			rook->set_pos(position); 
-			vector<Move>moves = rook->set_moves(); 
+			vector<Move>moves = rook->set_moves(true); 
 			for(int m=0; m<moves.size(); m++){
 				Move mi = moves[m];
 				Square s(mi.x_end, mi.y_end); 
@@ -123,7 +123,7 @@ bool Board::get_check_white(){
 					is_check = true; 
 				}
 			}
-		}
+		}//TODO: add king, the king can threaten squares as well. 
 	}
   }
   return is_check;

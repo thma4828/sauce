@@ -55,7 +55,7 @@ public:
 	int get_y_diff();
 	void set_pos(Position*);
 	vector<Move> get_moves();
-	vector<Move> set_moves();
+	vector<Move> set_moves(bool); //flag for if you want to return all threats or all legal moves. 
 	void clear_moves();
 	int get_pos_status();
 	bool is_enemy_piece_type(int);
@@ -77,6 +77,7 @@ protected:
 	int x_diff;
 	int y_diff;
 	bool been_moved;
+	bool pinned;
 	Position* pos;
 
 };

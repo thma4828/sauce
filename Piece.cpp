@@ -14,6 +14,7 @@ Piece::Piece(int c) {
 	y_diff = 0;
 	is_pos_set = false;
 	pos = nullptr;
+	pinned = false;
 }
 
 Piece::Piece() {
@@ -28,6 +29,7 @@ Piece::Piece() {
 	is_pos_set = false;
 	pos = nullptr;
 	been_moved = false;
+	pinned = false; 
 }
 
 Piece::Piece(int a, int b) {
@@ -42,6 +44,7 @@ Piece::Piece(int a, int b) {
 	is_pos_set = false;
 	pos = nullptr;
 	been_moved = false;
+	pinned = false; 
 }
 
 Piece::Piece(int a, int b, int c, int p, int yd, int xd) {
@@ -56,6 +59,7 @@ Piece::Piece(int a, int b, int c, int p, int yd, int xd) {
 	is_pos_set = false;
 	pos = nullptr;
 	been_moved = false;
+	pinned = false; 
 }
 
 void Piece::set_been_moved(bool bm){
@@ -123,7 +127,7 @@ int Piece::get_pos_status() {
 	return is_pos_set;
 }
 
-vector<Move> Piece::set_moves() {
+vector<Move> Piece::set_moves(bool threats) {
 	vector<Move>a;
 	return a;
 }

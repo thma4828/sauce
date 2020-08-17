@@ -9,9 +9,25 @@ Pawn::Pawn() {
 }
 
 
-vector<Move> Pawn::set_moves() {
-
+vector<Move> Pawn::set_moves(bool threats) {
+	vector<Move>threat_vector; 
 	vector<Move>moves;
+
+	if(threats && is_color_set && !is_null_piece){
+		if(color == BLACK){
+			Move m1(x+1, y+1, BLACK, true, false, PAWN, x, y);
+			Move m2(x+1, y-1, BLACK, true, false, PAWN, x, y); 
+			threat_vector.push_back(m1);
+			threat_vector.push_back(m2);
+			return threat_vector;
+		}else{
+			Move m1(x-1, y+1, WHITE, true, false, PAWN, x, y);
+			Move m2(x-1, y-1, WHITE, true, false, PAWN, x, y); 
+			threat_vector.push_back(m1);
+			threat_vector.push_back(m2); 
+			return threat_vector;
+		}
+	}
 	if (is_pos_set && is_color_set && !is_null_piece) {
 		if (color == BLACK) {
 			cout << "in pawn set moves black" << endl;
