@@ -9,6 +9,7 @@ Node::Node() {
 	black_value = 0.00;
 	white_value = 0.00;
 	wb_ratio = 0.0;
+	MCTS_visits = 0;
 }
 
 Node::Node(Node* p, int c, float w, float b) {
@@ -17,6 +18,7 @@ Node::Node(Node* p, int c, float w, float b) {
 	black_value = b;
 	white_value = w;
 	wb_ratio = w - b;
+	MCTS_visits = 0; 
 }
 
 void Node::set_values(float w, float b){

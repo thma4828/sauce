@@ -37,7 +37,7 @@ public:
 
 	Board *node_pos;
 	bool board_set;
-	
+	int MCTS_visits; 	
 	string move_string;
 
 };
