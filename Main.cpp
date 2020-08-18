@@ -14,7 +14,7 @@ int main(int argc, char**argv){
     cout << "usage: ./build <int: tree depth> <int : eval depth>" << endl;
     return -1;
   }
-  Position *pstart = new Position(T1);
+  Position *pstart = new Position(TCHECK);
   Generator G(pstart, BLACK);
   Node *root = G.get_tree_root();
   G.build_tree(root, 0, BLACK, atoi(argv[1]), false);

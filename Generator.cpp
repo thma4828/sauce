@@ -448,7 +448,6 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		}
 	} //all pieces added. 
      }else{ //check on the board.
-                  //only king moves possible for person in check....
                   //if no king moves there may be a blocking move to stop checkmate...
                   //if wb == WHITE && is_check then there is a check on the white king. (makes sense)
 		  //
@@ -486,7 +485,10 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 				if(valid)
 					valid_moves.push_back(m);
 			}
-			
+			//if there are no valid moves,
+			//we must search the position for a friendly piece with which
+			//we can block the check
+			//then if this doesn't exist it is mate. 
 			vector<Node *>nodes = get_nodes(valid_moves, p, curr, !wb);
 			for(int t=0; t<nodes.size(); t++){
 				Node *n1 = nodes[t];
