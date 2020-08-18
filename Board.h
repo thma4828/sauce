@@ -6,6 +6,7 @@
 #include "Pawn.h"
 #include "Queen.h"
 #include "Knight.h"
+#include "King.h"
 #include "Bishop.h"
 #include "Rook.h" 
 #include "Square.h"

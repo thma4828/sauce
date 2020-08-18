@@ -123,7 +123,17 @@ bool Board::get_check_white(){
 					is_check = true; 
 				}
 			}
-		}//TODO: add king, the king can threaten squares as well. 
+		}else if(p == BKING){
+			King *king = new King(i, j, BLACK, KING, 1, 1); 
+			king->set_pos(position);
+			vector<Move>moves = king->set_moves(true);
+			for(int m=0; m<moves.size(); m++){
+				Move mi = moves[m];
+				Square s(mi.x_end, mi.y_end);
+				black_threat_squares.push_back(s);
+				//cant be in check from the enemies king....
+			}
+		}
 	}
   }
   return is_check;
@@ -210,7 +220,16 @@ bool Board::get_check_black(){
 				}
 			}
 		
-		}//TODO: add king
+		}else if(p == WKING){
+			King *king = new King(i, j, WHITE, KING, 1, 1);
+			king->set_pos(position);
+			vector<Move>moves = king->set_moves(true);
+			for(int i=0; i<moves.size(); i++){
+				Move mi = moves[i];
+				Square s(mi.x_end, mi.y_end); 
+				white_threat_squares.push_back(s); 
+			}
+		}
 	}
   }
   return is_check;
