@@ -14,6 +14,7 @@ Bishop::Bishop() {
 }
 
 vector<Move> Bishop::set_moves(bool threats){
+	vector<Move>guarded;
 	vector<Move>moves;
 	if (is_color_set && is_pos_set && !is_null_piece) {
 
@@ -25,6 +26,7 @@ vector<Move> Bishop::set_moves(bool threats){
 			while (X < 7 && Y < 7 && pos->the_board[X + 1][Y + 1] == NULLCELL) {
 				Move d(X + 1, Y + 1, color, false, false, BISHOP, x, y);
 				moves.push_back(d);
+				guarded.push_back(d);
 				X++;
 				Y++;
 				cout << "bishop added move" << endl;
@@ -34,15 +36,21 @@ vector<Move> Bishop::set_moves(bool threats){
 				Move t(X + 1, Y + 1, color, true, false, BISHOP, x, y);
 				moves.push_back(t);
 				cout << "bishop added take" << endl;
+			}else if(X < 7 && Y < 7 && !is_enemy_piece_type(pos->the_board[X+1][Y+1])){
+			//gaurding friendly piece
+				Move g(X + 1, Y + 1, color, true ,false ,BISHOP, x, y);
+				guarded.push_back(g); 
 			}
 			else if (X < 7 && Y < 7 && is_enemy_king(pos->the_board[X + 1][Y + 1])) {
 				//bishop is putting the king in check.
+				//case should never occur if bug fixes correct. 
 			}
 			X = x;
 			Y = y;
 			while (X > 0 && Y > 0 && pos->the_board[X - 1][Y - 1] == NULLCELL) {
 				Move d(X - 1, Y - 1, color, false, false, BISHOP, x, y);
 				moves.push_back(d);
+				guarded.push_back(d);
 				X--;
 				Y--;
 			}
@@ -50,6 +58,9 @@ vector<Move> Bishop::set_moves(bool threats){
 			if (X > 0 && Y > 0 && is_enemy_piece_type(pos->the_board[X - 1][Y - 1])) {
 				Move t1(X - 1, Y - 1, color, true, false, BISHOP, x, y);
 				moves.push_back(t1);
+			}else if(X > 0 && Y > 0 && !is_enemy_king(pos->the_board[X - 1][Y - 1])){
+				Move g1(X - 1, Y - 1, color, true, false, BISHOP, x, y);
+				guarded.push_back(g1);
 			}
 			else if (X > 0 && Y > 0 && is_enemy_king(pos->the_board[X - 1][Y - 1])) {
 				//bishop is putting the king in check.
@@ -59,12 +70,16 @@ vector<Move> Bishop::set_moves(bool threats){
 			while (X > 0 && Y < 7 && pos->the_board[X - 1][Y + 1] == NULLCELL) {
 				Move d(X - 1, Y + 1, color, false, false, BISHOP, x, y);
 				moves.push_back(d);
+				guarded.push_back(d); 
 				X--;
 				Y++;
 			}
 			if (X > 0 && Y < 7 && is_enemy_piece_type(pos->the_board[X - 1][Y + 1])) {
 				Move t1(X - 1, Y + 1, color, true, false, BISHOP, x, y);
 				moves.push_back(t1);
+			}else if(X > 0 && Y < 7 && !is_enemy_king(pos->the_board[X - 1][Y + 1])){
+				Move g1(X -1, Y + 1, color, true, false, BISHOP, x, y);
+				guarded.push_back(g1);
 			}
 			else if (X > 0 && Y < 7 && is_enemy_king(pos->the_board[X - 1][Y + 1])) {
 				//bishop is putting the king in check.
@@ -74,12 +89,16 @@ vector<Move> Bishop::set_moves(bool threats){
 			while (X < 7 && Y > 0 && pos->the_board[X + 1][Y - 1] == NULLCELL) {
 				Move d(X + 1, Y - 1, color, false, false, BISHOP, x, y);
 				moves.push_back(d);
+				guarded.push_back(d);
 				X++;
 				Y--;
 			}
-			if (is_enemy_piece_type(pos->the_board[X + 1][Y - 1])) {
+			if (X < 7 && Y > 0 && is_enemy_piece_type(pos->the_board[X + 1][Y - 1])) {
 				Move t2(X + 1, Y - 1, color, true, false, BISHOP, x, y);
 				moves.push_back(t2);
+			}else if(X < 7 && Y > 0 && !is_enemy_piece_type(pos->the_board[X + 1][Y - 1])){
+				Move g2(X + 1,  Y - 1, color, true, false, BISHOP, x, y);
+				guarded.push_back(g2); 
 			}
 			else if (X < 7 && Y > 0 && is_enemy_king(pos->the_board[X + 1][Y - 1])) {
 				//bishop is putting the king in check.
@@ -88,6 +107,8 @@ vector<Move> Bishop::set_moves(bool threats){
 
 	}
 	curr_moves = moves;
+	if(threats)
+		return guarded;
 	return moves;
 
 }

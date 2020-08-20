@@ -18,6 +18,7 @@ Generator::Generator(Position *start, int start_color){
 }
 
 void Generator::eval_tree(Node *n, int depth, int color, int max){
+  if(n){
 	int c = n->children.size();
 
 	if(depth < (max - 1)){
@@ -59,6 +60,7 @@ void Generator::eval_tree(Node *n, int depth, int color, int max){
 		cout << "out of bounds." << endl;
 		return;
 	}
+  }
 }
 
 
