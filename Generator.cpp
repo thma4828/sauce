@@ -126,7 +126,7 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
   }
   return nodes;
 }
-
+//TODO add if() before adding nodes to check if piece was pinned (if moving it puts their own king into check.
 float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool check, float alpha, float beta)
 {
   if(depth <= max_depth){
