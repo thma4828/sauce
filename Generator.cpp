@@ -127,7 +127,7 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
   return nodes;
 }
 
-void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool check, float alpha, float beta)
+float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool check, float alpha, float beta)
 {
   if(depth <= max_depth){
     if(depth > 0){
@@ -141,9 +141,9 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
         
         if(value != NULLCELL){
           if(!check){
-            if(value == BPAWN || value == WPAWN){
+            if(value == BPAWN || value == WPAWN){ 
               Pawn *pawn;
-              if(value == BPAWN && wb == BLACK){
+              if(value == BPAWN && wb == BLACK){ //min player uses beta
                 pawn = new Pawn(x, y, BLACK, PAWN, 1, 1);
 
 		if(x > 1){
@@ -156,6 +156,8 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                 vector<Move>pmoves = pawn->set_moves(false);
                 vector<Node*>tnodes = get_nodes(pmoves, p, curr, !wb);
                 //cout << "in generator: new nodes created." << endl;
+		float value = 999;
+		float beta_hat;
                 for(int k=0; k<tnodes.size(); k++){
                   Node *n1 = tnodes[k];
                   curr->add_child(n1);
@@ -165,9 +167,20 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                     check = n1->node_pos->get_check_black();
 
                   //node should be added with correct parent and naive wb_eval value.
-                  if(depth+1 <= max_depth)
-                    build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+                  if(depth+1 <= max_depth){
+                     beta_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		     if(beta_hat < value){
+		     	value  = beta_hat; 
+		     }
+		     if(beta < value){
+		     	beta = value;
+		     }
+		     if(beta <= alpha){
+		     	break; 
+		     }
+		  }
                 }
+		return value; 
               }else if(value == WPAWN && wb == WHITE){
                 pawn = new Pawn(x, y, WHITE, PAWN, 1, 1);
 		if(x < 6){
@@ -179,6 +192,8 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                 vector<Move>pmoves = pawn->set_moves(false);
                 vector<Node*>tnodes = get_nodes(pmoves, p, curr, !wb);
                 //cout << "in generator: new nodes created." << endl;
+		float value = -999;
+		float alpha_hat;
                 for(int k=0; k<tnodes.size(); k++){
                   Node *n1 = tnodes[k];
                   curr->add_child(n1);
@@ -188,9 +203,20 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                     check = n1->node_pos->get_check_black();
 
                   //node should be added with correct parent and naive wb_eval value.
-                  if(depth+1 <= max_depth)
-                    build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+                  if(depth+1 <= max_depth){
+                    alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		    if(alpha_hat > value){
+		    	value = alpha_hat;
+		    }
+		    if(value  > alpha){
+		    	alpha = value;
+		    }
+		    if(alpha >= beta){
+		    	break;
+		    }
+		  }
                 }
+		return value;
 
               }else{
                 //
@@ -213,7 +239,32 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		if(kmoves.size() < 1)
 			cout << "in generator: knight, black knight has no moves" << endl;
                 vector<Node*>tnodes = get_nodes(kmoves, p, curr, !wb);
-                for(int t=0; t<tnodes.size(); t++){
+		float value = 999;
+		float beta_hat;
+                for(int k=0; k<tnodes.size(); k++){
+                  Node *n1 = tnodes[k];
+                  curr->add_child(n1);
+                  if(wb == BLACK)
+                    check = n1->node_pos->get_check_white();
+                  else
+                    check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  if(depth+1 <= max_depth){
+                     beta_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		     if(beta_hat < value){
+		     	value  = beta_hat; 
+		     }
+		     if(beta < value){
+		     	beta = value;
+		     }
+		     if(beta <= alpha){
+		     	break; 
+		     }
+		  }
+                }
+		return value; 
+               /*** for(int t=0; t<tnodes.size(); t++){
                   Node *n1 = tnodes[t];
                   curr->add_child(n1);
                   if(wb == BLACK)
@@ -226,7 +277,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                     build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 
 
-                }
+                }***/
 
             }else if(value == WKNIGHT && wb == WHITE){
               knight = new Knight(x, y, WHITE, KNIGHT, 2, 3);
@@ -237,7 +288,32 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		      cout << "in generator: knight: white night has no moves." << endl;
               vector<Node*>tnodes = get_nodes(kmoves, p, curr, !wb);
 
-              for(int t=0; t<tnodes.size(); t++){
+	      float value = -999;
+	      float alpha_hat;
+              for(int k=0; k<tnodes.size(); k++){
+                  Node *n1 = tnodes[k];
+                  curr->add_child(n1);
+                  if(wb == BLACK)
+                    check = n1->node_pos->get_check_white();
+                  else
+                    check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  if(depth+1 <= max_depth){
+                    alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		    if(alpha_hat > value){
+		    	value = alpha_hat;
+		    }
+		    if(value  > alpha){
+		    	alpha = value;
+		    }
+		    if(alpha >= beta){
+		    	break;
+		    }
+		  }
+                }
+		return value;
+              /***for(int t=0; t<tnodes.size(); t++){
                 Node *n1 = tnodes[t];
                 curr->add_child(n1);
                 if(wb == BLACK)
@@ -249,7 +325,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
                 if(depth+1 <= max_depth)
                   build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 
-              }
+              }***/
 
 
             }
@@ -267,8 +343,33 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 		//		cout << "in generator: bishop: bishop has no moves." << endl;
 			}
 			vector<Node *>tnodes = get_nodes(bmoves, p, curr, !wb);
+			float value = 999;
+			float beta_hat;
+                	for(int k=0; k<tnodes.size(); k++){
+                  		Node *n1 = tnodes[k];
+                  		curr->add_child(n1);
+                  		if(wb == BLACK)
+                    			check = n1->node_pos->get_check_white();
+                  		else
+                    			check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  		if(depth+1 <= max_depth){
+                     			beta_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		     			if(beta_hat < value){
+		     				value  = beta_hat; 
+		     			}
+		     			if(beta < value){
+		     				beta = value;
+		     			}
+		     			if(beta <= alpha){
+		     				break; 
+		     			}
+		  		}
+                	}
+			return value; 
 			
-			for(int t=0; t<tnodes.size(); t++){
+		/***	for(int t=0; t<tnodes.size(); t++){
 				Node *n1 = tnodes[t];
 				curr->add_child(n1);
 
@@ -278,7 +379,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 					build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 				}
 			}
-	
+		***/
 		}else if(value == WBISH && wb == WHITE){
 		//	cout << "in generator: in bishop: white bishop setting pos and moves." << endl;
 			bishop = new Bishop(x, y, WHITE, BISHOP, 1, 1);
@@ -289,7 +390,33 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			if(bmoves.size() < 1){
 		//		cout << "in generator: bishop: (white) bishop has no moves." << endl;
 			}
-			for(int t=0; t<tnodes.size(); t++){
+
+			float value = -999;
+			float alpha_hat;
+                	for(int k=0; k<tnodes.size(); k++){
+                  		Node *n1 = tnodes[k];
+                  		curr->add_child(n1);
+                  		if(wb == BLACK)
+                    			check = n1->node_pos->get_check_white();
+                  		else
+                    			check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  	if(depth+1 <= max_depth){
+                    		alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		    		if(alpha_hat > value){
+		    			value = alpha_hat;
+		    		}
+		    		if(value  > alpha){
+		    			alpha = value;
+		    		}
+		    		if(alpha >= beta){
+		    			break;
+		    		}
+		  	}
+                	}
+			return value;
+			/***for(int t=0; t<tnodes.size(); t++){
 				Node *n1 = tnodes[t];
 				curr->add_child(n1);
 
@@ -298,7 +425,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 				if(depth+1 <= max_depth){
 					build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 				}
-			}
+			}***/
 		}
 	}else if(value == WROOK || value == BROOK){
 		//cout << "in generator: rook" << endl;
@@ -307,11 +434,36 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			rook = new Rook(x, y, WHITE, ROOK, 8, 8);
 			rook->set_pos(p);
 			vector<Move>rmoves_white = rook->set_moves(false);
-			vector<Node*>rnodes = get_nodes(rmoves_white, p, curr, !wb);
-			if(rnodes.size() < 1)
-		//		cout << "in generator: rook has no moves." << endl;
+			vector<Node*>tnodes = get_nodes(rmoves_white, p, curr, !wb);
+			if(tnodes.size() < 1)
+				cout << "in generator: rook has no moves." << endl;
 
-			for(int t=0; t<rnodes.size(); t++){
+		float value = -999;
+		float alpha_hat;
+                for(int k=0; k<tnodes.size(); k++){
+                  Node *n1 = tnodes[k];
+                  curr->add_child(n1);
+                  if(wb == BLACK)
+                    check = n1->node_pos->get_check_white();
+                  else
+                    check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  if(depth+1 <= max_depth){
+                    alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		    if(alpha_hat > value){
+		    	value = alpha_hat;
+		    }
+		    if(value  > alpha){
+		    	alpha = value;
+		    }
+		    if(alpha >= beta){
+		    	break;
+		    }
+		  }
+                }
+		return value;
+		/***	for(int t=0; t<rnodes.size(); t++){
 				Node *n1 = rnodes[t];
 				curr->add_child(n1);
 				check = n1->node_pos->get_check_black();
@@ -319,23 +471,49 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 					build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);	
 				}
 
-			}
+			}***/
 		}else if(value == BROOK && wb == BLACK){
 			rook = new Rook(x, y, BLACK, ROOK, 8, 8);
 			rook->set_pos(p);
 			vector<Move>rmoves_black = rook->set_moves(false);
-			vector<Node*>rnodes = get_nodes(rmoves_black, p, curr, !wb);
-			if(rnodes.size() < 1){
+			vector<Node*>tnodes = get_nodes(rmoves_black, p, curr, !wb);
+			if(tnodes.size() < 1){
 				//cout << "in generator: rook has no moves." << endl;
 			}
-			for(int t=0; t<rnodes.size(); t++){
+			float value = 999;
+			float beta_hat;
+                	for(int k=0; k<tnodes.size(); k++){
+                  		Node *n1 = tnodes[k];
+                  		curr->add_child(n1);
+                  		if(wb == BLACK)
+                    			check = n1->node_pos->get_check_white();
+                  		else
+                    			check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  		if(depth+1 <= max_depth){
+                     			beta_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+					if(beta_hat < value){
+		     				value  = beta_hat; 
+		     			}
+		     			if(beta < value){
+		     				beta = value;
+		     			}
+		     			if(beta <= alpha){
+		     				break; 
+		     			}
+		  		}
+                	}
+			return value;
+			
+			/***for(int t=0; t<rnodes.size(); t++){
 				Node *n1 = rnodes[t];
 				curr->add_child(n1);
 				check = n1->node_pos->get_check_white();
 				if(depth+1 <= max_depth){
 					build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 				}
-			}
+			}***/
 		}
 	}else if(value == WQUEEN || value == BQUEEN){
 		//cout << "in generator: queen" << endl;
@@ -348,7 +526,33 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			if(tnodes.size() < 1){
 			//	cout << "in generator: queen has no moves. " << endl;
 			}
-			for(int t=0; t<tnodes.size(); t++){
+
+			float value = 999;
+			float beta_hat;
+                	for(int k=0; k<tnodes.size(); k++){
+                  		Node *n1 = tnodes[k];
+                  		curr->add_child(n1);
+                  		if(wb == BLACK)
+                    			check = n1->node_pos->get_check_white();
+                  		else
+                    			check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  		if(depth+1 <= max_depth){
+                     			beta_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		     			if(beta_hat < value){
+		     				value  = beta_hat; 
+		     			}
+		     			if(beta < value){
+		     				beta = value;
+		     			}
+		     			if(beta <= alpha){
+		     				break; 
+		     			}
+		  		}
+                	}
+			return value; 
+			/***for(int t=0; t<tnodes.size(); t++){
 				Node *n1 = tnodes[t];
 				curr->add_child(n1); 
 				check = n1->node_pos->get_check_white(); 
@@ -356,7 +560,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 				if(depth+1 <= max_depth){
 					build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 				}
-			}
+			}***/
 		}else if(value == WQUEEN && wb == WHITE){
 			queen = new Queen(x, y, WHITE, QUEEN, 8, 8);
 			queen->set_pos(p);
@@ -365,7 +569,33 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 			if(tnodes.size() < 1){
 			//	cout << "in generator: queen has no moves." << endl;
 			}
-			for(int t=0; t<tnodes.size(); t++){
+
+		float value = -999;
+		float alpha_hat;
+                for(int k=0; k<tnodes.size(); k++){
+                  Node *n1 = tnodes[k];
+                  curr->add_child(n1);
+                  if(wb == BLACK)
+                    check = n1->node_pos->get_check_white();
+                  else
+                    check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  if(depth+1 <= max_depth){
+                    alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		    if(alpha_hat > value){
+		    	value = alpha_hat;
+		    }
+		    if(value  > alpha){
+		    	alpha = value;
+		    }
+		    if(alpha >= beta){
+		    	break;
+		    }
+		  }
+                }
+		return value;
+		/***	for(int t=0; t<tnodes.size(); t++){
 				Node *n1 = tnodes[t];
 				curr->add_child(n1);
 				check = n1->node_pos->get_check_black(); 
@@ -373,7 +603,7 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
 				if(depth+1 <= max_depth){
 					build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 				}
-			}
+			}***/
 		}
 	
 	}else if(value == BKING || value == WKING){
@@ -553,8 +783,12 @@ void Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool ch
    }
   }else{
     cout << "depth reached." << endl;
-    return;
+    return curr->wb_ratio; 
   }
+  if(curr)
+	  return curr->wb_ratio;
+  else
+	  return 0.00;
 
 }
 
