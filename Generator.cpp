@@ -133,14 +133,16 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
     if(depth > 0){
     	cout << "in generator: entering node created with move: " << curr->move_string << endl;
     }
+    
     Position *p = curr->node_pos->get_position();
+    if(!check){
     for(int x=0; x<8; x++){
       for(int y=0; y<8; y++){
         
         int value = p->the_board[x][y];
         
         if(value != NULLCELL){
-          if(!check){
+        
             if(value == BPAWN || value == WPAWN){ 
               Pawn *pawn;
               if(value == BPAWN && wb == BLACK){ //min player uses beta
@@ -218,16 +220,8 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
                 }
 		return value;
 
-              }else{
-                //
-              }
-                //
-
-
-
-
-                  //rbuild the tree like depth-first-search to max_depth.
-
+        	
+	      }
 
           }else if(value == WKNIGHT || value == BKNIGHT){
             //cout << "in generator: knight" << endl;
@@ -633,15 +627,31 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 			if(tnodes.size() < 1){
 				cout << "in generator: king has no moves." << endl;
 			}
-			for(int t=0; t<tnodes.size(); t++){
-				Node *n1 = tnodes[t];
-				curr->add_child(n1);
-				check = n1->node_pos->get_check_white();
+			float value = 999;
+			float beta_hat;
+                	for(int k=0; k<tnodes.size(); k++){
+                  		Node *n1 = tnodes[k];
+                  		curr->add_child(n1);
+                  		if(wb == BLACK)
+                    			check = n1->node_pos->get_check_white();
+                  		else
+                    			check = n1->node_pos->get_check_black();
 
-				if(depth+1 <= max_depth){
-					build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
-				}
-			}
+                  //node should be added with correct parent and naive wb_eval value.
+                  		if(depth+1 <= max_depth){
+                     			beta_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		     			if(beta_hat < value){
+		     				value  = beta_hat; 
+		     			}
+		     			if(beta < value){
+		     				beta = value;
+		     			}
+		     			if(beta <= alpha){
+		     				break; 
+		     			}
+		  		}
+                	}
+			return value; 
 		}else if(value == WKING && wb == WHITE){
 			king = new King(x, y, WHITE, KING, 1, 1);
 			king->set_pos(p);
@@ -667,22 +677,47 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 				cout << "in generator: king has no moves." << endl;
 			}
 
-			for(int t=0; t<tnodes.size(); t++){
-				Node *n1 = tnodes[t];
-				curr->add_child(n1);
-				check = n1->node_pos->get_check_black();
+		float value = -999;
+		float alpha_hat;
+                for(int k=0; k<tnodes.size(); k++){
+                  Node *n1 = tnodes[k];
+                  curr->add_child(n1);
+                  if(wb == BLACK)
+                    check = n1->node_pos->get_check_white();
+                  else
+                    check = n1->node_pos->get_check_black();
 
-				if(depth+1 <= max_depth){
-					build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
-				}
-			}
+                  //node should be added with correct parent and naive wb_eval value.
+                  if(depth+1 <= max_depth){
+                    alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		    if(alpha_hat > value){
+		    	value = alpha_hat;
+		    }
+		    if(value  > alpha){
+		    	alpha = value;
+		    }
+		    if(alpha >= beta){
+		    	break;
+		    }
+		  }
+                }
+		return value;
 		
 		}
-	} //all pieces added. 
-     }else{ //check on the board.
+	} //all pieces added.
+	   //nullcell case comes here then returns.  
+
+      }
+     
+    }	
+    
+    }
+
+    }else{ //check on the board.
                   //if no king moves there may be a blocking move to stop checkmate...
                   //if wb == WHITE && is_check then there is a check on the white king. (makes sense)
 		  //
+		  cout << "CHECK CASE REACHED." << endl;
 		  int kx, ky;
 		  if(wb == WHITE){
 		  	for(int i=0; i<8; i++){
@@ -721,15 +756,34 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 			//we must search the position for a friendly piece with which
 			//we can block the check
 			//then if this doesn't exist it is mate. 
-			vector<Node *>nodes = get_nodes(valid_moves, p, curr, !wb);
-			for(int t=0; t<nodes.size(); t++){
-				Node *n1 = nodes[t];
-				curr->add_child(n1);
-				check = curr->node_pos->get_check_black(); 
-				if(depth+1 <= max_depth){
-					build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta); 
-				}
-			}
+			vector<Node *>tnodes = get_nodes(valid_moves, p, curr, !wb);
+
+		float value = -999;
+		float alpha_hat;
+                for(int k=0; k<tnodes.size(); k++){
+                  Node *n1 = tnodes[k];
+                  curr->add_child(n1);
+                  if(wb == BLACK)
+                    check = n1->node_pos->get_check_white();
+                  else
+                    check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  if(depth+1 <= max_depth){
+                    alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		    if(alpha_hat > value){
+		    	value = alpha_hat;
+		    }
+		    if(value  > alpha){
+		    	alpha = value;
+		    }
+		    if(alpha >= beta){
+		    	break;
+		    }
+		  }
+                }
+		return value;
+		
 
 		  }else{ //wb == BLACK
 			for(int x=0; x<8; x++){
@@ -761,34 +815,44 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 				if(valid)
 					valid_moves.push_back(mi);
 			}
-			vector<Node *>nodes = get_nodes(valid_moves, p, curr, !wb);
-			for(int i=0; i<nodes.size(); i++){
-				Node *n1 = nodes[i];
-				curr->add_child(n1); 
-				check = curr->node_pos->get_check_white(); 			
-				if(depth+1 <= max_depth){
-					build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
-				}
+			vector<Node *>tnodes = get_nodes(valid_moves, p, curr, !wb);
 
-			}
+			float value = 999;
+			float beta_hat;
+                	for(int k=0; k<tnodes.size(); k++){
+                  		Node *n1 = tnodes[k];
+                  		curr->add_child(n1);
+                  		if(wb == BLACK)
+                    			check = n1->node_pos->get_check_white();
+                  		else
+                    			check = n1->node_pos->get_check_black();
+
+                  //node should be added with correct parent and naive wb_eval value.
+                  		if(depth+1 <= max_depth){
+                     			beta_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+		     			if(beta_hat < value){
+		     				value  = beta_hat; 
+		     			}
+		     			if(beta < value){
+		     				beta = value;
+		     			}
+		     			if(beta <= alpha){
+		     				break; 
+		     			}
+		  		}
+                	}
+			return value; 
 
 
 		  
 		  }
-     }
 
     }
 
-    }
-   }
   }else{
     cout << "depth reached." << endl;
     return curr->wb_ratio; 
   }
-  if(curr)
-	  return curr->wb_ratio;
-  else
-	  return 0.00;
 
 }
 

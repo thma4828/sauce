@@ -70,8 +70,8 @@ Position::Position(int b) {
 		the_board[7][7] = WBISH;
 	}else if (b == TCHECK){
 		the_board[0][4] = BKING; //black king on e8
-		the_board[3][2] = WBISH; //white bishop on b5
-		the_board[3][3] = WROOK; //white rook on d5
+		the_board[3][1] = WBISH; //white bishop on b5
+		the_board[3][4] = WROOK; //white rook on d5
 		the_board[1][7] = BROOK; //black rook on h7
 		the_board[7][6] = WKING; //white king on g1
 	}
