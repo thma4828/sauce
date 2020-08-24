@@ -20,7 +20,7 @@ class Generator{ //start at a root position and generate a tree
 public:
   Generator();
   Generator(Position*, int);
-  void build_tree(Node*, int, int, int, bool);
+  void build_tree(Node*, int, int, int, bool, float, float);
   Node *get_tree_root();
   unsigned long count_tree_nodes(Node *, unsigned long);
   void eval_tree(Node*, int, int, int);

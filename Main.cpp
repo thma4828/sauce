@@ -17,7 +17,9 @@ int main(int argc, char**argv){
   Position *pstart = new Position(TCHECK);
   Generator G(pstart, BLACK);
   Node *root = G.get_tree_root();
-  G.build_tree(root, 0, BLACK, atoi(argv[1]), false);
+  int alpha = 0; //min value WHITE player assured of getting
+  int beta  = 999; //max value BLACK player assured of getting. 
+  G.build_tree(root, 0, BLACK, atoi(argv[1]), false,  alpha, beta);
   unsigned long ncount = G.count_tree_nodes(root, 0);
   cout << "Tree has: " << ncount << " nodes at depth = " << argv[1] << "."  <<  endl;
   int nc  = root->children.size();
@@ -27,15 +29,4 @@ int main(int argc, char**argv){
 		" || value(+w): " << root->children[j]->wb_ratio << endl;
   }
   cout << "Root position (blacks move) valued at: " << root->wb_ratio << endl;
-  G.eval_tree(root, 0, BLACK, atoi(argv[2])); 
-  cout << "after eval position valued at: " << root->wb_ratio << endl; 
-  
-  cout << "line calculated: " << endl;
-  Node *current = root;
-  current = current->best_child;
-  while(current != NULL){
-	cout << "(" << current->move_string << " , " << current->wb_ratio << ")" << endl;
-	current = current->best_child;
-
-  }
 }
