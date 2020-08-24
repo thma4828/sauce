@@ -25,9 +25,15 @@ int main(int argc, char**argv){
   cout << "Tree has: " << ncount << " nodes at depth = " << argv[1] << "."  <<  endl;
   int nc  = root->children.size();
   cout << "Root's children moves: (black moves)" << endl;
-  for(int j=0; j<nc; j++){
-  	cout << "move: " << j << " --> " << root->children[j]->move_string << 
-		" || value(+w): " << root->children[j]->wb_ratio << endl;
-  }
-  cout << "Root position (blacks move) valued at: " << root->wb_ratio << endl;
+  G.eval_tree(root, 0, BLACK, atoi(argv[2])); 
+  cout << "Root eval complete" << endl;
+
+  Node *current = root;
+  int i = 1;
+  while(current->best_child != NULL){
+  	current = current->best_child;
+	cout << i << ": " << current->move_string << ", "; i++;
+  } 
+  cout << endl;
+  return 0; 
 }
