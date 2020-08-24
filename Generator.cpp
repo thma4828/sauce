@@ -751,7 +751,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 			vector<Move>valid_moves;
 			for(int i=0; i<moves.size(); i++){
 				Move mi = moves[i];
-				bool valid;
+				bool valid = true;
 				for(int j=0; j<white_threats.size(); j++){
 					Square sj = white_threats[j];
 					if(sj.x == mi.x_end && sj.y == mi.y_end){
