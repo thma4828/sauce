@@ -30,6 +30,64 @@ string Move::get_move_string(){
 		s.push_back('K');
 	}
 
+	if(y_start == 0){
+		s.push_back('a');
+	}
+	if(y_start == 1){
+		s.push_back('b');
+	}
+	if(y_start == 2){
+		s.push_back('c');
+	}
+	if(y_start == 3){
+		s.push_back('d');
+	}
+	if(y_start == 4){
+		s.push_back('e');
+	}
+	if(y_start == 5){
+		s.push_back('f');
+	}
+	if(y_start == 6){
+		s.push_back('g');
+	}
+	if(y_start == 7){
+		s.push_back('h');
+	}
+
+	if(x_start == 0){
+		s.push_back('8');
+		s.push_back('-');
+	}
+	if(x_start == 1){
+		s.push_back('7');
+		s.push_back('-');
+	}
+	if(x_start == 2){
+		s.push_back('6');
+		s.push_back('-');
+	}
+	if(x_start == 3){
+		s.push_back('5');
+		s.push_back('-');
+	}
+	if(x_start == 4){
+		s.push_back('4');
+		s.push_back('-');
+	}
+	if(x_start == 5){
+		s.push_back('3');
+		s.push_back('-');
+	}
+	if(x_start == 6){
+		s.push_back('2');
+		s.push_back('-');
+	}
+	if(x_start == 7){
+		s.push_back('1');
+		s.push_back('-');
+	}
+
 	if(is_take){
 		s.push_back('x');
 	}

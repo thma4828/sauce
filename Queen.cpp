@@ -12,6 +12,7 @@ Queen::Queen(){
 
 vector<Move> Queen::set_moves(bool threats){
 	vector<Move>moves;
+	vector<Move>threatvec; 
 	if(is_pos_set && is_color_set){
 		cout << "in queen set moves." << endl;
 		int X = x;
@@ -22,13 +23,16 @@ vector<Move> Queen::set_moves(bool threats){
 			if(sq == NULLCELL){
 				Move m1(X, Y, color, false, false, QUEEN, x, y);
 				moves.push_back(m1);
+				threatvec.push_back(m1); 
 
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y); 
 				moves.push_back(t1);
 				break;
 			}else if(is_friendly_piece_type(sq)){
-				break;
+				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				threatvec.push_back(t1); 
+				break; 
 			}
 		
 		}
@@ -39,11 +43,14 @@ vector<Move> Queen::set_moves(bool threats){
 			if(sq == NULLCELL){
 				Move m1(X, Y, color, false, false, QUEEN, x, y);
 				moves.push_back(m1);
+				threatvec.push_back(m1); 
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y); 
 				moves.push_back(t1);
 				break; 
 			}else if(is_friendly_piece_type(sq)){
+				Move t1(X, Y, color, true, false, QUEEN, x, y); 
+				threatvec.push_back(t1); 
 				break;
 			}
 		}
@@ -55,12 +62,15 @@ vector<Move> Queen::set_moves(bool threats){
 			if(sq == NULLCELL){
 				Move m1(X, Y, color, false, false, QUEEN, x, y);
 				moves.push_back(m1);
+				threatvec.push_back(m1); 
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y);
 				moves.push_back(t1); 
 				break;
 			}else if(is_friendly_piece_type(sq)){
-				break;
+			 	Move t1(X, Y, color, true, false, QUEEN, x, y); 
+				threatvec.push_back(t1); 
+				break; 
 			}
 		}
 		Y = y;
@@ -70,12 +80,14 @@ vector<Move> Queen::set_moves(bool threats){
 			if(sq == NULLCELL){
 				Move m1(X, Y, color, false, false, QUEEN, x, y);
 				moves.push_back(m1);
+				threatvec.push_back(m1); 
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y);
 				moves.push_back(t1);
 				break;
 			}else if(is_friendly_piece_type(sq)){
-				break;
+				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				threatvec.push_back(t1); 
 			}
 		}
 		X = x;
@@ -86,11 +98,14 @@ vector<Move> Queen::set_moves(bool threats){
 			if(sq == NULLCELL){
 				Move m1(X, Y, color, false, false, QUEEN, x, y);
 				moves.push_back(m1);
+				threatvec.push_back(m1);
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y); 
 				moves.push_back(t1);
 				break;
 			}else if(is_friendly_piece_type(sq)){
+				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				threatvec.push_back(t1);
 				break;
 			}
 		}
@@ -102,11 +117,14 @@ vector<Move> Queen::set_moves(bool threats){
 			if(sq == NULLCELL){
 				Move m1(X, Y, color, false, false, QUEEN, x, y);
 				moves.push_back(m1);
+				threatvec.push_back(m1); 
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y); 
 				moves.push_back(t1);
 				break;
 			}else if(is_friendly_piece_type(sq)){
+				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				threatvec.push_back(t1); 
 				break;
 			}
 		}
@@ -118,11 +136,14 @@ vector<Move> Queen::set_moves(bool threats){
 			if(sq == NULLCELL){
 				Move m1(X, Y, color, false, false, QUEEN, x, y);
 				moves.push_back(m1);
+				threatvec.push_back(m1);
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y);
 				moves.push_back(t1);
 				break; 
 			}else if(is_friendly_piece_type(sq)){
+				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				threatvec.push_back(t1);
 				break;
 			}
 		}
@@ -134,11 +155,14 @@ vector<Move> Queen::set_moves(bool threats){
 			if(sq == NULLCELL){
 				Move m1(X, Y, color, false, false, QUEEN, x, y); 
 				moves.push_back(m1);
+				threatvec.push_back(m1);
 			}else if(is_enemy_piece_type(sq)){
 				Move t1(X, Y, color, true, false, QUEEN, x, y);
 				moves.push_back(t1);
 				break;
 			}else if(is_friendly_piece_type(sq)){
+				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				threatvec.push_back(t1);
 				break;
 			}
 		
@@ -146,5 +170,7 @@ vector<Move> Queen::set_moves(bool threats){
 	}
 
 	curr_moves = moves;
+	if(threats)
+		return threatvec;
 	return moves;
 }
