@@ -20,7 +20,7 @@ int main(int argc, char**argv){
   int alpha = -999; //min value WHITE player assured of getting
   //initially white is only gaurenteed to be checkmated at worst. 
   int beta  = 999; //max value BLACK player assured of getting. 
-  G.build_tree(root, 0, BLACK, atoi(argv[1]), true,  alpha, beta);
+  G.build_tree(root, 0, BLACK, atoi(argv[1]), false,  alpha, beta);
   unsigned long ncount = G.count_tree_nodes(root, 0);
   cout << "Tree has: " << ncount << " nodes at depth = " << argv[1] << "."  <<  endl;
   int nc  = root->children.size();

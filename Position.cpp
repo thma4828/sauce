@@ -69,10 +69,35 @@ Position::Position(int b) {
 		the_board[0][0] = BBISH;
 		the_board[7][7] = WBISH;
 	}else if (b == TCHECK){
+	
+		
+		for(int i=0; i<8; i++){
+			the_board[1][i] = BPAWN;
+			the_board[6][i] = WPAWN; 
+		}
+
 		the_board[0][4] = BKING; //black king on e8
-		the_board[3][1] = WBISH; //white bishop on b5
-		the_board[3][4] = WROOK; //white rook on d5
-		the_board[1][7] = BROOK; //black rook on h7
-		the_board[7][6] = WKING; //white king on g1
+		the_board[1][4] = BKNIGHT; //knight pineed on e7
+		
+		the_board[7][4] = WKING;
+		the_board[6][4] = WQUEEN;  //queen pinning enemy knight from e2
+		
+		//all other pieces have normal start positions. 
+
+		the_board[0][0] = BROOK;
+		the_board[0][7] = BROOK;
+		
+		the_board[7][7] = WROOK;
+		the_board[7][0] = WROOK;
+
+		the_board[0][1] = BKNIGHT;
+		the_board[0][2] = BBISH;
+		the_board[0][3] = BQUEEN;
+		the_board[0][5] = BBISH;
+		
+		the_board[7][1] = WKNIGHT;
+		the_board[7][2] = WBISH;
+		the_board[7][5] = WBISH;
+		the_board[7][6] = WKNIGHT; 
 	}
 }
