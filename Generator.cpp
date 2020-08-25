@@ -453,7 +453,6 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
                   else
                     check = n1->node_pos->get_check_black();
 
-                  //node should be added with correct parent and naive wb_eval value.
                   if(depth+1 <= max_depth){
                      beta_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 		     if(beta_hat < value){
@@ -481,7 +480,6 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
                   else
                     check = n1->node_pos->get_check_black();
 
-                  //node should be added with correct parent and naive wb_eval value.
                   if(depth+1 <= max_depth){
                     alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 		    if(alpha_hat > value){
