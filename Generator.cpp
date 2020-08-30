@@ -98,13 +98,24 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     }
     //TODO: use board cpp to see if move puts enemy king in check. 
     //then add + to the move string if it does! 
+    int parent_color = !wb;
+    if(parent_color == WHITE && m.is_promote == true){
+	    piece2move = WQUEEN; 
+	    n1->move_string.push_back('=');
+	    n1->move_string.push_back('Q');
+    }
+    if(parent_color == BLACK && m.is_promote == true){
+	    piece2move = BQUEEN;  
+	    n1->move_string.push_back('=');
+	    n1->move_string.push_back('Q'); 
+    }
     pnew->the_board[m.x_start][m.y_start] =  NULLCELL;
     pnew->the_board[m.x_end][m.y_end] = piece2move;
     b1->set_position(pnew);
     n1->set_board(b1);
     n1->assign_board_val();
 
-    int parent_color = !wb;
+    
     bool pin = false;
     if(parent_color == WHITE){
     	pin = n1->node_pos->get_check_white(); 

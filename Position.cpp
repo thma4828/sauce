@@ -35,23 +35,11 @@ Position::Position(int b) {
 		//nothing needs to be done.
 	}
 	else if (b == T1) { //test position.
-		//black pieces
-		the_board[3][3] = BPAWN;
-		the_board[3][4] = BPAWN;
-		the_board[1][3] = BROOK;
-		the_board[3][0] = BBISH;
-		the_board[1][4] = BKING;
-		the_board[2][4] = BKNIGHT;
-		the_board[5][0] = BQUEEN; 
-		//white pieces
-		the_board[4][5] = WPAWN;
-		the_board[4][6] = WPAWN;
-		the_board[5][2] = WKNIGHT;
-		the_board[5][5] = WBISH;
-		the_board[7][3] = WROOK;
-		the_board[7][4] = WQUEEN;
-		the_board[5][6] = WKING; 
+		the_board[6][1] = BPAWN;
+		the_board[7][0] = WPAWN; 
 
+		the_board[3][3] = WBISH;
+		the_board[5][4] = BKNIGHT; 
 	}
 	else if (b == TEST_2) {
 		for (y; y < 8; y++) {
