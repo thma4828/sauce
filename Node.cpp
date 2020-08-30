@@ -45,6 +45,7 @@ void Node::set_board(Board *b){
 }
 
 bool Node::assign_board_val(){
+	
 	if(board_set){ //board is called node_pos... (stupid!)
 		node_pos->calc_final_eval();
 		black_value = node_pos->get_black();

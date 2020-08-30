@@ -343,7 +343,6 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
     
     }	//y
 
-
   if(wb == BLACK){ //only nodes where white moves such that white not (still) in check should show. 
 		float value = 999;
 		float beta_hat;
