@@ -21,7 +21,6 @@ vector<Move> Rook::set_moves(bool t){
 	vector<Move>moves;
 	vector<Move>threats; 
 	if(is_color_set && is_pos_set && !is_null_piece){
-		cout << "in rook: set moves." << endl;
 	
 		int X, Y;
 		X = x;
@@ -94,7 +93,6 @@ vector<Move> Rook::set_moves(bool t){
 			
 	
 	}else{
-		cout << "rook piece not initialized." << endl;
 	}
 	
 	curr_moves = moves;

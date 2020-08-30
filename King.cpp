@@ -20,7 +20,6 @@ vector<Move> King::set_moves(bool threats){
 	vector<Move>moves;
 	vector<Move>tvec;
 	if(is_pos_set && is_color_set){
-		cout << "in king set moves." << endl;
 		for(int i=-1; i<2; i++){
 			for(int j=-1; j<2; j++){
 				if(i != 0 || j != 0){
