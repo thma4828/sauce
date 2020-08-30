@@ -78,33 +78,17 @@ unsigned long Generator::count_tree_nodes(Node *n, unsigned long c){
 
 vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, int wb){
   vector<Node*>nodes;
-  cout << "in generator: get_nodes(): entering routine." << endl;
   for(int j=0; j<moves.size(); j++){
-    cout << "in generator: get_nodes(): for loop iter: " << j << endl;
     Move m = moves[j];
     //create a node in the tree for position created by this move.
     Node *n1 = new Node(curr, wb, 0.1, 0.1);
     n1->move_string = m.get_move_string();
-    cout << "------>iter " << j << ": move " << n1->move_string << " on the board." << endl;
     Board *b1 = new Board();
     //need a new position same as *p but with move m added
-    cout << "------>iter " << j << ": node and board initialized in memory" << endl;
-    cout << "------>iter " << j << ": move has x_start, y_start = (" <<
-    m.x_start << "," << m.y_start << ")"<<endl;
-    cout << "------>iter " << j << ": move has x_end, y_end = (" <<
-    m.x_end << "," << m.y_end << ")"<<endl;
-    if(m.is_take){
-    	cout << "------>iter " << j << ": " << m.piece_type <<" takes enemy piece." << endl;
-    }
     
     int piece2move = p->the_board[m.x_start][m.y_start];
     int piece_taken = p->the_board[m.x_end][m.y_end];
-    cout << "------>iter " << j << ": Piece to move is of code: " << piece2move << endl;
-    if(m.is_take){
-    	cout << "------>iter " << j << ": Piece taken is of code: " << piece_taken << endl;
-    }
     Position *pnew = new Position();
-    cout << "------>iter " << j << ": going into 8x8 double for loop to copy most of position over." << endl;
     for(int x=0; x<8; x++){
       for(int y=0; y<8; y++){
 
@@ -114,10 +98,8 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     }
     //TODO: use board cpp to see if move puts enemy king in check. 
     //then add + to the move string if it does! 
-    cout << "------>iter " << j << ": old position copied over." << endl;
     pnew->the_board[m.x_start][m.y_start] =  NULLCELL;
     pnew->the_board[m.x_end][m.y_end] = piece2move;
-    cout << "------>iter " << j << ": new position made." << endl;
     b1->set_position(pnew);
     n1->set_board(b1);
     n1->assign_board_val();
@@ -140,16 +122,12 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
 float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool check, float alpha, float beta)
 {
   if(depth <= max_depth){
-    if(depth > 0){
-    	cout << "in generator: entering node created with move: " << curr->move_string << endl;
-    }
     
     Position *p = curr->node_pos->get_position();
     vector<Node*>tnodes; 
     if(!check){
     for(int x=0; x<8; x++){
       for(int y=0; y<8; y++){
- 	cout << "(x, y) = (" << x << ", " << y << ") " << endl;        
         int value = p->the_board[x][y];
         
         if(value != NULLCELL){
@@ -165,14 +143,12 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 
                 pawn->set_pos(p);
                 
-                //cout << "in generator: pawn has set moves." << endl;
                 vector<Move>pmoves = pawn->set_moves(false);
                 vector<Node*>newNodes = get_nodes(pmoves, p, curr, !wb);
 		for(int j=0; j<newNodes.size(); j++){
 			tnodes.push_back(newNodes[j]); 
 		}
 
-                //cout << "in generator: new nodes created." << endl;
               }else if(value == WPAWN && wb == WHITE){
                 pawn = new Pawn(x, y, WHITE, PAWN, 1, 1);
 		if(x < 6){
@@ -360,7 +336,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
                   //if no king moves there may be a blocking move to stop checkmate...
                   //if wb == WHITE && is_check then there is a check on the white king. (makes sense)
 		  //
-		  cout << "CHECK CASE REACHED." << endl;
+		  
 		  int kx, ky;
 		  if(wb == WHITE){
 		  	for(int i=0; i<8; i++){
