@@ -64,9 +64,10 @@ Position::Position(int b) {
 		the_board[1][4] = BPAWN;
 		the_board[2][3] = BKNIGHT;	
 		
-		the_board[0][7] = WROOK;
+		
 		the_board[6][5] = WPAWN;
 		the_board[6][6] = WPAWN;
 		the_board[6][7] = WPAWN;
+		the_board[7][7] = WKING;
 	}
 }
