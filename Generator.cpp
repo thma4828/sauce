@@ -284,23 +284,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 			king = new King(x, y, BLACK, KING, 1, 1);
 			king->set_pos(p);
 			vector<Move>kmoves = king->set_moves(false);
-			vector<Move>valid_moves;
-			curr->node_pos->get_check_black();
-			vector<Square>white_threats = curr->node_pos->get_threat_squares(wb); 
-			for(int i=0; i<kmoves.size(); i++){
-				Move mi = kmoves[i];
-				bool valid = true;
-				for(int j=0; j<white_threats.size(); j++){
-					Square wt = white_threats[j];
-					//king cannot move into check. 
-					if(wt.x == mi.x_end && wt.y == mi.y_end){
-						valid = false;
-					}
-				}
-				if(valid)
-					valid_moves.push_back(mi); 
-			}
-			vector<Node*>newNodes = get_nodes(valid_moves, p, curr, !wb);
+			vector<Node*>newNodes = get_nodes(kmoves, p, curr, !wb);
 			for(int j=0; j<newNodes.size(); j++){
 				tnodes.push_back(newNodes[j]); 
 			}
@@ -309,23 +293,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 			king = new King(x, y, WHITE, KING, 1, 1);
 			king->set_pos(p);
 			vector<Move>kmoves = king->set_moves(false);
-			vector<Move>valid_moves;
-			curr->node_pos->get_check_white(); 
-			vector<Square>black_threats = curr->node_pos->get_threat_squares(wb); 
-
-			for(int i=0; i<kmoves.size(); i++){
-				Move mi = kmoves[i];
-				bool valid = true;
-				for(int j=0; j<black_threats.size(); j++){
-					Square bt = black_threats[j];
-					if(bt.x == mi.x_end && bt.y ==  mi.y_end){
-						valid = false;
-					}
-				}
-				if(valid)
-					valid_moves.push_back(mi);
-			}
-			vector<Node*>newNodes = get_nodes(valid_moves, p, curr, !wb);
+			vector<Node*>newNodes = get_nodes(kmoves, p, curr, !wb);
 			for(int j=0; j<newNodes.size(); j++){
 				tnodes.push_back(newNodes[j]); 
 			}
