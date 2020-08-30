@@ -83,33 +83,40 @@ unsigned long Generator::count_tree_nodes(Node *n, unsigned long c){
 	return c;
 }
 
-int Generator::Partition(vector<Node*>&nodes, int p, int r){
+int Generator::Partition(vector<Node*>&nodes, int p, int r, int wb){
 	
 	Node *x = nodes[r];
 	int i = p - 1;
 	for(int j=p; j<r; j++){
-		Node *Aj = nodes[j];
+		if(wb == BLACK){
+			if(nodes[j]->wb_ratio <=  x->wb_ratio){
+				i = i + 1;
+				Node *temp = nodes[i];
+				nodes[i] = nodes[j];
+				nodes[j] = temp;
+			}
+		}else{
+			if(nodes[j]->wb_ratio >= x->wb_ratio){
+				i = i+1;
+				Node *temp = nodes[i];
+				nodes[i] = nodes[j];
+				nodes[j] = temp; 
+			}
 		
-		if(Aj->wb_ratio >=  x->wb_ratio){
-			i = i + 1;
-			Node *temp = nodes[i];
-			nodes[i] = Aj;
-			nodes[j] = temp;
 		}
 	}
 	Node *temp = nodes[i+1];
-	Node *R = nodes[r];
-	nodes[i+1] = R;
+	nodes[i+1] = nodes[r];
 	nodes[r] = temp; 
 	
 	return i+1; 
 }
 
-void Generator::Quicksort(vector<Node*>&nodes, int p, int r){
+void Generator::Quicksort(vector<Node*>&nodes, int p, int r, int wb){
 	if(p < r){
-		int q = Partition(nodes, p, r);
-		Quicksort(nodes, p, q-1);
-		Quicksort(nodes, q+1, r); 
+		int q = Partition(nodes, p, r, wb);
+		Quicksort(nodes, p, q-1, wb);
+		Quicksort(nodes, q+1, r, wb); 
 	}
 
 }
@@ -364,8 +371,8 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
     	curr->wb_ratio = 0;
 	return curr->wb_ratio; 
     }
-    if(tnodes.size() > 0)
-    	Quicksort(tnodes, 0, tnodes.size()-1); 
+    
+    Quicksort(tnodes, 0, tnodes.size()-1, wb); 
 
   if(wb == BLACK){ //only nodes where white moves such that white not (still) in check should show. 
 		float value = 1000;

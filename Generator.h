@@ -29,8 +29,8 @@ private:
   Tree *move_tree; //tree has to be manually build out of nodes by this class.
   vector<Node*>get_nodes(vector<Move>, Position *, Node *, int);
                                         //p,        //curr  //wb
-  void Quicksort(vector<Node*>&, int, int); 
-  int Partition(vector<Node*>&, int, int); 
+  void Quicksort(vector<Node*>&, int, int, int); 
+  int Partition(vector<Node*>&, int, int, int); 
 
 };
 
