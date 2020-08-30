@@ -32,12 +32,16 @@ void Generator::eval_tree(Node *n, int depth, int color, int max){
 
 		if(color == BLACK){
 			v = move_tree->get_min(children_values);
-			n->best_child = n->children[v->index];
-			n->wb_ratio = v->value;
+			if(v != NULL){
+				n->best_child = n->children[v->index];
+				n->wb_ratio = v->value;
+			}
 		}else if(color == WHITE){
 			v = move_tree->get_max(children_values);
-			n->best_child = n->children[v->index];
-			n->wb_ratio = v->value;
+			if(v != NULL){
+				n->best_child = n->children[v->index];
+				n->wb_ratio = v->value;
+			}
 		}
 		return;
 	
@@ -47,12 +51,16 @@ void Generator::eval_tree(Node *n, int depth, int color, int max){
 		
 		if(color == BLACK){
 			v = move_tree->get_min(children_values);
-			n->best_child = n->children[v->index];
-			n->wb_ratio =  v->value;
+			if(v != NULL){
+				n->best_child = n->children[v->index];
+				n->wb_ratio =  v->value;
+			}
 		}else if(color == WHITE){
 			v = move_tree->get_max(children_values);
-			n->best_child = n->children[v->index];
-			n->wb_ratio = v->value;
+			if(v != NULL){
+				n->best_child = n->children[v->index];
+				n->wb_ratio = v->value;
+			}
 		}
 		return;
 	
