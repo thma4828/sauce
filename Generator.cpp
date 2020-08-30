@@ -203,7 +203,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
             }
             //TODO BELOW + all other piece types.
         }else if(value == WBISH || value == BBISH){
-		cout << "in generator: in bishop." << endl;
+//		cout << "in generator: in bishop." << endl;
 		Bishop *bishop;
 		if(value == BBISH && wb == BLACK){
 		//	cout << "in generator: in bishop: black bishop setting pos and moves" << endl;

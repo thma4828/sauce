@@ -18,7 +18,7 @@ vector<Move> Bishop::set_moves(bool threats){
 	vector<Move>moves;
 	if (is_color_set && is_pos_set && !is_null_piece) {
 
-		cout << "in bishop's version of get moves" << endl;
+	//	cout << "in bishop's version of get moves" << endl;
 		if (is_color_set) {
 			int X, Y;
 			X = x;
@@ -29,13 +29,13 @@ vector<Move> Bishop::set_moves(bool threats){
 				guarded.push_back(d);
 				X++;
 				Y++;
-				cout << "bishop added move" << endl;
+	//			cout << "bishop added move" << endl;
 			}
 
 			if (X < 7 && Y < 7 && is_enemy_piece_type(pos->the_board[X + 1][Y + 1])) {
 				Move t(X + 1, Y + 1, color, true, false, BISHOP, x, y);
 				moves.push_back(t);
-				cout << "bishop added take" << endl;
+	//			cout << "bishop added take" << endl;
 			}else if(X < 7 && Y < 7 && !is_enemy_piece_type(pos->the_board[X+1][Y+1])){
 			//gaurding friendly piece
 				Move g(X + 1, Y + 1, color, true ,false ,BISHOP, x, y);
