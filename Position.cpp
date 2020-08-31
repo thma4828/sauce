@@ -72,5 +72,15 @@ Position::Position(int b) {
 		the_board[7][5] = WROOK; 
 		the_board[4][4] = WQUEEN;
 		the_board[5][5] = WBISH; 
+	}else if(b == TCASTLE){
+		the_board[0][4] = BKING;
+		the_board[0][0] = BROOK;
+		the_board[0][7] = BROOK;
+		
+
+		the_board[7][4] = WKING;
+		the_board[7][0] = WROOK;
+		the_board[7][7] = WROOK;
+	
 	}
 }

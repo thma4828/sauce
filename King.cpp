@@ -42,6 +42,67 @@ vector<Move> King::set_moves(bool threats){
 				}
 			}
 		}
+		//castling
+		if(color == BLACK){
+			bool conA = (x == 0 && y == 4);
+			int qs_rook = pos->the_board[0][0];
+			int ks_rook = pos->the_board[0][7];
+
+			bool conB = (qs_rook == BROOK);
+			int mids1 = pos->the_board[0][1];
+			int mids2 = pos->the_board[0][2];
+			int mids3 = pos->the_board[0][3];
+
+			bool conC = (mids1 == mids2 && mids3 == mids2 && mids1 == NULLCELL);
+
+			if(conA && conB && conC){
+				Move queenSideCastle(0, 2, color, false, false, KING, x, y, false, true);
+				moves.push_back(queenSideCastle);
+			}
+
+			bool conD = (ks_rook == BROOK);
+
+			mids1 = pos->the_board[0][6];
+			mids2 = pos->the_board[0][5];
+
+			bool conE = (mids1 == mids2 && mids2 == mids3 && mids1 == NULLCELL);
+
+			if(conA && conD && conE){
+				Move kingSideCastle(0, 6, color, false, false, KING, x, y, true, false);
+				moves.push_back(kingSideCastle);
+			}
+		}else{ //color is white
+
+			bool conA = (x == 7 && y == 4);
+			int qs_rook = pos->the_board[7][0];
+			int ks_rook = pos->the_board[7][7];
+
+			bool conB = (qs_rook == BROOK);
+			int mids1 = pos->the_board[7][1];
+			int mids2 = pos->the_board[7][2];
+			int mids3 = pos->the_board[7][3];
+
+			bool conC = (mids1 == mids2 && mids3 == mids2 && mids1 == NULLCELL);
+
+			if(conA && conB && conC){
+				Move queenSideCastle(7, 2, color, false, false, KING, x, y, false, true);
+				moves.push_back(queenSideCastle);
+			}
+
+			bool conD = (ks_rook == BROOK);
+
+			mids1 = pos->the_board[7][6];
+			mids2 = pos->the_board[7][5];
+
+			bool conE = (mids1 == mids2 && mids2 == mids3 && mids1 == NULLCELL);
+
+			if(conA && conD && conE){
+				Move kingSideCastle(7, 6, color, false, false, KING, x, y, true, false);
+				moves.push_back(kingSideCastle);
+			}
+		
+		
+		}
 	
 	}
 	curr_moves = moves;

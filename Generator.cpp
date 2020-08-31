@@ -157,6 +157,28 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     }
     pnew->the_board[m.x_start][m.y_start] =  NULLCELL;
     pnew->the_board[m.x_end][m.y_end] = piece2move;
+    
+    if(parent_color == BLACK){
+    	if(m.is_king_castle){
+		pnew->the_board[0][7] = NULLCELL;
+		pnew->the_board[0][5] = BROOK;
+	}else if(m.is_queen_castle){
+		pnew->the_board[0][0] = NULLCELL;
+		pnew->the_board[0][3] = BROOK;
+	}
+    
+    }else{
+    	if(m.is_king_castle){
+		pnew->the_board[7][7] = NULLCELL;
+		pnew->the_board[7][5] = WROOK;
+		
+	}else if(m.is_queen_castle){
+		pnew->the_board[7][0] = NULLCELL;
+		pnew->the_board[7][3] = WROOK; 
+	}
+    
+    }
+
     b1->set_position(pnew);
     n1->set_board(b1);
     n1->assign_board_val(curr);

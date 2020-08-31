@@ -23,6 +23,8 @@ int main(int argc, char**argv){
   	pstart = new Position(TEST_3);
   if(pos_code == 3)
   	pstart = new Position(TCHECK);
+  if(pos_code == 4)
+	  pstart = new Position(TCASTLE); 
 
   Generator G(pstart, wb);
   Node *root = G.get_tree_root();
@@ -33,6 +35,11 @@ int main(int argc, char**argv){
   unsigned long ncount = G.count_tree_nodes(root, 0);
   cout << "Tree has: " << ncount << " nodes at depth = " << argv[1] << "."  <<  endl;
   
+
+
+  G.eval_tree(root, 0, wb, atoi(argv[2])); 
+  cout << "Root eval complete" << endl;
+
   int nc  = root->children.size();
   cout << "Root has: " << nc << " children" << endl;
   cout << "Root's children moves: ";
@@ -44,11 +51,6 @@ int main(int argc, char**argv){
   	Node *child = root->children[i];
 	cout << child->move_string << ": " << child->wb_ratio << endl;
   }
-
-
-  G.eval_tree(root, 0, wb, atoi(argv[2])); 
-  cout << "Root eval complete" << endl;
-
   Node *current = root;
   int i = 1;
   while(current->best_child != NULL){
