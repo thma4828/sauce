@@ -255,8 +255,8 @@ void Board::calc_final_eval(){
   //if check on the board worth something.
   //if checkmate worth some const INF
 
-  final_eval_black = 1.0;
-  final_eval_white = 1.0;
+//  final_eval_black = 1.0;
+//  final_eval_white = 1.0;
 
   for(int x=0; x<8; x++){
     for(int y=0; y<8; y++){

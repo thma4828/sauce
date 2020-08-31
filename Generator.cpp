@@ -407,16 +407,12 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
                   else
                     check = n1->node_pos->get_check_black();
 
-		  if(check){
-			  n1->move_string.push_back('+');
-			  n1->wb_ratio -= 0.25;
-		  }
                   if(depth+1 <= max_depth){
                      beta_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 		     if(beta_hat < value){
 		     	value  = beta_hat; 
 		     }
-		     if(beta < value){
+		     if(value < beta){
 		     	beta = value;
 		     }
 		     if(beta <= alpha){
@@ -437,10 +433,6 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
                     check = n1->node_pos->get_check_white();
                   else
                     check = n1->node_pos->get_check_black();
-		  if(check){
-			  n1->move_string.push_back('+');
-			  n1->wb_ratio += 0.25;
-		  }
                   if(depth+1 <= max_depth){
                     alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
 		    if(alpha_hat > value){

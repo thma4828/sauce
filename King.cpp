@@ -77,7 +77,7 @@ vector<Move> King::set_moves(bool threats){
 			int qs_rook = pos->the_board[7][0];
 			int ks_rook = pos->the_board[7][7];
 
-			bool conB = (qs_rook == BROOK);
+			bool conB = (qs_rook == WROOK);
 			int mids1 = pos->the_board[7][1];
 			int mids2 = pos->the_board[7][2];
 			int mids3 = pos->the_board[7][3];
@@ -89,7 +89,7 @@ vector<Move> King::set_moves(bool threats){
 				moves.push_back(queenSideCastle);
 			}
 
-			bool conD = (ks_rook == BROOK);
+			bool conD = (ks_rook == WROOK);
 
 			mids1 = pos->the_board[7][6];
 			mids2 = pos->the_board[7][5];
