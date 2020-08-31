@@ -21,16 +21,16 @@ vector<Move> Queen::set_moves(bool threats){
 			X--;
 			int sq = pos->the_board[X][Y];
 			if(sq == NULLCELL){
-				Move m1(X, Y, color, false, false, QUEEN, x, y);
+				Move m1(X, Y, color, false, false, QUEEN, x, y, false, false);
 				moves.push_back(m1);
 				threatvec.push_back(m1); 
 
 			}else if(is_enemy_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y); 
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false); 
 				moves.push_back(t1);
 				break;
 			}else if(is_friendly_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false);
 				threatvec.push_back(t1); 
 				break; 
 			}
@@ -41,15 +41,15 @@ vector<Move> Queen::set_moves(bool threats){
 			X++;
 			int sq = pos->the_board[X][Y];
 			if(sq == NULLCELL){
-				Move m1(X, Y, color, false, false, QUEEN, x, y);
+				Move m1(X, Y, color, false, false, QUEEN, x, y, false, false);
 				moves.push_back(m1);
 				threatvec.push_back(m1); 
 			}else if(is_enemy_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y); 
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false); 
 				moves.push_back(t1);
 				break; 
 			}else if(is_friendly_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y); 
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false); 
 				threatvec.push_back(t1); 
 				break;
 			}
@@ -60,15 +60,15 @@ vector<Move> Queen::set_moves(bool threats){
 			Y++;
 			int sq = pos->the_board[X][Y];
 			if(sq == NULLCELL){
-				Move m1(X, Y, color, false, false, QUEEN, x, y);
+				Move m1(X, Y, color, false, false, QUEEN, x, y, false, false);
 				moves.push_back(m1);
 				threatvec.push_back(m1); 
 			}else if(is_enemy_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false);
 				moves.push_back(t1); 
 				break;
 			}else if(is_friendly_piece_type(sq)){
-			 	Move t1(X, Y, color, true, false, QUEEN, x, y); 
+			 	Move t1(X, Y, color, true, false, QUEEN, x, y, false, false); 
 				threatvec.push_back(t1); 
 				break; 
 			}
@@ -78,15 +78,15 @@ vector<Move> Queen::set_moves(bool threats){
 			Y--;
 			int sq = pos->the_board[X][Y]; 
 			if(sq == NULLCELL){
-				Move m1(X, Y, color, false, false, QUEEN, x, y);
+				Move m1(X, Y, color, false, false, QUEEN, x, y, false, false);
 				moves.push_back(m1);
 				threatvec.push_back(m1); 
 			}else if(is_enemy_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false);
 				moves.push_back(t1);
 				break;
 			}else if(is_friendly_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false);
 				threatvec.push_back(t1); 
 			}
 		}
@@ -96,15 +96,15 @@ vector<Move> Queen::set_moves(bool threats){
 			X++; Y++;
 			int sq = pos->the_board[X][Y];
 			if(sq == NULLCELL){
-				Move m1(X, Y, color, false, false, QUEEN, x, y);
+				Move m1(X, Y, color, false, false, QUEEN, x, y, false, false );
 				moves.push_back(m1);
 				threatvec.push_back(m1);
 			}else if(is_enemy_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y); 
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false); 
 				moves.push_back(t1);
 				break;
 			}else if(is_friendly_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false);
 				threatvec.push_back(t1);
 				break;
 			}
@@ -115,15 +115,15 @@ vector<Move> Queen::set_moves(bool threats){
 			X++; Y--;
 			int sq = pos->the_board[X][Y];
 			if(sq == NULLCELL){
-				Move m1(X, Y, color, false, false, QUEEN, x, y);
+				Move m1(X, Y, color, false, false, QUEEN, x, y, false, false);
 				moves.push_back(m1);
 				threatvec.push_back(m1); 
 			}else if(is_enemy_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y); 
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false); 
 				moves.push_back(t1);
 				break;
 			}else if(is_friendly_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false);
 				threatvec.push_back(t1); 
 				break;
 			}
@@ -134,15 +134,15 @@ vector<Move> Queen::set_moves(bool threats){
 			X--; Y++;
 			int sq = pos->the_board[X][Y];
 			if(sq == NULLCELL){
-				Move m1(X, Y, color, false, false, QUEEN, x, y);
+				Move m1(X, Y, color, false, false, QUEEN, x, y, false, false);
 				moves.push_back(m1);
 				threatvec.push_back(m1);
 			}else if(is_enemy_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false);
 				moves.push_back(t1);
 				break; 
 			}else if(is_friendly_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false);
 				threatvec.push_back(t1);
 				break;
 			}
@@ -153,15 +153,15 @@ vector<Move> Queen::set_moves(bool threats){
 			X--; Y--;
 			int sq = pos->the_board[X][Y];
 			if(sq == NULLCELL){
-				Move m1(X, Y, color, false, false, QUEEN, x, y); 
+				Move m1(X, Y, color, false, false, QUEEN, x, y, false, false); 
 				moves.push_back(m1);
 				threatvec.push_back(m1);
 			}else if(is_enemy_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false);
 				moves.push_back(t1);
 				break;
 			}else if(is_friendly_piece_type(sq)){
-				Move t1(X, Y, color, true, false, QUEEN, x, y);
+				Move t1(X, Y, color, true, false, QUEEN, x, y, false, false);
 				threatvec.push_back(t1);
 				break;
 			}

@@ -15,14 +15,14 @@ vector<Move> Pawn::set_moves(bool threats) {
 
 	if(threats && is_color_set && !is_null_piece){
 		if(color == BLACK){
-			Move m1(x+1, y+1, BLACK, true, false, PAWN, x, y);
-			Move m2(x+1, y-1, BLACK, true, false, PAWN, x, y); 
+			Move m1(x+1, y+1, BLACK, true, false, PAWN, x, y, false, false);
+			Move m2(x+1, y-1, BLACK, true, false, PAWN, x, y, false, false); 
 			threat_vector.push_back(m1);
 			threat_vector.push_back(m2);
 			return threat_vector;
 		}else{
-			Move m1(x-1, y+1, WHITE, true, false, PAWN, x, y);
-			Move m2(x-1, y-1, WHITE, true, false, PAWN, x, y); 
+			Move m1(x-1, y+1, WHITE, true, false, PAWN, x, y, false, false);
+			Move m2(x-1, y-1, WHITE, true, false, PAWN, x, y, false, false); 
 			threat_vector.push_back(m1);
 			threat_vector.push_back(m2); 
 			return threat_vector;
@@ -33,11 +33,11 @@ vector<Move> Pawn::set_moves(bool threats) {
 			if (x < 6) {
 					if (y > 0 && y < 7) {
 						if (pos->the_board[x + 1][y] == NULLCELL) {
-							Move m1(x + 1, y, BLACK, false, false, PAWN, x, y);
+							Move m1(x + 1, y, BLACK, false, false, PAWN, x, y, false, false);
 							moves.push_back(m1);
 							if (pos->the_board[x + 2][y] == NULLCELL
 									&& !been_moved) {
-									Move m2(x + 2, y, BLACK, false, false, PAWN, x, y);
+									Move m2(x + 2, y, BLACK, false, false, PAWN, x, y, false, false);
 									moves.push_back(m2);
 							}
 						}
@@ -46,7 +46,7 @@ vector<Move> Pawn::set_moves(bool threats) {
 
 
 						if (is_enemy_piece_type(enemy_squarex1y1) && !is_enemy_king(enemy_squarex1y1)){ //add all other enemy types.
-							Move t1(x + 1, y + 1, BLACK, true, false, PAWN, x, y);
+							Move t1(x + 1, y + 1, BLACK, true, false, PAWN, x, y, false, false);
 							moves.push_back(t1);
 						}
 						else if (is_enemy_king(enemy_squarex1y1)) {
@@ -54,7 +54,7 @@ vector<Move> Pawn::set_moves(bool threats) {
 						}
 
 						if (is_enemy_piece_type(enemy_squarex1y2) && !is_enemy_king(enemy_squarex1y2)){
-							Move t2(x + 1, y - 1, BLACK, true, false, PAWN, x, y);
+							Move t2(x + 1, y - 1, BLACK, true, false, PAWN, x, y, false, false);
 							moves.push_back(t2);
 						}
 						else if (is_enemy_king(enemy_squarex1y2)) {
@@ -66,13 +66,13 @@ vector<Move> Pawn::set_moves(bool threats) {
 						if (y == 0) { // just cant take to any y to the left
 								if(pos->the_board[x+1][y] == NULLCELL){
 
-									Move ma(x+1, y, BLACK, false, false, PAWN, x, y);
+									Move ma(x+1, y, BLACK, false, false, PAWN, x, y, false, false);
 									moves.push_back(ma);
 
 									if(pos->the_board[x+2][y] == NULLCELL
 											&& !been_moved){
 
-										Move mb(x+2, y, BLACK, false, false, PAWN, x, y);
+										Move mb(x+2, y, BLACK, false, false, PAWN, x, y, false, false);
 										moves.push_back(mb);
 
 									}
@@ -83,18 +83,18 @@ vector<Move> Pawn::set_moves(bool threats) {
 								int enemy_s1 = pos->the_board[x+1][y+1];
 
 								if(is_enemy_piece_type(enemy_s1) && !is_enemy_king(enemy_s1)){
-									Move ta(x+1, y+1, BLACK, true, false, PAWN, x, y);
+									Move ta(x+1, y+1, BLACK, true, false, PAWN, x, y, false, false);
 									moves.push_back(ta);
 								}
 						}
 						else if(y == 7){ //y is 7 cant take to the right. x still less than 6
 							if(pos->the_board[x+1][y] == NULLCELL){
-								Move ma(x+1, y, BLACK, false, false, PAWN, x, y);
+								Move ma(x+1, y, BLACK, false, false, PAWN, x, y, false, false);
 								moves.push_back(ma);
 
 								if(pos->the_board[x+2][y] == NULLCELL
 										&& !been_moved){
-									Move mb(x+2, y, BLACK, false, false, PAWN, x, y);
+									Move mb(x+2, y, BLACK, false, false, PAWN, x, y, false, false);
 
 									moves.push_back(mb);
 								}
@@ -102,7 +102,7 @@ vector<Move> Pawn::set_moves(bool threats) {
 							}
 							int enemy_s1 = pos->the_board[x+1][y-1];
 							if(is_enemy_piece_type(enemy_s1) && !is_enemy_king(enemy_s1)){
-								Move tb(x+1, y-1, BLACK, true, false, PAWN, x, y);
+								Move tb(x+1, y-1, BLACK, true, false, PAWN, x, y, false, false);
 								moves.push_back(tb);
 							}
 
@@ -115,18 +115,20 @@ vector<Move> Pawn::set_moves(bool threats) {
 				//also breaks into subcases of y...
 				int e;
 
-				Move m_promote(x + 1, y, BLACK, false, true, PAWN, x, y);
+				Move m_promote(x + 1, y, BLACK, false, true, PAWN, x, y, false, false);
 				if(pos->the_board[x+1][y] == NULLCELL){
 					moves.push_back(m_promote);
 				}
 
 				if(y > 0 && y < 7){
-					Move mp2(x+1, y+1, BLACK, true, true, PAWN, x, y);
+					Move mp2(x+1, y+1, BLACK, true, true, PAWN, x, y
+							, false, false);
 					e = pos->the_board[x+1][y+1];
 					if(is_enemy_piece_type(e) && !is_enemy_king(e)){
 						moves.push_back(mp2);
 					}
-					Move mp3(x+1, y-1, BLACK, true, true, PAWN, x, y);
+					Move mp3(x+1, y-1, BLACK, true, true, PAWN, x, y,
+							false, false);
 					e = pos->the_board[x+1][y-1];
 					if(is_enemy_piece_type(e) && !is_enemy_king(e)){
 						moves.push_back(mp3);
@@ -134,13 +136,13 @@ vector<Move> Pawn::set_moves(bool threats) {
 
 
 				}else if(y == 0){
-					Move mp2(x+1, y+1, BLACK, true, true, PAWN, x, y);
+					Move mp2(x+1, y+1, BLACK, true, true, PAWN, x, y, false, false);
 					e = pos->the_board[x+1][y+1];
 					if(is_enemy_piece_type(e) && !is_enemy_king(e)){
 						moves.push_back(mp2);
 					}
 				}else{
-					Move mp3(x+1, y-1, BLACK, true, true, PAWN, x, y);
+					Move mp3(x+1, y-1, BLACK, true, true, PAWN, x, y, false, false);
 					e = pos->the_board[x+1][y-1];
 					if(is_enemy_piece_type(e) && !is_enemy_king(e)){
 						moves.push_back(mp3);
@@ -157,10 +159,10 @@ vector<Move> Pawn::set_moves(bool threats) {
 			if (x > 1) {
 					if (y > 0 && y < 7) {
 						if (pos->the_board[x - 1][y] == NULLCELL) {
-							Move m1(x - 1, y, WHITE, false, false, PAWN, x, y);
+							Move m1(x - 1, y, WHITE, false, false, PAWN, x, y, false, false);
 							moves.push_back(m1);
 							if (pos->the_board[x - 2][y] == NULLCELL && !been_moved) {
-									Move m2(x - 2, y, WHITE, false, false, PAWN, x, y);
+									Move m2(x - 2, y, WHITE, false, false, PAWN, x, y, false, false);
 									moves.push_back(m2);
 							}
 						}
@@ -169,7 +171,7 @@ vector<Move> Pawn::set_moves(bool threats) {
 
 
 						if (is_enemy_piece_type(enemy_squarex1y1) && !is_enemy_king(enemy_squarex1y1)){ //add all other enemy types.
-							Move t1(x - 1, y + 1, WHITE, true, false, PAWN, x, y);
+							Move t1(x - 1, y + 1, WHITE, true, false, PAWN, x, y, false, false);
 							moves.push_back(t1);
 						}
 						else if (is_enemy_king(enemy_squarex1y1)) {
@@ -177,7 +179,7 @@ vector<Move> Pawn::set_moves(bool threats) {
 						}
 
 						if (is_enemy_piece_type(enemy_squarex1y2) && !is_enemy_king(enemy_squarex1y2)){
-							Move t2(x - 1, y - 1, WHITE, true, false, PAWN, x, y);
+							Move t2(x - 1, y - 1, WHITE, true, false, PAWN, x, y, false, false);
 							moves.push_back(t2);
 						}
 						else if (is_enemy_king(enemy_squarex1y2)) {
@@ -188,11 +190,11 @@ vector<Move> Pawn::set_moves(bool threats) {
 					else {
 						if (y == 0) { // just cant take to any y to the left
 								if(pos->the_board[x-1][y] == NULLCELL){
-									Move ma(x-1, y, WHITE, false, false, PAWN, x, y);
+									Move ma(x-1, y, WHITE, false, false, PAWN, x, y, false, false);
 									moves.push_back(ma);
 
 									if(pos->the_board[x-2][y] == NULLCELL && !been_moved){
-										Move mb(x-2, y, WHITE, false, false, PAWN, x, y);
+										Move mb(x-2, y, WHITE, false, false, PAWN, x, y, false, false);
 
 										moves.push_back(mb);
 									}
@@ -200,17 +202,17 @@ vector<Move> Pawn::set_moves(bool threats) {
 								}
 								int enemy_s1 = pos->the_board[x-1][y+1];
 								if(is_enemy_piece_type(enemy_s1) && !is_enemy_king(enemy_s1)){
-									Move ta(x-1, y+1, WHITE, true, false, PAWN, x, y);
+									Move ta(x-1, y+1, WHITE, true, false, PAWN, x, y, false, false);
 									moves.push_back(ta);
 								}
 						}
 						else { //y is 7 cant take to the right. x still less than 6
 							if(pos->the_board[x-1][y] == NULLCELL){
-								Move maa(x-1, y, WHITE, false, false, PAWN, x, y);
+								Move maa(x-1, y, WHITE, false, false, PAWN, x, y, false, false);
 								moves.push_back(maa);
 
 								if(pos->the_board[x-2][y] == NULLCELL && !been_moved){
-									Move mbb(x-2, y, WHITE, false, false, PAWN, x, y);
+									Move mbb(x-2, y, WHITE, false, false, PAWN, x, y, false, false);
 
 									moves.push_back(mbb);
 								}
@@ -218,7 +220,7 @@ vector<Move> Pawn::set_moves(bool threats) {
 							}
 							int enemy_s1 = pos->the_board[x-1][y-1];
 							if(is_enemy_piece_type(enemy_s1) && !is_enemy_king(enemy_s1)){
-								Move tb(x-1, y-1, WHITE, true, false, PAWN, x, y);
+								Move tb(x-1, y-1, WHITE, true, false, PAWN, x, y, false, false);
 								moves.push_back(tb);
 							}
 
@@ -229,18 +231,20 @@ vector<Move> Pawn::set_moves(bool threats) {
 				//a pawn promotion.
 				//also breaks into subcases of y...
 				int e;
-				Move m_promote(x - 1, y, WHITE, false, true, PAWN, x, y);
+				Move m_promote(x - 1, y, WHITE, false, true, PAWN, x, y,
+						false, false );
 				if(pos->the_board[x-1][y] == NULLCELL){
 					moves.push_back(m_promote);
 				}
 
 				if(y > 0 && y < 7){
-					Move mp2(x-1, y+1, WHITE, true, true, PAWN, x, y);
+					Move mp2(x-1, y+1, WHITE, true, true, PAWN, x, y,
+							false, false );
 					e = pos->the_board[x-1][y+1];
 					if(is_enemy_piece_type(e) && !is_enemy_king(e)){
 						moves.push_back(mp2);
 					}
-					Move mp3(x-1, y-1, WHITE, true, true, PAWN, x, y);
+					Move mp3(x-1, y-1, WHITE, true, true, PAWN, x, y, false, false );
 					e = pos->the_board[x-1][y-1];
 					if(is_enemy_piece_type(e) && !is_enemy_king(e)){
 						moves.push_back(mp3);
@@ -248,13 +252,13 @@ vector<Move> Pawn::set_moves(bool threats) {
 
 
 				}else if(y == 0){
-					Move mp2(x-1, y+1, WHITE, true, true, PAWN, x, y);
+					Move mp2(x-1, y+1, WHITE, true, true, PAWN, x, y, false, false );
 					e = pos->the_board[x-1][y+1];
 					if(is_enemy_piece_type(e) && !is_enemy_king(e)){
 						moves.push_back(mp2);
 					}
 				}else{
-					Move mp3(x-1, y-1, WHITE, true, true, PAWN, x, y);
+					Move mp3(x-1, y-1, WHITE, true, true, PAWN, x, y, false, false );
 					e = pos->the_board[x-1][y-1];
 					if(is_enemy_piece_type(e) && !is_enemy_king(e)){
 						moves.push_back(mp3);

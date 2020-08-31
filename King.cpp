@@ -27,14 +27,14 @@ vector<Move> King::set_moves(bool threats){
 						int sq = pos->the_board[x+i][y+j];
 						if(sq == NULLCELL){
 							//need to check if its enemy controlled square.
-							Move m(x+i, y+j, color, false, false, KING, x, y);
+							Move m(x+i, y+j, color, false, false, KING, x, y, false, false);
 							moves.push_back(m); 
 							tvec.push_back(m);
 						}else if(is_enemy_piece_type(sq)){
-							Move t(x+i, y+j, color, true, false, KING, x, y); 
+							Move t(x+i, y+j, color, true, false, KING, x, y, false, false); 
 							moves.push_back(t); 
 						}else if(!is_enemy_king(sq)){
-							Move t(x+i, y+j, color, true, false, KING, x, y);
+							Move t(x+i, y+j, color, true, false, KING, x, y, false, false);
 							tvec.push_back(t); 
 						}
 

@@ -3,7 +3,8 @@
 #include "Piece.h"
 using namespace std;
 
-Move::Move(int xe, int ye, int cc, int ist, int isp, int pt, int xs, int ys) {
+Move::Move(int xe, int ye, int cc, int ist, int isp, int pt, int xs, int ys,
+		int kingcastle, int queencastle) {
 	x_end = xe;
 	y_end = ye;
 	x_start = xs;
@@ -12,9 +13,17 @@ Move::Move(int xe, int ye, int cc, int ist, int isp, int pt, int xs, int ys) {
 	is_take = ist;
 	is_promote = isp;
 	piece_type = pt;
+	is_king_castle = kingcastle;
+	is_queen_castle = queencastle; 
 }
 
 string Move::get_move_string(){
+	if(is_king_castle){
+		return "O-O";
+	}
+	if(is_queen_castle){
+		return "O-O-O";
+	}
 	string s;
 	if(piece_type == PAWN){
 		//
