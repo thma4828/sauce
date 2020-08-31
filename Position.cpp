@@ -54,23 +54,23 @@ Position::Position(int b) {
 			the_board[1][y] = BPAWN;
 			the_board[6][y] = WPAWN;
 		}
-		the_board[0][0] = BBISH;
+		the_board[0][2] = BBISH;
 		the_board[7][7] = WBISH;
 	}else if (b == TCHECK){
-		the_board[0][0] = BROOK;
-		the_board[0][3] = BKING;
-		the_board[1][2] = BPAWN;	
-		the_board[1][3] = BPAWN;	
-		the_board[1][4] = BPAWN;
-		the_board[2][3] = BKNIGHT;	
+		the_board[0][2] = BROOK;
+		the_board[0][1] = BKING;
+		the_board[1][0] = BPAWN;	
+		the_board[1][1] = BPAWN;	
+		the_board[1][2] = BPAWN;
+		
 		
 		
 		the_board[6][5] = WPAWN;
 		the_board[6][6] = WPAWN;
 		the_board[6][7] = WPAWN;
-		the_board[7][7] = WKING;
-		the_board[5][7] = WROOK; 
-		the_board[5][4] = WKNIGHT;
-		the_board[4][1] = WROOK;
+		the_board[7][6] = WKING;
+		the_board[7][5] = WROOK; 
+		the_board[4][4] = WQUEEN;
+		the_board[5][5] = WBISH; 
 	}
 }
