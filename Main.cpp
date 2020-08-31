@@ -32,8 +32,7 @@ int main(int argc, char**argv){
   G.build_tree(root, 0, wb, atoi(argv[1]), false,  alpha, beta);
   unsigned long ncount = G.count_tree_nodes(root, 0);
   cout << "Tree has: " << ncount << " nodes at depth = " << argv[1] << "."  <<  endl;
-  G.eval_tree(root, 0, wb, atoi(argv[2])); 
-  cout << "Root eval complete" << endl;
+  
   int nc  = root->children.size();
   cout << "Root has: " << nc << " children" << endl;
   cout << "Root's children moves: ";
@@ -45,6 +44,10 @@ int main(int argc, char**argv){
   	Node *child = root->children[i];
 	cout << child->move_string << ": " << child->wb_ratio << endl;
   }
+
+
+  G.eval_tree(root, 0, wb, atoi(argv[2])); 
+  cout << "Root eval complete" << endl;
 
   Node *current = root;
   int i = 1;
