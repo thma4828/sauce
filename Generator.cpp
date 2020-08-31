@@ -13,7 +13,7 @@ Generator::Generator(Position *start, int start_color){
   root->set_board(root_board);
   //now node needs to use the board to get
   //the default (naive) evaluation on the position.
-  root->assign_board_val();//node now has naive evaluation.
+  root->assign_board_val(NULL);//node now has naive evaluation.
   move_tree = new Tree(root);
 }
 
@@ -159,7 +159,7 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     pnew->the_board[m.x_end][m.y_end] = piece2move;
     b1->set_position(pnew);
     n1->set_board(b1);
-    n1->assign_board_val();
+    n1->assign_board_val(curr);
 
     bool pin = false;
     if(parent_color == WHITE){

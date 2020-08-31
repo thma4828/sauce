@@ -24,7 +24,7 @@ public:
 	void set_parent(Node*);
 	void set_board(Board*);
 
-	bool assign_board_val();
+	bool assign_board_val(Node *);
 
 	Node* parent;
 	int num_children;
@@ -37,8 +37,10 @@ public:
 
 	Board *node_pos;
 	bool board_set;
-	int MCTS_visits; 
-	float Q; //MCTS Q-value is sum of outcomes of sims that passed through this state. 	
+	bool kscw; //king side castle allowed for white
+	bool kscb; //king side castle allowed for black
+	bool qscw; //queen side castle allowed for white
+	bool qscb; //queen side castle allowed for black. 
 	string move_string;
 
 };
