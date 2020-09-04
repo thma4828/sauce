@@ -399,16 +399,21 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
   if(wb == BLACK){ //only nodes where white moves such that white not (still) in check should show. 
 		float value = 1000;
 		float beta_hat;
+		bool check_white;
+		bool check_black;
                 for(int k=0; k<tnodes.size(); k++){
                   Node *n1 = tnodes[k];
                   curr->add_child(n1);
-                  if(wb == BLACK)
-                    check = n1->node_pos->get_check_white();
-                  else
-                    check = n1->node_pos->get_check_black();
+                  
+                  check_white = n1->node_pos->get_check_white();
+                  
+                  check_black = n1->node_pos->get_check_black();
+
+		  if(check_white)
+			  n1->move_string.push_back('+'); 
 
                   if(depth+1 <= max_depth){
-                     beta_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+                     beta_hat = build_tree(n1, depth+1, !wb, max_depth, check_white, alpha, beta);
 		     if(beta_hat < value){
 		     	value  = beta_hat; 
 		     }
@@ -429,12 +434,18 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
                 for(int k=0; k<tnodes.size(); k++){
                   Node *n1 = tnodes[k];
                   curr->add_child(n1);
-                  if(wb == BLACK)
-                    check = n1->node_pos->get_check_white();
-                  else
-                    check = n1->node_pos->get_check_black();
+		  bool check_white;
+		  bool check_black;
+                  
+                  check_white = n1->node_pos->get_check_white();
+                  
+                  check_black = n1->node_pos->get_check_black();
+
+		  if(check_black)
+			  n1->move_string.push_back('+');
+
                   if(depth+1 <= max_depth){
-                    alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check, alpha, beta);
+                    alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check_black, alpha, beta);
 		    if(alpha_hat > value){
 		    	value = alpha_hat;
 		    }
