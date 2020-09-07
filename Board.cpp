@@ -30,6 +30,10 @@ Board::Board(){
   final_eval_white = 1.0;
 }
 
+Board::~Board(){
+	delete position; 
+}
+
 void Board::set_color(int c){
   color = c;
 }

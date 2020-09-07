@@ -6,6 +6,7 @@ class Position {
 public:
 	Position();
 	Position(int);
+	~Position();
 
 	int the_board[8][8];
 

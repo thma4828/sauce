@@ -16,6 +16,11 @@ Node::Node() {
 	
 }
 
+Node::~Node(){
+	delete node_pos; 
+
+}
+
 Node::Node(Node* p, int c, float w, float b) {
 	parent = p;
 	color = c;

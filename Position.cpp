@@ -116,3 +116,7 @@ Position::Position(int b) {
 	
 	}
 }
+
+Position::~Position(){
+	//
+}

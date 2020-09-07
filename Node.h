@@ -15,6 +15,7 @@ class Node
 {
 public:
 	Node();
+	~Node(); 
 
 	Node(Node*, int, float, float);
 

@@ -18,6 +18,7 @@ class Board //this interface will taken a position, get all the moves of both si
 {
 public:
 	Board();
+	~Board();
 	void set_position(Position *);
 	Position *get_position();
 	void calc_final_eval();

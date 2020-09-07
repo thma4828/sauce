@@ -378,30 +378,30 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
     
     }	//y
 
-    if(wb == BLACK && check && tnodes.size() == 0){
+    int s = tnodes.size();
+    if(wb == BLACK && check && s == 0){
     	curr->wb_ratio = 999;
 	return curr->wb_ratio;
     }
-    else if(wb == BLACK && tnodes.size() == 0){
+    else if(wb == BLACK && s == 0){
     	curr->wb_ratio = 0;
 	return curr->wb_ratio;
     }
-    else if(wb == WHITE && check && tnodes.size() == 0){
+    else if(wb == WHITE && check && s == 0){
     	curr->wb_ratio = -999;
 	return curr->wb_ratio;
-    }else if(wb == WHITE && tnodes.size() == 0){
+    }else if(wb == WHITE && s == 0){
     	curr->wb_ratio = 0;
 	return curr->wb_ratio; 
     }
     
-    Quicksort(tnodes, 0, tnodes.size()-1, wb); 
-
+    Quicksort(tnodes, 0, s-1, wb); 
   if(wb == BLACK){ //only nodes where white moves such that white not (still) in check should show. 
 		float value = 1000;
 		float beta_hat;
 		bool check_white;
 		bool check_black;
-                for(int k=0; k<tnodes.size(); k++){
+                for(int k=0; k < s; k++){
                   Node *n1 = tnodes[k];
                   curr->add_child(n1);
                   
@@ -421,7 +421,12 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 		     	beta = value;
 		     }
 		     if(beta <= alpha){
-		     	break; 
+		     	     int j = k+1;
+			     for(j; j<s; j++){
+			     	Node *nj = tnodes[j];
+				delete nj; 
+			     }
+			     break; 
 		     }
 		  }
                 }
@@ -431,7 +436,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
   }else{
 		float value = -1000;
 		float alpha_hat;
-                for(int k=0; k<tnodes.size(); k++){
+                for(int k=0; k<s; k++){
                   Node *n1 = tnodes[k];
                   curr->add_child(n1);
 		  bool check_white;
@@ -453,6 +458,12 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 		    	alpha = value;
 		    }
 		    if(alpha >= beta){
+
+		     	     int j = k+1;
+			     for(j; j<s; j++){
+			     	Node *nj = tnodes[j];
+				delete nj; 
+			     }
 		    	break;
 		    }
 		  }
