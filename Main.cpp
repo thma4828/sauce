@@ -62,9 +62,12 @@ cout << "Nc6-d4 children" << endl;
   }
   Node *current = root;
   int i = 1;
-  while(current->best_child != NULL){
+  while(current){
   	current = current->best_child;
-	cout << i << ": " << current->move_string << ", "; i++;
+	if(current){
+		cout << i << ": " << current->move_string << ", "; 
+		i++;
+	}
   } 
   cout << endl;
   return 0; 
