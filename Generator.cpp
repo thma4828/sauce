@@ -191,7 +191,7 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     	pin = n1->node_pos->get_check_black(); 
     } 
     
-    if(!pin)
+    if(!pin && n1->color == wb)
     	nodes.push_back(n1);
   }
   return nodes;
@@ -346,7 +346,6 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 		}
 	
 	}else if(value == BKING || value == WKING){
-		//king case, kings not in check. 
 		King *king;
 		if(value == BKING && wb == BLACK){
 			king = new King(x, y, BLACK, KING, 1, 1);

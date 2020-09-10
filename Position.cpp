@@ -70,7 +70,6 @@ Position::Position(int b) {
 		the_board[3][4] = BPAWN;
 		the_board[3][7] = BBISH;
 
-		the_board[4][2] = WPAWN;
 		the_board[4][7] = WPAWN;
 		
 		the_board[5][1] = WPAWN;

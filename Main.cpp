@@ -49,7 +49,16 @@ int main(int argc, char**argv){
 	  cout << "whites move." << endl; 
   for(int i=0; i<nc; i++){
   	Node *child = root->children[i];
-	cout << child->move_string << ": " << child->wb_ratio << endl;
+	cout << i << ": " << child->move_string << ": " << child->wb_ratio << endl;
+  }
+
+  Node *nd4 = root->children[22]; 
+
+  int ncd4 = nd4->children.size();
+cout << "Nc6-d4 children" << endl; 
+  for(int i=0; i<ncd4; i++){
+  	Node *ch = nd4->children[i];
+	cout << i << ": " << ch->move_string << ": " << ch->wb_ratio << endl; 
   }
   Node *current = root;
   int i = 1;
