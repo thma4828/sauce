@@ -215,7 +215,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
               if(value == BPAWN && wb == BLACK){ //min player uses beta
                 pawn = new Pawn(x, y, BLACK, PAWN, 1, 1);
 
-		if(x > 1){
+		if(x != 1){
 			pawn->set_been_moved(true);
 		}
 
@@ -229,7 +229,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 
               }else if(value == WPAWN && wb == WHITE){
                 pawn = new Pawn(x, y, WHITE, PAWN, 1, 1);
-		if(x < 6){
+		if(x != 6){
 			pawn->set_been_moved(true);
 		}
                 pawn->set_pos(p);
@@ -383,14 +383,14 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
     	curr->wb_ratio = 999;
 	return curr->wb_ratio;
     }
-    else if(wb == BLACK && s == 0){
+    else if(wb == BLACK && check == false && s == 0){
     	curr->wb_ratio = 0;
 	return curr->wb_ratio;
     }
     else if(wb == WHITE && check && s == 0){
     	curr->wb_ratio = -999;
 	return curr->wb_ratio;
-    }else if(wb == WHITE && s == 0){
+    }else if(wb == WHITE && check == false && s == 0){
     	curr->wb_ratio = 0;
 	return curr->wb_ratio; 
     }
