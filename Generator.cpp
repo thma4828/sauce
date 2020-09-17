@@ -1,8 +1,10 @@
 #include "Generator.h"
+#include <stdlib.h>
+#include <time.h>
 
 
 Generator::Generator(){
-  //
+  srand(time(NULL));
 }
 
 Generator::Generator(Position *start, int start_color){
@@ -84,6 +86,10 @@ unsigned long Generator::count_tree_nodes(Node *n, unsigned long c){
 }
 
 int Generator::Partition(vector<Node*>&nodes, int p, int r, int wb){
+	int nonce = rand() % (r-p) + p; 
+	Node *t = nodes[r];
+	nodes[r] = nodes[nonce];
+	nodes[nonce] = t; 
 	
 	Node *x = nodes[r];
 	int i = p - 1;
