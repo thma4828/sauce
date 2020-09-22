@@ -24,6 +24,7 @@ public:
   float build_tree(Node*, int, int, int, bool, float, float);
   Node *get_tree_root();
   unsigned long count_tree_nodes(Node *, unsigned long);
+  void del_tree_nodes(Node *);
   void eval_tree(Node*, int, int, int);
 
 private:

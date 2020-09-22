@@ -54,6 +54,14 @@ int main(int argc, char**argv){
 	cout << i << ": " << child->move_string << ": " << child->wb_ratio << endl;
   }
 
+  Node *b7b6 = root->children[1];
+
+  cout << "Move: " << b7b6->move_string << endl;
+  for(int i=0; i<b7b6->children.size(); i++){
+  	Node *child = b7b6->children[i];
+	cout << i << ": " << child->move_string << ": " << child->wb_ratio << endl;
+  }
+
 
   Node *current = root;
   int i = 1;

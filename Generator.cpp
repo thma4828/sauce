@@ -8,8 +8,23 @@ Generator::Generator(){
 }
 
 Generator::~Generator(){
-	//
+    del_tree_nodes(move_tree->root);
 }
+
+
+void Generator::del_tree_nodes(Node *n){
+	if(n != NULL){
+		if(n->children.size() > 0){
+			for(int i=0; i<n->children.size(); i++){
+				del_tree_nodes(n->children[i]);
+			}
+		
+		}
+		delete n; 
+	
+	}
+}
+
 
 Generator::Generator(Position *start, int start_color){
   Node *root = new Node(nullptr, start_color, 0.1, 0.1);
