@@ -19,12 +19,14 @@ int main(int argc, char**argv){
   Position *pstart;
   if(pos_code == 1)
   	pstart = new Position(T1);
-  if(pos_code == 2)
+  else if(pos_code == 2)
   	pstart = new Position(TEST_3);
-  if(pos_code == 3)
+  else if(pos_code == 3)
   	pstart = new Position(TCHECK);
-  if(pos_code == 4)
+  else if(pos_code == 4)
 	  pstart = new Position(TCASTLE); 
+  else
+	  pstart = new Position(T1); 
 
   Generator G(pstart, wb);
   Node *root = G.get_tree_root();
@@ -52,14 +54,7 @@ int main(int argc, char**argv){
 	cout << i << ": " << child->move_string << ": " << child->wb_ratio << endl;
   }
 
-  Node *nd4 = root->children[22]; 
 
-  int ncd4 = nd4->children.size();
-cout << "Nc6-d4 children" << endl; 
-  for(int i=0; i<ncd4; i++){
-  	Node *ch = nd4->children[i];
-	cout << i << ": " << ch->move_string << ": " << ch->wb_ratio << endl; 
-  }
   Node *current = root;
   int i = 1;
   while(current){

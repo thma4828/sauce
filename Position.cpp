@@ -24,8 +24,6 @@ Position::Position(int b) {
 		}
 	}
 
-
-	int x = 0;
 	int y = 0;
 
 	if (b == START) {

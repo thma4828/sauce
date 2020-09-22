@@ -7,6 +7,10 @@ Generator::Generator(){
   srand(time(NULL));
 }
 
+Generator::~Generator(){
+	//
+}
+
 Generator::Generator(Position *start, int start_color){
   Node *root = new Node(nullptr, start_color, 0.1, 0.1);
   Board *root_board = new Board();

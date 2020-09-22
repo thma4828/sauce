@@ -51,6 +51,8 @@ bool Board::get_check_white(){
 	  black_threat_squares.clear();
   //TODO determine if check is in the pos on whites king.
   int kx, ky;
+  kx = -1;
+  ky = -1;
   for(int i=0; i<8; i++){
   	for(int j=0; j<8; j++){
 		int p = position->the_board[i][j];
@@ -59,6 +61,9 @@ bool Board::get_check_white(){
 			ky = j;
 		}
 	}
+  }
+  if((kx == -1) || (ky == -1)){
+  	return false; 
   }
   bool is_check = false;
   for(int i=0; i<8; i++){
@@ -146,7 +151,8 @@ bool Board::get_check_white(){
 bool Board::get_check_black(){
   if(white_threat_squares.size() > 0)
 	  white_threat_squares.clear(); 
-  int kx, ky;
+  int kx = -1;
+  int ky = -1;
   for(int i=0; i<8; i++){
   	for(int j=0; j<8; j++){
 		int p = position->the_board[i][j];
@@ -154,6 +160,9 @@ bool Board::get_check_black(){
 			kx = i; ky = j; 
 		}
 	}
+  }
+  if((kx == -1) || (ky == -1)){
+  	return false; 
   }
 
   bool is_check = false;

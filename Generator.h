@@ -19,6 +19,7 @@ using namespace std;
 class Generator{ //start at a root position and generate a tree
 public:
   Generator();
+  ~Generator();
   Generator(Position*, int);
   float build_tree(Node*, int, int, int, bool, float, float);
   Node *get_tree_root();
