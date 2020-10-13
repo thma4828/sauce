@@ -36,6 +36,7 @@ using namespace std;
 #define TEST_3 0x78aa
 #define TCHECK 0xabcd
 #define TCASTLE 0x683
+#define TPUZZLE1 0x7aab
 
 class Piece
 {

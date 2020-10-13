@@ -111,6 +111,47 @@ Position::Position(int b) {
 		the_board[7][0] = WROOK;
 		the_board[7][7] = WROOK;
 	
+	}else if(b == TPUZZLE1){ //black to move
+		//rank8
+		the_board[0][0] = BROOK;		
+		the_board[0][2] = BBISH;		
+		the_board[0][4] = BKING;		
+		the_board[0][6] = BKNIGHT;		
+		the_board[0][7] = BROOK;		
+		//rank7
+		the_board[1][0] = BPAWN;
+		the_board[1][1] = BPAWN;
+		the_board[1][2] = BPAWN;
+		the_board[1][3] = BPAWN;
+		the_board[1][5] = BPAWN;
+		the_board[1][6] = BPAWN;
+		the_board[1][7] = BPAWN;
+		//rank6
+		the_board[2][3] = BBISH;
+		the_board[2][5] = BQUEEN; 
+
+		//rank4
+		the_board[4][2] = WBISH;
+		the_board[4][3] = WQUEEN; 
+		the_board[4][4] = WPAWN;
+
+		//rank3
+		the_board[5][4] = WBISH;
+
+		//rank2
+		the_board[6][0] = WPAWN;
+		the_board[6][1] = WPAWN;
+		the_board[6][2] = WPAWN;
+		the_board[6][5] = WPAWN;
+		the_board[6][6] = WPAWN;
+		the_board[6][7] = WPAWN;
+
+		//rank1
+		the_board[7][0] = WROOK;
+		the_board[7][1] = WKNIGHT;
+		the_board[7][4] = WKING;
+		the_board[7][7] = WROOK; 
+
 	}
 }
 

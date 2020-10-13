@@ -401,8 +401,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
     }	//x
     
     }	//y
-
-    int s = tnodes.size();
+    int s = tnodes.size(); 
     if(wb == BLACK && check && s == 0){
     	curr->wb_ratio = 999;
 	return curr->wb_ratio;
@@ -419,89 +418,64 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 	return curr->wb_ratio; 
     }
     
-    Quicksort(tnodes, 0, s-1, wb); 
-  if(wb == BLACK){ //only nodes where white moves such that white not (still) in check should show. 
-		float value = 1000;
-		float beta_hat;
-		bool check_white;
-		bool check_black;
-                for(int k=0; k < s; k++){
-                  Node *n1 = tnodes[k];
-                  curr->add_child(n1);
-                  
-                  check_white = n1->node_pos->get_check_white();
-                  
-                  check_black = n1->node_pos->get_check_black();
+  Quicksort(tnodes, 0, s-1, wb); 
+  bool check_b = false;
+  bool check_w = false; 
+  if(wb == WHITE){ //maximizer.
+	int value = -1000; 
+	for(int i=0; i<s; i++){
+		Node *n1 = tnodes[i]; 
+		curr->add_child(n1); 
+		check_b = n1->node_pos->get_check_black();
+		if(check_b)
+			n1->move_string.push_back('+'); 
+		int temp = build_tree(n1, depth+1, !wb, max_depth, check_b, alpha, beta);
 
-		  if(check_white)
-			  n1->move_string.push_back('+'); 
+		if(temp > value)
+			value = temp;
 
-                  if(depth+1 <= max_depth){
-                     beta_hat = build_tree(n1, depth+1, !wb, max_depth, check_white, alpha, beta);
-		     if(beta_hat < value){
-		     	value  = beta_hat; 
-		     }
-		     if(value < beta){
-		     	beta = value;
-		     }
-		     if(beta <= alpha){
-		     	     int j = k+1;
-			     for(j; j<s; j++){
-			     	Node *nj = tnodes[j];
-				delete nj; 
-			     }
-			     break; 
-		     }
-		  }
-                }
-		return value; 
-  	
-  
-  }else{
-		float value = -1000;
-		float alpha_hat;
-                for(int k=0; k<s; k++){
-                  Node *n1 = tnodes[k];
-                  curr->add_child(n1);
-		  bool check_white;
-		  bool check_black;
-                  
-                  check_white = n1->node_pos->get_check_white();
-                  
-                  check_black = n1->node_pos->get_check_black();
+		if(value > alpha)
+			alpha = value; 
 
-		  if(check_black)
-			  n1->move_string.push_back('+');
+		if(alpha >= beta){
+			for(int n=i+1; n<s; n++){
+				delete tnodes[n]; 
+			}
+			
+			break; 
+		}
+	}
+	return value; 
 
-                  if(depth+1 <= max_depth){
-                    alpha_hat = build_tree(n1, depth+1, !wb, max_depth, check_black, alpha, beta);
-		    if(alpha_hat > value){
-		    	value = alpha_hat;
-		    }
-		    if(value  > alpha){
-		    	alpha = value;
-		    }
-		    if(alpha >= beta){
+  }else if (wb == BLACK){//minimizer.
+	int value = 1000; 
+	for(int i=0; i<s; i++){
+		Node *n1 = tnodes[i];
+		curr->add_child(n1); 
 
-		     	     int j = k+1;
-			     for(j; j<s; j++){
-			     	Node *nj = tnodes[j];
-				delete nj; 
-			     }
-		    	break;
-		    }
-		  }
-                }
-		return value;
-  	
-  
-  
+		int check_w = n1->node_pos->get_check_white(); 
+		if(check_w)
+			n1->move_string.push_back('+');
+
+		int temp = build_tree(n1, depth+1, !wb, max_depth, check_w, alpha, beta); 
+		if(temp < value)
+			value = temp;
+
+		if(value < beta)
+			beta = value;
+
+		if(beta <= alpha){
+			for(int n=i+1; n<s; n++)
+				delete tnodes[n]; 
+			break;
+		}
+	}
+	return value; 
+
   }
 
-  }else{
-  	cout << "depth reached."<< endl;
+ }
 	return curr->wb_ratio; 
-  }
 
 }
 

@@ -25,8 +25,8 @@ int main(int argc, char**argv){
   	pstart = new Position(TCHECK);
   else if(pos_code == 4)
 	  pstart = new Position(TCASTLE); 
-  else
-	  pstart = new Position(T1); 
+  else if (pos_code == 5)
+	  pstart = new Position(TPUZZLE1); 
 
   Generator G(pstart, wb);
   Node *root = G.get_tree_root();
