@@ -68,8 +68,10 @@ int main(int argc, char**argv){
 			cout << "computer makes the move: "
 			       	<< m->move_string << endl; 	
 
-			delete G;
 			Position *np = m->node_pos->get_position(); 
+
+			delete G; 
+
 			G = new Generator(np, !wb);
 				
 			wb = !wb; 
