@@ -11,8 +11,9 @@ int main(int argc, char**argv){
 	
 	int wb = WHITE;
 
-	Generator G = Generator(p, wb); 
-	Node *root = G.get_tree_root(); 
+	Generator *G = new Generator(p, wb); 
+	Node *root;
+	
 	int alpha = -1000;
 	int beta = 1000; 
 	
@@ -20,51 +21,62 @@ int main(int argc, char**argv){
 	string move;
 	cout << "new chess game: you play as white." << endl;
 	while(turn < 10){
-		G.build_tree(G.get_tree_root(), 0, wb, 2, false, alpha, beta); 
+		cout << "turn :" << turn << endl;
+	        cout << "turn wb: " << wb << endl;	
+		alpha = -1000;
+		beta = 1000;
+		root = G->get_tree_root(); 
+		G->build_tree(root, 0, wb, 3, false, alpha, beta); 
+		cout << "your possible moves are: " << endl;
+
+		int rc = root->children.size(); 
+		for(int i=0; i<rc; i++){
+			cout << root->children[i]->move_string << endl; 
+		}
+		
 		cout << "enter your move: " << endl;
 		getline(cin, move); 
 
 		Node *move_node = NULL; 
 		bool move_found = false; 
+
 		for(int i=0; i<root->children.size(); i++){
 			Node *temp = root->children[i];
 
 			if(temp->move_string == move){
-				move_node = temp;
+				move_node = temp; 
 				move_found = true;
+				wb = !wb; 
 				break;
 			}
 		}
 		if(move_found){
+			
 			turn++;
 			Position *pn = move_node->node_pos->get_position();
 		        
-			wb = !wb; 
-			G = Generator(pn, wb);
-			bool c;
-			if(wb == WHITE)
-				c = move_node->node_pos->
-					get_check_black();
-			else
-				c = move_node->
-					node_pos->get_check_white(); 
-			G.build_tree(G.get_tree_root(),
-				       	0, wb, 4, c, alpha, beta);
-			G.eval_tree(root, 0, wb, 3); 
+			delete G;  
+			G = new Generator(pn, wb);
+			root = G->get_tree_root(); 
+			alpha = -1000;
+			beta = 1000;
 
-			cout << "computer makes the move: "
-			       	<< root->move_string << endl; 
-		        wb = !wb; 	
-			root = root->best_child;
-
+			G->build_tree(root, 0, wb, 4, false, alpha, beta);
+			G->eval_tree(root, 0, wb, 4); 
 			
-			G = Generator(root->node_pos->get_position(), wb); 
+			Node *m = root->best_child; 
+			cout << "computer makes the move: "
+			       	<< m->move_string << endl; 	
+
+			delete G;
+			Position *np = m->node_pos->get_position(); 
+			G = new Generator(np, !wb);
 				
+			wb = !wb; 
 		}else{
 		  cout << "move does not exist: try again." << endl;
 
-		}
-
+		} 
 	}
 
 }
