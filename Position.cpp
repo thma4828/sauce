@@ -1,6 +1,9 @@
 #include "Position.h"
 #include "Piece.h"
-
+#include <fstream>
+#include <string> 
+#include <iostream>
+#include <sstream> 
 using namespace std;
 
 
@@ -28,6 +31,30 @@ Position::Position(int b) {
 
 	if (b == START) {
 		//TODO: build chess starting position.
+		for(int col = 0; col<8; col++){
+			the_board[1][col] = BPAWN;
+
+			the_board[6][col] = WPAWN;
+		}
+
+		the_board[0][0] = BROOK;
+		the_board[0][1] = BKNIGHT;
+		the_board[0][2] = BBISH;
+		the_board[0][3] = BQUEEN;
+		the_board[0][4] = BKING;
+		the_board[0][5] = BBISH;
+		the_board[0][6] = BKNIGHT;
+		the_board[0][7] = BROOK;
+
+
+		the_board[7][0] = WROOK;
+		the_board[7][1] = WKNIGHT;
+		the_board[7][2] = WBISH;
+		the_board[7][3] = WQUEEN;
+		the_board[7][4] = WKING;
+		the_board[7][5] = WBISH;
+		the_board[7][6] = WKNIGHT;
+		the_board[7][7] = WROOK;
 	}
 	else if (b == EMPTY) {
 		//nothing needs to be done.
@@ -153,6 +180,29 @@ Position::Position(int b) {
 		the_board[7][7] = WROOK; 
 
 	}
+}
+
+void Position::read_board_file(string f){
+    ifstream reader;
+    reader.open(f);
+    string line, token; 
+    int i = 0;
+    int j;
+    if(!reader.is_open()){
+	cout << "could not open board file." << endl; 		    
+    }else{
+    	while(getline(reader, line) && i < 8){
+		istringstream iss(line); 
+		j = 0;
+		while(iss >> token && j < 8){
+		   int piece_code = stoi(token);
+		   j++;
+
+		   the_board[i][j] = piece_code; 
+		}
+		i++;
+	}
+    }
 }
 
 Position::~Position(){

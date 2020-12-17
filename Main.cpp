@@ -18,7 +18,7 @@ int main(int argc, char**argv){
   int pos_code = atoi(argv[4]);
   Position *pstart;
   if(pos_code == 1)
-  	pstart = new Position(T1);
+  	pstart = new Position(START);
   else if(pos_code == 2)
   	pstart = new Position(TEST_3);
   else if(pos_code == 3)
@@ -27,6 +27,8 @@ int main(int argc, char**argv){
 	  pstart = new Position(TCASTLE); 
   else if (pos_code == 5)
 	  pstart = new Position(TPUZZLE1); 
+  else
+	  pstart = new Position(START); 
 
   Generator G(pstart, wb);
   Node *root = G.get_tree_root();

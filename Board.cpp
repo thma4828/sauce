@@ -1,27 +1,6 @@
 #include "Board.h"
 
 
-#define BLACK 1
-#define WHITE 0
-#define NULLCELL 3
-#define PAWN 11
-#define BISHOP 37
-#define ROOK 87
-#define KNIGHT 313
-#define QUEEN 1717
-#define KING 1337
-#define WPAWN 3123
-#define BQUEEN 171710
-#define WQUEEN 171720
-#define BPAWN 3422
-#define WROOK 8756
-#define BROOK 9867
-#define WBISH 9788
-#define BBISH 8112
-#define WKING 7655
-#define BKING 1232
-#define WKNIGHT 7171
-#define BKNIGHT 8712
 
 using namespace std;
 
