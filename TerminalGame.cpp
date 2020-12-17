@@ -20,13 +20,13 @@ int main(int argc, char**argv){
 	int turn = 1;
 	string move;
 	cout << "new chess game: you play as white." << endl;
-	while(turn < 10){
+	while(true){
 		cout << "turn :" << turn << endl;
 	        cout << "turn wb: " << wb << endl;	
 		alpha = -1000;
 		beta = 1000;
 		root = G->get_tree_root(); 
-		G->build_tree(root, 0, wb, 3, false, alpha, beta); 
+		G->build_tree(root, 0, wb, 3,root->node_pos->get_check_white(), alpha, beta); 
 		cout << "your possible moves are: " << endl;
 
 		int rc = root->children.size(); 
@@ -61,7 +61,7 @@ int main(int argc, char**argv){
 			alpha = -1000;
 			beta = 1000;
 
-			G->build_tree(root, 0, wb, 4, false, alpha, beta);
+			G->build_tree(root, 0, wb, 4, root->node_pos->get_check_black(), alpha, beta);
 			G->eval_tree(root, 0, wb, 4); 
 			
 			Node *m = root->best_child; 
