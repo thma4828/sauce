@@ -17,7 +17,7 @@ Node::Node() {
 }
 
 Node::~Node(){
-	delete node_pos; 
+	//delete node_pos; 
 
 }
 

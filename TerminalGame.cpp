@@ -26,7 +26,7 @@ int main(int argc, char**argv){
 		alpha = -1000;
 		beta = 1000;
 		root = G->get_tree_root(); 
-		G->build_tree(root, 0, wb, 3,root->node_pos->get_check_white(), alpha, beta); 
+		G->build_tree(root, 0, wb, 2,root->node_pos->get_check_white(), alpha, beta); 
 		cout << "your possible moves are: " << endl;
 
 		int rc = root->children.size(); 
@@ -56,13 +56,13 @@ int main(int argc, char**argv){
 			Position *pn = move_node->node_pos->get_position();
 		        
 			delete G;  
-			G = new Generator(pn, wb);
-			root = G->get_tree_root(); 
+			Generator *P = new Generator(pn, wb);
+			root = P->get_tree_root(); 
 			alpha = -1000;
 			beta = 1000;
 
-			G->build_tree(root, 0, wb, 4, root->node_pos->get_check_black(), alpha, beta);
-			G->eval_tree(root, 0, wb, 4); 
+			P->build_tree(root, 0, wb, 4, root->node_pos->get_check_black(), alpha, beta);
+			P->eval_tree(root, 0, wb, 5); 
 			
 			Node *m = root->best_child; 
 			cout << "computer makes the move: "
@@ -70,7 +70,7 @@ int main(int argc, char**argv){
 
 			Position *np = m->node_pos->get_position(); 
 
-			delete G; 
+			delete P; 
 
 			G = new Generator(np, !wb);
 				

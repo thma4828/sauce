@@ -402,6 +402,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
     
     }	//y
     int s = tnodes.size(); 
+   
     if(wb == BLACK && check && s == 0){
     	curr->wb_ratio = 999;
 	return curr->wb_ratio;
@@ -420,7 +421,10 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
     
   Quicksort(tnodes, 0, s-1, wb); 
   bool check_b = false;
-  bool check_w = false; 
+  bool check_w = false;
+  if(depth > 0){
+  	s = s >> 1; 
+  } 
   if(wb == WHITE){ //maximizer.
 	int value = -1000; 
 	for(int i=0; i<s; i++){
