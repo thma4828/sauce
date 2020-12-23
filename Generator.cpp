@@ -422,7 +422,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
   Quicksort(tnodes, 0, s-1, wb); 
   bool check_b = false;
   bool check_w = false;
-  if(depth > 0 && s >= 5){
+  if(depth > 0 && s > 5){
   	s = s >> 1; 
   } 
   if(wb == WHITE){ //maximizer.

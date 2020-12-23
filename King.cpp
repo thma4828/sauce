@@ -65,7 +65,7 @@ vector<Move> King::set_moves(bool threats){
 			mids1 = pos->the_board[0][6];
 			mids2 = pos->the_board[0][5];
 
-			bool conE = (mids1 == mids2 && mids2 == mids3 && mids1 == NULLCELL);
+			bool conE = (mids1 == mids2 && mids1 == NULLCELL);
 
 			if(conA && conD && conE){
 				Move kingSideCastle(0, 6, color, false, false, KING, x, y, true, false);
@@ -94,7 +94,7 @@ vector<Move> King::set_moves(bool threats){
 			mids1 = pos->the_board[7][6];
 			mids2 = pos->the_board[7][5];
 
-			bool conE = (mids1 == mids2 && mids2 == mids3 && mids1 == NULLCELL);
+			bool conE = (mids1 == mids2 && mids1 == NULLCELL);
 
 			if(conA && conD && conE){
 				Move kingSideCastle(7, 6, color, false, false, KING, x, y, true, false);
