@@ -196,9 +196,8 @@ void Position::read_board_file(string f){
 		j = 0;
 		while(iss >> token && j < 8){
 		   int piece_code = stoi(token);
-		   j++;
-
-		   the_board[i][j] = piece_code; 
+		   the_board[i][j] = piece_code;
+		   j++;  
 		}
 		i++;
 	}
