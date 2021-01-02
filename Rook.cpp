@@ -31,14 +31,14 @@ vector<Move> Rook::set_moves(bool t){
 			threats.push_back(m_down);
 			X++;
 		}
-		if( is_enemy_piece_type(pos->the_board[X+1][Y]) ){
+		if(X < 7 && is_enemy_piece_type(pos->the_board[X+1][Y]) ){
 			Move t_down(X+1, Y, color, true, false, ROOK, x, y, false, false);
 			moves.push_back(t_down);
+			threats.push_back(t_down); 
+		}else if(X < 7 && !is_enemy_piece_type(pos->the_board[X+1][Y])){					  Move t_down(X+1, Y, color, true, false, ROOK, x, y, false, false);
+			threats.push_back(t_down); 
 		}
-		if(X < 7){
-			Move t1(X+1, Y, color, true, false, ROOK, x, y, false, false); //gaurding friendly
-			threats.push_back(t1); 
-		}
+	
 
 
 		
@@ -50,14 +50,15 @@ vector<Move> Rook::set_moves(bool t){
 			Y++;
 		}
 		
-		if( is_enemy_piece_type(pos->the_board[X][Y+1]) ){
+		if(Y < 7 && is_enemy_piece_type(pos->the_board[X][Y+1]) ){
 			Move t_right(X, Y+1, color, true, false, ROOK, x, y, false, false);
 			moves.push_back(t_right);
+			threats.push_back(t_right); 
+		}else if(Y < 7 && !is_enemy_piece_type(pos->the_board[X][Y+1])){
+			Move t_right(X, Y+1, color, true, false, ROOK, x, y, false, false); 
+			threats.push_back(t_right); 
 		}
-		if(Y < 7){
-			Move t2(X, Y+1, color, true, false, ROOK, x, y, false, false);
-			threats.push_back(t2); 
-		}
+
 
 		Y = y;
 		X = x;
@@ -67,14 +68,16 @@ vector<Move> Rook::set_moves(bool t){
 			threats.push_back(m_up);
 			X--;
 		}
-		if( is_enemy_piece_type(pos->the_board[X-1][Y]) ){
+		if(X > 0 && is_enemy_piece_type(pos->the_board[X-1][Y]) ){
 			Move t_up(X-1, Y, color, true, false, ROOK, x, y, false, false);
 			moves.push_back(t_up);
+			threats.push_back(t_up); 
+		}else if(X > 0 && !is_enemy_piece_type(pos->the_board[X-1][Y])){
+			
+			Move t_up(X-1, Y, color, true, false, ROOK, x, y, false, false);
+			threats.push_back(t_up); 
 		}
-		if(X > 0){
-			Move t3(X-1, Y, color, true, false, ROOK, x, y, false, false);
-			threats.push_back(t3); 
-		}
+		
 		X = x;
 		while(Y > 0 && pos->the_board[X][Y-1] == NULLCELL){
 			Move m_left(X, Y-1, color, false, false, ROOK, x,  y, false, false);
@@ -82,11 +85,11 @@ vector<Move> Rook::set_moves(bool t){
 			threats.push_back(m_left);
 			Y--;
 		}
-		if( is_enemy_piece_type(pos->the_board[X][Y-1]) ){
+		if(Y > 0 && is_enemy_piece_type(pos->the_board[X][Y-1]) ){
 			Move t_left(X, Y-1, color, true, false, ROOK, x, y, false, false);
 			moves.push_back(t_left);
 			threats.push_back(t_left); 
-		}if(Y > 0){
+		}else if(Y > 0 && !is_enemy_piece_type(pos->the_board[X][Y-1])){
 			Move t4(X, Y-1, color, true, false, ROOK, x, y, false, false); 
 			threats.push_back(t4);
 		}
