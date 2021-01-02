@@ -157,7 +157,7 @@ bool Piece::is_enemy_piece_type(int pc) {
 		if (color == BLACK) {
 			if (pc == WPAWN || pc == WBISH || 
 			    pc == WROOK || pc == WKNIGHT ||
-			    pc == WQUEEN) { //add rest of enemy pieces. just Q, K and Night
+			    pc == WQUEEN || pc == WKING) { //add rest of enemy pieces. just Q, K and Night
 				return 1;
 			}
 			else {
@@ -167,7 +167,7 @@ bool Piece::is_enemy_piece_type(int pc) {
 		else { //color is white, so enemy piece would be black piece....
 			if (pc == BPAWN || pc == BBISH ||
 			    pc == BROOK || pc == BKNIGHT || 
-			    pc == BQUEEN) { //add rest of enemy pieces. just Q, K and Night
+			    pc == BQUEEN || pc == BKING) { //add rest of enemy pieces. just Q, K and Night
 				return 1;
 			}
 			else {

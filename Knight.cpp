@@ -45,12 +45,11 @@ vector<Move> Knight::set_moves(bool threats){
 //	cout << "------>knight takes on non-empty square. " << endl;
         Move t1(x+1, y+2, color, true, false, KNIGHT, x, y, false, false);
         moves.push_back(t1);
-      }else if(!is_enemy_piece_type(squarec1) && !is_enemy_king(squarec1)){
+	threatvec.push_back(t1); 
+      }else if(!is_enemy_piece_type(squarec1)){
   //    	cout << "------>knight obstructed by friendly piece." << endl;
 	Move t2(x+1, y+1, color, true, false, KNIGHT, x, y, false, false);
 	threatvec.push_back(t2); 
-      }else if(is_enemy_king(squarec1)){
-      	//check on the board. 
       }else{
     //  	cout << "------>move escaped being captured by logical cases...." << endl;
 
@@ -69,12 +68,11 @@ vector<Move> Knight::set_moves(bool threats){
 //		cout << "------>knight takes on non-empty square. " << endl;
 		Move t2(x+1, y-2, color, true, false, KNIGHT, x, y, false, false);
 		moves.push_back(t2);
-	}else if(!is_enemy_piece_type(squarec2) && !is_enemy_king(squarec2)){
+		threatvec.push_back(t2); 
+	}else if(!is_enemy_piece_type(squarec2)){
 //		cout << "------>knight obstructed by friendly piece." << endl;
 		Move t2(x+1, y-2, color, true, false, KNIGHT, x,  y, false, false);
 		threatvec.push_back(t2); 
-	}else if(is_enemy_king(squarec2)){
-		//unanswered check...
 	}
     }
   //  cout << "------>knight analyzed c2 now moving to c3." << endl;
@@ -91,12 +89,11 @@ vector<Move> Knight::set_moves(bool threats){
 //		cout << "------>knight takes on non-empty square. " << endl;
 		Move t3(x-1, y+2, color, true, false, KNIGHT, x, y, false, false);
 		moves.push_back(t3);
-	}else if(!is_enemy_piece_type(squarec3) && !is_enemy_king(squarec3)){
+		threatvec.push_back(t3); 
+	}else if(!is_enemy_piece_type(squarec3)){
 //		cout << "------>knight obstructed by its own piece. " << endl;
 		Move t3(x-1, y+2, color, true, false, KNIGHT, x, y, false, false);
 		threatvec.push_back(t3); 
-	}else if(is_enemy_king(squarec3)){
-		//check. 
 	}
     }
   //  cout << "------>knight analyzed c3 moving to c4." << endl;
@@ -112,12 +109,11 @@ vector<Move> Knight::set_moves(bool threats){
 //		cout << "------>knight takes on non-empty square. " << endl;
 		Move t4(x-1, y-2, color, true, false, KNIGHT, x, y, false, false);
 		moves.push_back(t4);
-	}else if(!is_enemy_king(squarec4) && !is_enemy_king(squarec4)){
+		threatvec.push_back(t4); 
+	}else if(!is_enemy_piece_type(squarec4)){
 //		cout << "------>knight obstructed by its own piece. " << endl;
 		Move t4(x-1, y-2, color, true, false, KNIGHT, x, y, false, false); 
 		threatvec.push_back(t4); 
-	}else if(is_enemy_king(squarec4)){
-		//check
 	}
     }
   //  cout << "------>knight analyzed c4 moving to c5 (TODO)" << endl;
@@ -132,9 +128,9 @@ vector<Move> Knight::set_moves(bool threats){
 		threatvec.push_back(m5);
 	}else if(is_enemy_piece_type(squarec5)){		Move t5(x+2, y+1, color, true, false, KNIGHT, x, y, false, false);
 		moves.push_back(t5);
-	}else if(is_enemy_king(squarec5)){
-		//check on the board. 
-	}else{
+		threatvec.push_back(t5); 
+	}else if(!is_enemy_piece_type(squarec5)){
+		
 //		cout << "knight is obstructed by friendly piece." << endl;
 		Move t6(x+2, y+1, color, true, false, KNIGHT, x, y, false, false);
 		threatvec.push_back(t6);
@@ -152,9 +148,9 @@ vector<Move> Knight::set_moves(bool threats){
 //		cout << "------>knight takes enemy piece." << endl;
 		Move t6(x+2, y-1, color, true, false, KNIGHT, x, y, false, false);
 		moves.push_back(t6);
-	}else if(is_enemy_king(squarec6)){
-		//check
-	}else{
+		threatvec.push_back(t6); 
+	}else if(!is_enemy_piece_type(squarec6)){
+	
 //		cout << "------>knight obstructed by friendly piece." << endl;
 		Move t6(x+2, y-1, color, true, false, KNIGHT, x, y, false, false);
 		threatvec.push_back(t6);
@@ -173,9 +169,9 @@ vector<Move> Knight::set_moves(bool threats){
 //		cout << "------>knight takes enemy piece." << endl;
 		Move t7(x-2, y+1, color, true, false, KNIGHT, x, y, false, false);
 		moves.push_back(t7);
-	}else if(is_enemy_king(squarec7)){
-		//check
-	}else{
+		threatvec.push_back(t7);
+	}else if(!is_enemy_piece_type(squarec7)){
+		
 //		cout << "------>knight obstructed by friendly piece." << endl;
 		Move t7(x-2, y+1, color, true, false, KNIGHT, x, y, false, false);
 		threatvec.push_back(t7);
@@ -195,10 +191,10 @@ vector<Move> Knight::set_moves(bool threats){
 //		cout << "------>knight takes enemy piece." << endl;
 		Move t8(x-2, y-1, color, true, false, KNIGHT, x, y, false, false);
 		moves.push_back(t8);
+		threatvec.push_back(t8); 
 	
-	}else if(is_enemy_king(squarec8)){
-		//check
-	}else{
+	}else if(!is_enemy_piece_type(squarec8)){
+		
 //		cout << "------>knight obstructed by friendly piece." << endl;
 		Move t8(x-2, y-1, color, true, false, KNIGHT, x, y, false, false); 
 		threatvec.push_back(t8); 

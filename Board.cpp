@@ -246,10 +246,6 @@ void Board::calc_final_eval(){
   //start with adding up piece totals...
   //if check on the board worth something.
   //if checkmate worth some const INF
-
-//  final_eval_black = 1.0;
-//  final_eval_white = 1.0;
-
   for(int x=0; x<8; x++){
     for(int y=0; y<8; y++){
       int piece_code = position->the_board[x][y];
@@ -261,7 +257,7 @@ void Board::calc_final_eval(){
       }
       if(piece_code == WKNIGHT){
         final_eval_white += 3.0;
-      }
+     }
       if(piece_code == BKNIGHT){
         final_eval_black += 3.0;
       }
@@ -270,6 +266,7 @@ void Board::calc_final_eval(){
       }
       if(piece_code == BBISH){
         final_eval_black += 3.0;
+	
       }
       if(piece_code == WROOK){
         final_eval_white += 5.0;
@@ -279,12 +276,14 @@ void Board::calc_final_eval(){
       }
       if(piece_code == WQUEEN){
         final_eval_white += 9.0;
+	
       }
       if(piece_code == BQUEEN){
         final_eval_black += 9.0;
       }
       if(piece_code == WKING){
       	final_eval_white += 41.0;
+
       }
       if(piece_code == BKING){
       	final_eval_black += 41.0; 
