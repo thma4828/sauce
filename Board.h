@@ -22,9 +22,9 @@ public:
 	void set_position(Position *);
 	Position *get_position();
 	void calc_final_eval();
-	float get_wb_ratio();
-	float get_black();
-	float get_white();
+	double get_wb_ratio();
+	double get_black();
+	double get_white();
 	bool get_check_white();
 	bool get_check_black();
 	void set_color(int);
@@ -40,15 +40,12 @@ private:
 	vector<Move>white_moves;
 	vector<Square>white_threat_squares;
 	vector<Square>black_threat_squares; 
-	float black_piece_value;
-	float white_piece_value;
-	float black_threat_value;
-	float white_threat_value;
-	float black_structure_value;
-	float white_structure_value;
 
-	float final_eval_white;
-	float final_eval_black;
+	double pos_eval_white;
+	double pos_eval_black;
+
+	double mat_eval_white;
+	double mat_eval_black;
 
 	int color;
 	//TODO add score mechanism for threats and piece value.

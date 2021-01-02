@@ -5,8 +5,11 @@
 using namespace std;
 
 Board::Board(){
-  final_eval_black = 1.0;
-  final_eval_white = 1.0;
+  pos_eval_black = 1.0;
+  pos_eval_white = 1.0;
+
+  mat_eval_black = 1.0;
+  mat_eval_white = 1.0; 
 }
 
 Board::~Board(){
@@ -250,56 +253,56 @@ void Board::calc_final_eval(){
     for(int y=0; y<8; y++){
       int piece_code = position->the_board[x][y];
       if(piece_code == WPAWN){
-        final_eval_white += 1.0;
+        mat_eval_white += 1.0;
       }
       if(piece_code == BPAWN){
-        final_eval_black += 1.0;
+        mat_eval_black += 1.0;
       }
       if(piece_code == WKNIGHT){
-        final_eval_white += 3.0;
+        mat_eval_white += 3.0;
      }
       if(piece_code == BKNIGHT){
-        final_eval_black += 3.0;
+        mat_eval_black += 3.0;
       }
       if(piece_code == WBISH){
-        final_eval_white += 3.0;
+        mat_eval_white += 3.0;
       }
       if(piece_code == BBISH){
-        final_eval_black += 3.0;
+        mat_eval_black += 3.0;
 	
       }
       if(piece_code == WROOK){
-        final_eval_white += 5.0;
+        mat_eval_white += 5.0;
       }
       if(piece_code == BROOK){
-        final_eval_black += 5.0;
+        mat_eval_black += 5.0;
       }
       if(piece_code == WQUEEN){
-        final_eval_white += 9.0;
+        mat_eval_white += 9.0;
 	
       }
       if(piece_code == BQUEEN){
-        final_eval_black += 9.0;
+        mat_eval_black += 9.0;
       }
       if(piece_code == WKING){
-      	final_eval_white += 41.0;
+      	mat_eval_white += 41.0;
 
       }
       if(piece_code == BKING){
-      	final_eval_black += 41.0; 
+      	mat_eval_black += 41.0; 
       }
 
     }
   }
 }
-float Board::get_wb_ratio(){
-  return final_eval_white - final_eval_black;
+double  Board::get_wb_ratio(){
+  return (mat_eval_white - mat_eval_black) + (0.25 * (pos_eval_white - pos_eval_black));
 }
-float Board::get_black(){
-  return final_eval_black;
+double Board::get_black(){
+  return mat_eval_black;
 }
-float Board::get_white(){
-  return final_eval_white;
+double Board::get_white(){
+  return mat_eval_white;
 }
 
 Position *Board::get_position(){

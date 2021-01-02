@@ -17,9 +17,9 @@ public:
 	Node();
 	~Node(); 
 
-	Node(Node*, int, float, float);
+	Node(Node*, int, double, double);
 
-	void set_values(float, float);
+	void set_values(double, double);
 	void set_color(int);
 	void add_child(Node*);
 	void set_parent(Node*);
@@ -31,17 +31,11 @@ public:
 	int num_children;
 	int color;
 	vector<Node*>children;
-	float black_value;
-	float white_value;
-	float wb_ratio;
+	double wb_ratio;
 	Node *best_child;
 
 	Board *node_pos;
 	bool board_set;
-	bool kscw; //king side castle allowed for white
-	bool kscb; //king side castle allowed for black
-	bool qscw; //queen side castle allowed for white
-	bool qscb; //queen side castle allowed for black. 
 	string move_string;
 
 };
