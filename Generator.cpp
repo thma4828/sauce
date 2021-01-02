@@ -215,9 +215,15 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     }else{
     	pin = n1->node_pos->get_check_black(); 
     } 
-    
-    if(!pin && n1->color == wb)
-    	nodes.push_back(n1);
+    if((parent_color == WHITE && curr->node_pos->get_check_white() && 
+		    (m.is_king_castle || m.is_queen_castle))
+		    ||
+		    (parent_color == BLACK && curr->node_pos->get_check_black() && (m.is_king_castle || m.is_queen_castle))){
+	//dont push back n1,because you cannot castle out of check.  		    
+    }else{    
+    	if(!pin)
+    		nodes.push_back(n1);
+    }
   }
   return nodes;
 }
