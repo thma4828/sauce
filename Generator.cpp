@@ -423,9 +423,19 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
   bool check_b = false;
   bool check_w = false;
   if(depth > 0 && s > 8 && s < 20){
-  	s = s >> 1; 
+  	int snew = s >> 1; 
+	for(int si = snew; si<s; si++){
+		delete tnodes[si];
+	}
+	tnodes.resize(snew);
+	s = snew; 
   }else if(depth > 0 && s >= 20){
-  	s = s >> 2;
+  	int snew = s >> 2;
+	for(int si=snew; si<s; si++){
+		delete tnodes[si]; 
+	}
+	tnodes.resize(snew);
+        s = snew; 	
   } 
   if(wb == WHITE){ //maximizer.
 	int value = -1000; 
