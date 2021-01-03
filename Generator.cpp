@@ -182,7 +182,15 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     }
     pnew->the_board[m.x_start][m.y_start] =  NULLCELL;
     pnew->the_board[m.x_end][m.y_end] = piece2move;
-    
+    if(m.is_ep){
+    	if(parent_color == WHITE){
+		int x_erase = m.x_end + 1; 
+		pnew->the_board[x_erase][m.y_end] = NULLCELL; 
+	}else if(parent_color == BLACK){
+		int x_erase = m.x_end - 1; 
+		pnew->the_board[x_erase][m.y_end] = NULLCELL; 
+	}
+    }
     if(parent_color == BLACK){
     	if(m.is_king_castle){
 		pnew->the_board[0][7] = NULLCELL;
@@ -205,9 +213,13 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     }
 
     b1->set_position(pnew);
+    if(parent_color == WHITE){
+    	b1->set_position_ep_squares(curr->node_pos->get_position_ep_squares(BLACK), BLACK);
+    }else if(parent_color == BLACK){
+    	b1->set_position_ep_squares(curr->node_pos->get_position_ep_squares(WHITE), WHITE); 
+    }
     n1->set_board(b1);
     n1->assign_board_val(curr);
-
     bool pin = false;
     if(parent_color == WHITE){
     	pin = n1->node_pos->get_check_white(); 

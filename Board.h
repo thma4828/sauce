@@ -20,6 +20,8 @@ public:
 	Board();
 	~Board();
 	void set_position(Position *);
+	void set_position_ep_squares(vector<vector<int>>, int); //int is WB 
+	vector<vector<int>> get_position_ep_squares(int); 
 	Position *get_position();
 	void calc_final_eval();
 	double get_wb_ratio();

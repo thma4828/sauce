@@ -38,17 +38,17 @@ vector<Move> Knight::set_moves(bool threats){
       int squarec1 = pos->the_board[x+1][y+2];
       if(squarec1 == NULLCELL){
 //	cout << "------>knight move to empty square. " << endl;
-        Move m1(x+1, y+2, color, false, false, KNIGHT, x, y, false, false);
+        Move m1(x+1, y+2, color, false, false, KNIGHT, x, y, false, false, false);
 	threatvec.push_back(m1);
         moves.push_back(m1);
       }else if(is_enemy_piece_type(squarec1)){
 //	cout << "------>knight takes on non-empty square. " << endl;
-        Move t1(x+1, y+2, color, true, false, KNIGHT, x, y, false, false);
+        Move t1(x+1, y+2, color, true, false, KNIGHT, x, y, false, false, false);
         moves.push_back(t1);
 	threatvec.push_back(t1); 
       }else if(!is_enemy_piece_type(squarec1)){
   //    	cout << "------>knight obstructed by friendly piece." << endl;
-	Move t2(x+1, y+1, color, true, false, KNIGHT, x, y, false, false);
+	Move t2(x+1, y+1, color, true, false, KNIGHT, x, y, false, false, false);
 	threatvec.push_back(t2); 
       }else{
     //  	cout << "------>move escaped being captured by logical cases...." << endl;
@@ -61,17 +61,17 @@ vector<Move> Knight::set_moves(bool threats){
 	int squarec2 = pos->the_board[x+1][y-2];
 	if(squarec2 == NULLCELL){
 //		cout << "------>knight move to empty square. " << endl;
-		Move m2(x+1, y-2, color, false, false, KNIGHT, x, y, false, false);
+		Move m2(x+1, y-2, color, false, false, KNIGHT, x, y, false, false, false);
 		threatvec.push_back(m2); 
 		moves.push_back(m2);
 	}else if(is_enemy_piece_type(squarec2)){
 //		cout << "------>knight takes on non-empty square. " << endl;
-		Move t2(x+1, y-2, color, true, false, KNIGHT, x, y, false, false);
+		Move t2(x+1, y-2, color, true, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(t2);
 		threatvec.push_back(t2); 
 	}else if(!is_enemy_piece_type(squarec2)){
 //		cout << "------>knight obstructed by friendly piece." << endl;
-		Move t2(x+1, y-2, color, true, false, KNIGHT, x,  y, false, false);
+		Move t2(x+1, y-2, color, true, false, KNIGHT, x,  y, false, false, false);
 		threatvec.push_back(t2); 
 	}
     }
@@ -81,18 +81,18 @@ vector<Move> Knight::set_moves(bool threats){
 	int squarec3 = pos->the_board[x-1][y+2];
 	if(squarec3 == NULLCELL){
 //		cout << "------>knight move to empty square. " << endl;
-		Move m3(x-1, y+2, color, false, false, KNIGHT, x, y, false, false);
+		Move m3(x-1, y+2, color, false, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(m3);
 		threatvec.push_back(m3);
 
 	}else if(is_enemy_piece_type(squarec3)){
 //		cout << "------>knight takes on non-empty square. " << endl;
-		Move t3(x-1, y+2, color, true, false, KNIGHT, x, y, false, false);
+		Move t3(x-1, y+2, color, true, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(t3);
 		threatvec.push_back(t3); 
 	}else if(!is_enemy_piece_type(squarec3)){
 //		cout << "------>knight obstructed by its own piece. " << endl;
-		Move t3(x-1, y+2, color, true, false, KNIGHT, x, y, false, false);
+		Move t3(x-1, y+2, color, true, false, KNIGHT, x, y, false, false, false);
 		threatvec.push_back(t3); 
 	}
     }
@@ -102,17 +102,17 @@ vector<Move> Knight::set_moves(bool threats){
 	int squarec4 = pos->the_board[x-1][y-2];
 	if(squarec4 == NULLCELL){
 //		cout << "------>knight move to empty square. " << endl;
-		Move m4(x-1, y-2, color, false, false, KNIGHT, x, y, false, false);
+		Move m4(x-1, y-2, color, false, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(m4);
 		threatvec.push_back(m4);
 	}else if(is_enemy_piece_type(squarec4)){
 //		cout << "------>knight takes on non-empty square. " << endl;
-		Move t4(x-1, y-2, color, true, false, KNIGHT, x, y, false, false);
+		Move t4(x-1, y-2, color, true, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(t4);
 		threatvec.push_back(t4); 
 	}else if(!is_enemy_piece_type(squarec4)){
 //		cout << "------>knight obstructed by its own piece. " << endl;
-		Move t4(x-1, y-2, color, true, false, KNIGHT, x, y, false, false); 
+		Move t4(x-1, y-2, color, true, false, KNIGHT, x, y, false, false, false); 
 		threatvec.push_back(t4); 
 	}
     }
@@ -123,16 +123,17 @@ vector<Move> Knight::set_moves(bool threats){
 	if(squarec5 == NULLCELL){
 //		cout << "------>knight moves to empty square." << endl;
 
-		Move m5(x+2, y+1, color, false, false, KNIGHT, x, y, false, false);
+		Move m5(x+2, y+1, color, false, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(m5);
 		threatvec.push_back(m5);
-	}else if(is_enemy_piece_type(squarec5)){		Move t5(x+2, y+1, color, true, false, KNIGHT, x, y, false, false);
+	}else if(is_enemy_piece_type(squarec5)){		
+		Move t5(x+2, y+1, color, true, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(t5);
 		threatvec.push_back(t5); 
 	}else if(!is_enemy_piece_type(squarec5)){
 		
 //		cout << "knight is obstructed by friendly piece." << endl;
-		Move t6(x+2, y+1, color, true, false, KNIGHT, x, y, false, false);
+		Move t6(x+2, y+1, color, true, false, KNIGHT, x, y, false, false, false);
 		threatvec.push_back(t6);
 	}
     }
@@ -141,18 +142,18 @@ vector<Move> Knight::set_moves(bool threats){
 	int squarec6 = pos->the_board[x+2][y-1];
 	if(squarec6 == NULLCELL){
 //		cout << "------>knight moves to empty square." << endl;
-		Move m6(x+2, y-1, color, false, false, KNIGHT, x, y, false, false);
+		Move m6(x+2, y-1, color, false, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(m6);
 		threatvec.push_back(m6);
 	}else if(is_enemy_piece_type(squarec6)){
 //		cout << "------>knight takes enemy piece." << endl;
-		Move t6(x+2, y-1, color, true, false, KNIGHT, x, y, false, false);
+		Move t6(x+2, y-1, color, true, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(t6);
 		threatvec.push_back(t6); 
 	}else if(!is_enemy_piece_type(squarec6)){
 	
 //		cout << "------>knight obstructed by friendly piece." << endl;
-		Move t6(x+2, y-1, color, true, false, KNIGHT, x, y, false, false);
+		Move t6(x+2, y-1, color, true, false, KNIGHT, x, y, false, false, false);
 		threatvec.push_back(t6);
 	}
 
@@ -162,18 +163,18 @@ vector<Move> Knight::set_moves(bool threats){
     	int squarec7 = pos->the_board[x-2][y+1];
 	if(squarec7 == NULLCELL){
 //		cout << "------>knight moves to empty square." << endl;
-		Move m7(x-2, y+1, color, false, false, KNIGHT, x, y, false, false);
+		Move m7(x-2, y+1, color, false, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(m7);
 		threatvec.push_back(m7);
 	}else if(is_enemy_piece_type(squarec7)){
 //		cout << "------>knight takes enemy piece." << endl;
-		Move t7(x-2, y+1, color, true, false, KNIGHT, x, y, false, false);
+		Move t7(x-2, y+1, color, true, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(t7);
 		threatvec.push_back(t7);
 	}else if(!is_enemy_piece_type(squarec7)){
 		
 //		cout << "------>knight obstructed by friendly piece." << endl;
-		Move t7(x-2, y+1, color, true, false, KNIGHT, x, y, false, false);
+		Move t7(x-2, y+1, color, true, false, KNIGHT, x, y, false, false, false);
 		threatvec.push_back(t7);
 	}
 
@@ -183,20 +184,20 @@ vector<Move> Knight::set_moves(bool threats){
 	int squarec8 = pos->the_board[x-2][y-1];
 	if(squarec8 == NULLCELL){
 //		cout << "------>knight moves to empty square." << endl;
-		Move m8(x-2, y-1, color, false, false, KNIGHT, x , y, false, false);
+		Move m8(x-2, y-1, color, false, false, KNIGHT, x , y, false, false, false);
 		moves.push_back(m8);
 		threatvec.push_back(m8);
 	
 	}else if(is_enemy_piece_type(squarec8)){
 //		cout << "------>knight takes enemy piece." << endl;
-		Move t8(x-2, y-1, color, true, false, KNIGHT, x, y, false, false);
+		Move t8(x-2, y-1, color, true, false, KNIGHT, x, y, false, false, false);
 		moves.push_back(t8);
 		threatvec.push_back(t8); 
 	
 	}else if(!is_enemy_piece_type(squarec8)){
 		
 //		cout << "------>knight obstructed by friendly piece." << endl;
-		Move t8(x-2, y-1, color, true, false, KNIGHT, x, y, false, false); 
+		Move t8(x-2, y-1, color, true, false, KNIGHT, x, y, false, false, false); 
 		threatvec.push_back(t8); 
 	}
     

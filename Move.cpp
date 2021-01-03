@@ -4,7 +4,7 @@
 using namespace std;
 
 Move::Move(int xe, int ye, int cc, int ist, int isp, int pt, int xs, int ys,
-		int kingcastle, int queencastle) {
+		int kingcastle, int queencastle, int isEP) {
 	x_end = xe;
 	y_end = ye;
 	x_start = xs;
@@ -15,6 +15,7 @@ Move::Move(int xe, int ye, int cc, int ist, int isp, int pt, int xs, int ys,
 	piece_type = pt;
 	is_king_castle = kingcastle;
 	is_queen_castle = queencastle; 
+	is_ep = isEP; 
 }
 
 string Move::get_move_string(){
@@ -125,9 +126,17 @@ string Move::get_move_string(){
 		s.push_back('h');
 	}
 
+
 	int x_val = 8 - x_end;
 	string xs = to_string(x_val);
 	s.push_back(xs[0]);
+
+
+	if(is_ep){
+		s.push_back('-');
+		s.push_back('e');
+		s.push_back('p'); 
+	}
 
 	return s;
 }

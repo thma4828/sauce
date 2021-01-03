@@ -20,6 +20,23 @@ void Board::set_color(int c){
   color = c;
 }
 
+void Board::set_position_ep_squares(vector<vector<int>>sqs, int wb){
+	if(wb == BLACK){
+		position->ep_squares_black = sqs;
+	}else if(wb == WHITE){
+		position->ep_squares_white = sqs;
+	}
+}
+
+vector<vector<int>> Board::get_position_ep_squares(int wb){
+	if(wb == BLACK){
+		return position->ep_squares_black; 
+	}else if(wb == WHITE){
+		return position->ep_squares_white; 
+	}
+	return position->ep_squares_white; 
+}
+
 vector<Square> Board::get_threat_squares(int col){
 	if(col == WHITE){
 		return black_threat_squares;

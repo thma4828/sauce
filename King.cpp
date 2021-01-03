@@ -27,14 +27,14 @@ vector<Move> King::set_moves(bool threats){
 						int sq = pos->the_board[x+i][y+j];
 						if(sq == NULLCELL){
 							//need to check if its enemy controlled square.
-							Move m(x+i, y+j, color, false, false, KING, x, y, false, false);
+							Move m(x+i, y+j, color, false, false, KING, x, y, false, false, false);
 							moves.push_back(m); 
 							tvec.push_back(m);
 						}else if(is_enemy_piece_type(sq)){
-							Move t(x+i, y+j, color, true, false, KING, x, y, false, false); 
+							Move t(x+i, y+j, color, true, false, KING, x, y, false, false, false); 
 							moves.push_back(t); 
 						}else if(!is_enemy_king(sq)){
-							Move t(x+i, y+j, color, true, false, KING, x, y, false, false);
+							Move t(x+i, y+j, color, true, false, KING, x, y, false, false, false);
 							tvec.push_back(t); 
 						}
 
@@ -56,7 +56,7 @@ vector<Move> King::set_moves(bool threats){
 			bool conC = (mids1 == mids2 && mids3 == mids2 && mids1 == NULLCELL);
 
 			if(conA && conB && conC){
-				Move queenSideCastle(0, 2, color, false, false, KING, x, y, false, true);
+				Move queenSideCastle(0, 2, color, false, false, KING, x, y, false, true, false);
 				moves.push_back(queenSideCastle);
 			}
 
@@ -68,7 +68,7 @@ vector<Move> King::set_moves(bool threats){
 			bool conE = (mids1 == mids2 && mids1 == NULLCELL);
 
 			if(conA && conD && conE){
-				Move kingSideCastle(0, 6, color, false, false, KING, x, y, true, false);
+				Move kingSideCastle(0, 6, color, false, false, KING, x, y, true, false, false);
 				moves.push_back(kingSideCastle);
 			}
 		}else{ //color is white
@@ -85,7 +85,7 @@ vector<Move> King::set_moves(bool threats){
 			bool conC = (mids1 == mids2 && mids3 == mids2 && mids1 == NULLCELL);
 
 			if(conA && conB && conC){
-				Move queenSideCastle(7, 2, color, false, false, KING, x, y, false, true);
+				Move queenSideCastle(7, 2, color, false, false, KING, x, y, false, true, false);
 				moves.push_back(queenSideCastle);
 			}
 
@@ -97,7 +97,7 @@ vector<Move> King::set_moves(bool threats){
 			bool conE = (mids1 == mids2 && mids1 == NULLCELL);
 
 			if(conA && conD && conE){
-				Move kingSideCastle(7, 6, color, false, false, KING, x, y, true, false);
+				Move kingSideCastle(7, 6, color, false, false, KING, x, y, true, false, false);
 				moves.push_back(kingSideCastle);
 			}
 		
