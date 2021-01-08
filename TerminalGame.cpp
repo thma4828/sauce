@@ -14,8 +14,8 @@ int main(int argc, char**argv){
 	Generator *G = new Generator(p, wb); 
 	Node *root;
 	
-	int alpha = -1000;
-	int beta = 1000; 
+	double alpha = -1000;
+	double beta = 1000; 
 	
 	int turn = 1;
 	string move;
@@ -31,7 +31,7 @@ int main(int argc, char**argv){
 
 		int rc = root->children.size(); 
 		for(int i=0; i<rc; i++){
-			cout << root->children[i]->move_string << endl; 
+			cout << root->children[i]->move_string << endl;
 		}
 		
 		cout << "enter your move: " << endl;
@@ -66,7 +66,8 @@ int main(int argc, char**argv){
 			
 			Node *m = root->best_child; 
 			cout << "computer makes the move: "
-			       	<< m->move_string << endl; 	
+			       	<< m->move_string << 
+				" valued at: " << m->wb_ratio << endl; 	
 
 			Position *np = m->node_pos->get_position(); 
 

@@ -366,7 +366,7 @@ void Board::calc_final_eval(){
   }
 }
 double  Board::get_wb_ratio(){
-  return (mat_eval_white + (0.125 * pos_eval_white)) - (mat_eval_black + (0.125*pos_eval_black)); 
+  return (mat_eval_white + (0.025 * pos_eval_white)) - (mat_eval_black + (0.025*pos_eval_black)); 
 }
 double Board::get_black(){
   return mat_eval_black;
