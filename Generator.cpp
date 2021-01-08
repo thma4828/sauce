@@ -240,7 +240,7 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
   return nodes;
 }
 //TODO add if() before adding nodes to check if piece was pinned (if moving it puts their own king into check.
-float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool check, float alpha, float beta)
+double Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool check, double alpha, double beta)
 {
   if(depth <= max_depth){
     
@@ -422,18 +422,18 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
     int s = tnodes.size(); 
    
     if(wb == BLACK && check && s == 0){
-    	curr->wb_ratio = 999;
+    	curr->wb_ratio = 999.0;
 	return curr->wb_ratio;
     }
     else if(wb == BLACK && check == false && s == 0){
-    	curr->wb_ratio = 0;
+    	curr->wb_ratio = 0.0;
 	return curr->wb_ratio;
     }
     else if(wb == WHITE && check && s == 0){
-    	curr->wb_ratio = -999;
+    	curr->wb_ratio = -999.0;
 	return curr->wb_ratio;
     }else if(wb == WHITE && check == false && s == 0){
-    	curr->wb_ratio = 0;
+    	curr->wb_ratio = 0.0;
 	return curr->wb_ratio; 
     }
     
@@ -456,14 +456,14 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
         s = snew; 	
   } 
   if(wb == WHITE){ //maximizer.
-	int value = -1000; 
+	double value = -1000.0; 
 	for(int i=0; i<s; i++){
 		Node *n1 = tnodes[i]; 
 		curr->add_child(n1); 
 		check_b = n1->node_pos->get_check_black();
 		if(check_b)
 			n1->move_string.push_back('+'); 
-		int temp = build_tree(n1, depth+1, !wb, max_depth, check_b, alpha, beta);
+		double temp = build_tree(n1, depth+1, !wb, max_depth, check_b, alpha, beta);
 
 		if(temp > value)
 			value = temp;
@@ -482,7 +482,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 	return value; 
 
   }else if (wb == BLACK){//minimizer.
-	int value = 1000; 
+	double value = 1000.0; 
 	for(int i=0; i<s; i++){
 		Node *n1 = tnodes[i];
 		curr->add_child(n1); 
@@ -491,7 +491,7 @@ float Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool c
 		if(check_w)
 			n1->move_string.push_back('+');
 
-		int temp = build_tree(n1, depth+1, !wb, max_depth, check_w, alpha, beta); 
+		double temp = build_tree(n1, depth+1, !wb, max_depth, check_w, alpha, beta); 
 		if(temp < value)
 			value = temp;
 

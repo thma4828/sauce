@@ -21,7 +21,7 @@ public:
   Generator();
   ~Generator();
   Generator(Position*, int);
-  float build_tree(Node*, int, int, int, bool, float, float);
+  double build_tree(Node*, int, int, int, bool, double, double);
   Node *get_tree_root();
   unsigned long count_tree_nodes(Node *, unsigned long);
   void del_tree_nodes(Node *);
