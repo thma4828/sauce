@@ -234,7 +234,309 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
   }
   return nodes;
 }
-//TODO add if() before adding nodes to check if piece was pinned (if moving it puts their own king into check.
+
+bool isPromote(string s){
+	bool isp = false;
+	for(int i=0; i<s.length(); i++){
+		if(s[i] == '='){
+			isp = true;
+		}
+	}
+	return isp;
+}
+bool isCapture(string s){
+	bool isc = false;
+	for(int i=0; i<s.length(); i++){
+		if(s[i] == 'x'){
+			isc = true; 
+		}
+	}
+	return isc; 
+}
+bool isCheck(string s){
+	bool isch = false;
+	for(int i=0; i<s.length(); i++){
+		if(s[i] == '+'){
+			isch = true;
+		}
+	}
+	return isch; 
+}
+
+
+vector<Node*> filter_nodes(vector<Node*>nodes){
+	vector<Node*>newNodes;
+
+	for(int i=0; i<nodes.size(); i++){
+		Node *n = nodes[i];
+	        string s = n->move_string; 
+		if(isPromote(s) || isCapture(s) || isCheck(s)){
+			newNodes.push_back(n); 
+		}
+	        	
+
+	}
+
+	return newNodes; 
+}
+
+double Generator::build_tree_2(Node* curr, int depth, int wb, int max_depth, bool check, double alpha, double beta)
+{
+  if(depth <= max_depth){
+    
+    Position *p = curr->node_pos->get_position();
+    vector<Node*>tnodes; 
+    
+    for(int x=0; x<8; x++){
+      for(int y=0; y<8; y++){
+        int value = p->the_board[x][y];
+        
+        if(value != NULLCELL){
+        
+            if(value == BPAWN || value == WPAWN){ 
+              Pawn *pawn;
+              if(value == BPAWN && wb == BLACK){ //min player uses beta
+                pawn = new Pawn(x, y, BLACK, PAWN, 1, 1);
+
+		if(x != 1){
+			pawn->set_been_moved(true);
+		}
+
+                pawn->set_pos(p);
+                
+                vector<Move>pmoves = pawn->set_moves(false);
+                vector<Node*>newNodes = get_nodes(pmoves, p, curr, !wb);
+		for(int j=0; j<newNodes.size(); j++){
+			tnodes.push_back(newNodes[j]); 
+		}
+
+              }else if(value == WPAWN && wb == WHITE){
+                pawn = new Pawn(x, y, WHITE, PAWN, 1, 1);
+		if(x != 6){
+			pawn->set_been_moved(true);
+		}
+                pawn->set_pos(p);
+                
+                vector<Move>pmoves = pawn->set_moves(false);
+                vector<Node*>newNodes = get_nodes(pmoves, p, curr, !wb);
+		for(int j=0; j<newNodes.size(); j++){
+			tnodes.push_back(newNodes[j]); 
+		}
+
+        	
+	      }
+
+          }else if(value == WKNIGHT || value == BKNIGHT){
+            Knight *knight;
+            if(value == BKNIGHT && wb == BLACK){
+                knight = new Knight(x, y, BLACK, KNIGHT, 2, 3);
+                knight->set_pos(p);
+                vector<Move>kmoves = knight->set_moves(false);
+                vector<Node*>newNodes = get_nodes(kmoves, p, curr, !wb);
+		for(int j=0; j<newNodes.size(); j++){
+			tnodes.push_back(newNodes[j]); 
+		}
+		
+            }else if(value == WKNIGHT && wb == WHITE){
+              knight = new Knight(x, y, WHITE, KNIGHT, 2, 3);
+              knight->set_pos(p);
+              vector<Move> kmoves = knight->set_moves(false);
+             
+              vector<Node*>newNodes = get_nodes(kmoves, p, curr, !wb);
+	      for(int j=0; j<newNodes.size(); j++){
+			tnodes.push_back(newNodes[j]); 
+	      }
+
+            }
+        }else if(value == WBISH || value == BBISH){
+		Bishop *bishop;
+		if(value == BBISH && wb == BLACK){
+			bishop = new Bishop(x, y, BLACK, BISHOP, 1, 1);
+			bishop->set_pos(p);
+			
+			vector<Move>bmoves = bishop->set_moves(false);
+			vector<Node*>newNodes = get_nodes(bmoves, p, curr, !wb);
+			for(int j=0; j<newNodes.size(); j++){
+				tnodes.push_back(newNodes[j]); 
+			}
+
+			
+		}else if(value == WBISH && wb == WHITE){
+			bishop = new Bishop(x, y, WHITE, BISHOP, 1, 1);
+			bishop->set_pos(p);
+		
+			vector<Move>bmoves = bishop->set_moves(false);
+			vector<Node*>newNodes = get_nodes(bmoves, p, curr, !wb);
+			for(int j=0; j<newNodes.size(); j++){
+				tnodes.push_back(newNodes[j]); 
+			}
+
+
+		}
+	}else if(value == WROOK || value == BROOK){
+		Rook *rook;
+		if(value == WROOK && wb == WHITE){
+			rook = new Rook(x, y, WHITE, ROOK, 8, 8);
+			rook->set_pos(p);
+			vector<Move>rmoves_white = rook->set_moves(false);
+			vector<Node*>newNodes = get_nodes(rmoves_white, p, curr, !wb);
+			
+			for(int j=0; j<newNodes.size(); j++){
+				tnodes.push_back(newNodes[j]); 
+			}
+
+
+		}else if(value == BROOK && wb == BLACK){
+			rook = new Rook(x, y, BLACK, ROOK, 8, 8);
+			rook->set_pos(p);
+			vector<Move>rmoves_black = rook->set_moves(false);
+			vector<Node*>newNodes = get_nodes(rmoves_black, p, curr, !wb);
+
+			for(int j=0; j<newNodes.size(); j++){
+				tnodes.push_back(newNodes[j]); 
+			}
+		}
+	}else if(value == WQUEEN || value == BQUEEN){
+		Queen *queen;
+		if(value == BQUEEN && wb == BLACK){
+			queen = new Queen(x, y, BLACK, QUEEN, 8, 8);
+			queen->set_pos(p);
+			vector<Move>qmoves = queen->set_moves(false);
+			vector<Node*>newNodes = get_nodes(qmoves, p, curr, !wb);
+			for(int j=0; j<newNodes.size(); j++){
+				tnodes.push_back(newNodes[j]); 
+			}
+
+
+		}else if(value == WQUEEN && wb == WHITE){
+			queen = new Queen(x, y, WHITE, QUEEN, 8, 8);
+			queen->set_pos(p);
+			vector<Move>qmoves = queen->set_moves(false);
+			vector<Node*>newNodes = get_nodes(qmoves, p, curr, !wb);
+			for(int j=0; j<newNodes.size(); j++){
+				tnodes.push_back(newNodes[j]); 
+			}
+
+		}
+	
+	}else if(value == BKING || value == WKING){
+		King *king;
+		if(value == BKING && wb == BLACK){
+			king = new King(x, y, BLACK, KING, 1, 1);
+			king->set_pos(p);
+			vector<Move>kmoves = king->set_moves(false);
+			vector<Node*>newNodes = get_nodes(kmoves, p, curr, !wb);
+			for(int j=0; j<newNodes.size(); j++){
+				tnodes.push_back(newNodes[j]); 
+			}
+			
+		}else if(value == WKING && wb == WHITE){
+			king = new King(x, y, WHITE, KING, 1, 1);
+			king->set_pos(p);
+			vector<Move>kmoves = king->set_moves(false);
+			vector<Node*>newNodes = get_nodes(kmoves, p, curr, !wb);
+			for(int j=0; j<newNodes.size(); j++){
+				tnodes.push_back(newNodes[j]); 
+			}
+			
+
+		
+		}
+	} //all pieces added.
+	   //nullcell case comes here then returns.  
+
+      }//if(not nullcell ends here)
+     
+    }	//x
+    
+    }	//y
+    int s = tnodes.size(); 
+   
+    if(wb == BLACK && check && s == 0){
+    	curr->wb_ratio = 999.0;
+	return curr->wb_ratio;
+    }
+    else if(wb == BLACK && check == false && s == 0){
+    	curr->wb_ratio = 0.0;
+	return curr->wb_ratio;
+    }
+    else if(wb == WHITE && check && s == 0){
+    	curr->wb_ratio = -999.0;
+	return curr->wb_ratio;
+    }else if(wb == WHITE && check == false && s == 0){
+    	curr->wb_ratio = 0.0;
+	return curr->wb_ratio; 
+    }
+    
+  Quicksort(tnodes, 0, s-1, wb); 
+  bool check_b = false;
+  bool check_w = false;
+  
+  if(depth > 1 && !check){
+  	//only explore, checks, promotions, and captures. 
+ 	tnodes = filter_nodes(tnodes);  
+	s = tnodes.size(); 
+  }
+  
+  if(wb == WHITE){ //maximizer.
+	double value = -1000.0; 
+	for(int i=0; i<s; i++){
+		Node *n1 = tnodes[i]; 
+		curr->add_child(n1); 
+		check_b = n1->node_pos->get_check_black();
+		if(check_b)
+			n1->move_string.push_back('+'); 
+		double temp = build_tree(n1, depth+1, !wb, max_depth, check_b, alpha, beta);
+
+		if(temp > value)
+			value = temp;
+
+		if(value > alpha)
+			alpha = value; 
+
+		if(alpha >= beta){
+			for(int n=i+1; n<s; n++){
+				delete tnodes[n]; 
+			}
+			
+			break; 
+		}
+	}
+	return value; 
+
+  }else if (wb == BLACK){//minimizer.
+	double value = 1000.0; 
+	for(int i=0; i<s; i++){
+		Node *n1 = tnodes[i];
+		curr->add_child(n1); 
+
+		int check_w = n1->node_pos->get_check_white(); 
+		if(check_w)
+			n1->move_string.push_back('+');
+
+		double temp = build_tree(n1, depth+1, !wb, max_depth, check_w, alpha, beta); 
+		if(temp < value)
+			value = temp;
+
+		if(value < beta)
+			beta = value;
+
+		if(beta <= alpha){
+			for(int n=i+1; n<s; n++)
+				delete tnodes[n]; 
+			break;
+		}
+	}
+	return value; 
+
+  }
+
+ }
+	return curr->wb_ratio; 
+
+}
+
+
 double Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool check, double alpha, double beta)
 {
   if(depth <= max_depth){

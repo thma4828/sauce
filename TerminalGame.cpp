@@ -26,7 +26,7 @@ int main(int argc, char**argv){
 		alpha = -1000;
 		beta = 1000;
 		root = G->get_tree_root(); 
-		G->build_tree(root, 0, wb, 2,root->node_pos->get_check_white(), alpha, beta); 
+		G->build_tree_2(root, 0, wb, 1,root->node_pos->get_check_white(), alpha, beta); 
 		cout << "your possible moves are: " << endl;
 
 		int rc = root->children.size(); 
@@ -61,7 +61,7 @@ int main(int argc, char**argv){
 			alpha = -1000;
 			beta = 1000;
 
-			P->build_tree(root, 0, wb, 3, root->node_pos->get_check_black(), alpha, beta);
+			P->build_tree_2(root, 0, wb, 3, root->node_pos->get_check_black(), alpha, beta);
 			P->eval_tree(root, 0, wb, 4); 
 			
 			Node *m = root->best_child; 
