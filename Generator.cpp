@@ -260,24 +260,26 @@ bool isCapture(string s){
 	}
 	return isc; 
 }
-bool isCheck(string s){
+bool isCheck(Node *n, int wb){
 	bool isch = false;
-	for(int i=0; i<s.length(); i++){
-		if(s[i] == '+'){
-			isch = true;
-		}
+	
+	if(wb == WHITE){ //node n is result of whites move, 
+		isch = n->node_pos->get_check_black();
+	}else{
+		isch = n->node_pos->get_check_white(); 
 	}
+
 	return isch; 
 }
 
 
-vector<Node*> filter_nodes(vector<Node*>nodes){
+vector<Node*> filter_nodes(vector<Node*>nodes, int wb){
 	vector<Node*>newNodes;
 
 	for(int i=0; i<nodes.size(); i++){
 		Node *n = nodes[i];
 	        string s = n->move_string; 
-		if(isPromote(s) || isCapture(s) || isCheck(s)){
+		if(isPromote(s) || isCapture(s) || isCheck(n, wb)){
 			newNodes.push_back(n); 
 		}
 	        	
@@ -480,7 +482,7 @@ double Generator::build_tree_2(Node* curr, int depth, int wb, int max_depth, boo
   
   if(depth > 1 && !check){
   	//only explore, checks, promotions, and captures. 
- 	tnodes = filter_nodes(tnodes);  
+ 	tnodes = filter_nodes(tnodes, wb);  
 	s = tnodes.size(); 
   }
 
