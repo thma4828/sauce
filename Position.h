@@ -12,8 +12,6 @@ public:
 	void read_board_file(std::string); 
 
 	int the_board[8][8];
-	vector<vector<int>>ep_squares_white;
-	vector<vector<int>>ep_squares_black; 
 
 private:
 	int board_pos;

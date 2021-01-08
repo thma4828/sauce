@@ -28,40 +28,6 @@ vector<Move> Pawn::set_moves(bool threats) {
 			return threat_vector;
 		}
 	}
-	if(!threats && is_color_set && !is_null_piece){
-		if(color == BLACK){
-			
-			for(int i=0; i< pos->ep_squares_black.size(); i++){
-				vector<int>sq = pos->ep_squares_black[i]; 
-				int xep = sq[0];
-				int yep = sq[1]; 
-
-				if(xep == x+1 && yep == y-1){
-					Move m1(x+1, y-1, BLACK, true, false, PAWN, x, y, false, false, true); 
-					moves.push_back(m1); 
-				}else if(xep == x+1 && yep == y+1){
-					Move m1(x+1, y+1, BLACK, true, false, PAWN, x, y, false, false, true); 
-					moves.push_back(m1); 
-				}
-			}
-		}
-		else if(color == WHITE){
-			
-			for(int i=0; i<pos->ep_squares_white.size(); i++){
-				vector<int>sq = pos->ep_squares_white[i]; 
-				int xep = sq[0];
-				int yep = sq[1]; 
-
-				if(xep == x-1 && yep == y-1){
-					Move m1(x-1, y-1, WHITE, true, false, PAWN, x, y, false, false, true); 
-					moves.push_back(m1); 
-				}else if(xep == x-1 && yep == y+1){
-					Move m1(x-1, y+1, WHITE, true, false, PAWN, x, y, false, false, true); 
-					moves.push_back(m1); 
-				}
-			}
-		}
-	}
 	if (is_pos_set && is_color_set && !is_null_piece) {
 		if (color == BLACK) {
 			if (x < 6) {
@@ -73,10 +39,6 @@ vector<Move> Pawn::set_moves(bool threats) {
 									&& !been_moved) {
 									Move m2(x + 2, y, BLACK, false, false, PAWN, x, y, false, false, false);
 									moves.push_back(m2);
-									vector<int>sq;
-									sq.push_back(x+1);
-									sq.push_back(y);
-									pos->ep_squares_white.push_back(sq);
 							}
 						}
 						int enemy_squarex1y1 = pos->the_board[x + 1][y + 1];
@@ -113,10 +75,6 @@ vector<Move> Pawn::set_moves(bool threats) {
 										Move mb(x+2, y, BLACK, false, false, PAWN, x, y, false, false, false);
 										moves.push_back(mb);
 
-									vector<int>sq;
-									sq.push_back(x+1);
-									sq.push_back(y);
-									pos->ep_squares_white.push_back(sq);
 
 									}
 								}else{
@@ -141,10 +99,6 @@ vector<Move> Pawn::set_moves(bool threats) {
 
 									moves.push_back(mb);
 
-									vector<int>sq;
-									sq.push_back(x+1);
-									sq.push_back(y);
-									pos->ep_squares_white.push_back(sq);
 								}
 								
 							}
@@ -213,10 +167,6 @@ vector<Move> Pawn::set_moves(bool threats) {
 									Move m2(x - 2, y, WHITE, false, false, PAWN, x, y, false, false, false);
 									moves.push_back(m2);
 
-									vector<int>sq;
-									sq.push_back(x-1);
-									sq.push_back(y);
-									pos->ep_squares_black.push_back(sq);
 							}
 						}
 						int enemy_squarex1y1 = pos->the_board[x - 1][y + 1];
@@ -250,10 +200,6 @@ vector<Move> Pawn::set_moves(bool threats) {
 										Move mb(x-2, y, WHITE, false, false, PAWN, x, y, false, false, false);
 
 										moves.push_back(mb);
-									vector<int>sq;
-									sq.push_back(x-1);
-									sq.push_back(y);
-									pos->ep_squares_black.push_back(sq);
 									}
 
 								}
@@ -274,10 +220,6 @@ vector<Move> Pawn::set_moves(bool threats) {
 									moves.push_back(mbb);
 									
 								
-									vector<int>sq;
-									sq.push_back(x-1);
-									sq.push_back(y);
-									pos->ep_squares_black.push_back(sq);
 								}
 
 							}

@@ -213,11 +213,6 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     }
 
     b1->set_position(pnew);
-    if(parent_color == WHITE){
-    	b1->set_position_ep_squares(curr->node_pos->get_position_ep_squares(BLACK), BLACK);
-    }else if(parent_color == BLACK){
-    	b1->set_position_ep_squares(curr->node_pos->get_position_ep_squares(WHITE), WHITE); 
-    }
     n1->set_board(b1);
     n1->assign_board_val(curr);
     bool pin = false;
