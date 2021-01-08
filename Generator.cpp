@@ -218,7 +218,6 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     bool pin = false;
     if(parent_color == WHITE){
     	pin = n1->node_pos->get_check_white(); 
-
     }else{
     	pin = n1->node_pos->get_check_black(); 
     } 
@@ -486,8 +485,9 @@ double Generator::build_tree_2(Node* curr, int depth, int wb, int max_depth, boo
 		Node *n1 = tnodes[i]; 
 		curr->add_child(n1); 
 		check_b = n1->node_pos->get_check_black();
-		if(check_b)
+		if(check_b){
 			n1->move_string.push_back('+'); 
+		}
 		double temp = build_tree(n1, depth+1, !wb, max_depth, check_b, alpha, beta);
 
 		if(temp > value)
@@ -513,8 +513,9 @@ double Generator::build_tree_2(Node* curr, int depth, int wb, int max_depth, boo
 		curr->add_child(n1); 
 
 		int check_w = n1->node_pos->get_check_white(); 
-		if(check_w)
-			n1->move_string.push_back('+');
+		if(check_w){
+			n1->move_string.push_back('+'); 
+		}
 
 		double temp = build_tree(n1, depth+1, !wb, max_depth, check_w, alpha, beta); 
 		if(temp < value)
@@ -760,8 +761,9 @@ double Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool 
 		Node *n1 = tnodes[i]; 
 		curr->add_child(n1); 
 		check_b = n1->node_pos->get_check_black();
-		if(check_b)
-			n1->move_string.push_back('+'); 
+		if(check_b){
+			n1->move_string.push_back('+');
+		}
 		double temp = build_tree(n1, depth+1, !wb, max_depth, check_b, alpha, beta);
 
 		if(temp > value)
@@ -787,9 +789,9 @@ double Generator::build_tree(Node *curr, int depth, int wb, int max_depth, bool 
 		curr->add_child(n1); 
 
 		int check_w = n1->node_pos->get_check_white(); 
-		if(check_w)
-			n1->move_string.push_back('+');
-
+		if(check_w){
+			n1->move_string.push_back('+'); 
+		}
 		double temp = build_tree(n1, depth+1, !wb, max_depth, check_w, alpha, beta); 
 		if(temp < value)
 			value = temp;
