@@ -468,7 +468,6 @@ double Generator::build_tree_2(Node* curr, int depth, int wb, int max_depth, boo
 	return curr->wb_ratio; 
     }
     
-  Quicksort(tnodes, 0, s-1, wb); 
   bool check_b = false;
   bool check_w = false;
   
@@ -477,6 +476,9 @@ double Generator::build_tree_2(Node* curr, int depth, int wb, int max_depth, boo
  	tnodes = filter_nodes(tnodes);  
 	s = tnodes.size(); 
   }
+
+  
+  Quicksort(tnodes, 0, s-1, wb); 
   
   if(wb == WHITE){ //maximizer.
 	double value = -1000.0; 
