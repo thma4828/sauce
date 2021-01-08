@@ -38,7 +38,7 @@ vector<vector<int>> Board::get_position_ep_squares(int wb){
 }
 
 vector<Square> Board::get_threat_squares(int col){
-	if(col == WHITE){
+	if(col == BLACK){
 		return black_threat_squares;
 	}else{
 		return white_threat_squares; 
