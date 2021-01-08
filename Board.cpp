@@ -245,11 +245,80 @@ void Board::set_position(Position *p){
   position = p;
 }
 
+bool inCenter(int x, int y){
+	if(x == 3 || x == 4){
+		if(y == 3 || y == 4){
+			return true;
+		}
+	}
+	return false; 
+}
+
+bool inSemiCenter(int x, int y){
+	if(x >= 2 && x <=5){
+		if(y >= 2 && x <= 5){
+			return true;
+		}
+	}
+	return false; 
+}
+
+bool inAttackZone(int wb, int x, int y){
+	if(wb == WHITE){
+		if(x <= 2){
+			return true;
+		}else{
+			return false;
+		}
+	}else{
+		if(x >= 5){
+			return true;
+		}else{
+			return false; 
+		}
+	}
+
+}
+
 void Board::calc_final_eval(){
   //TODO: without looking at future positions just give naive evaluation...
   //start with adding up piece totals...
   //if check on the board worth something.
   //if checkmate worth some const INF
+  get_check_white();
+  for(int n=0; n<black_threat_squares.size(); n++){
+  	Square sb = black_threat_squares[n];
+	int x = sb.x;
+	int y = sb.y;
+
+	if(inCenter(x, y) && !inSemiCenter(x, y)){
+		pos_eval_black += 1.0; 
+	}else if(inSemiCenter(x, y)){
+		pos_eval_black += 0.75; 
+	}
+
+	if(inAttackZone(WHITE, x, y)){
+		pos_eval_black += 1.0; 
+	}
+  }
+  get_check_black(); 
+  for(int m=0; m<white_threat_squares.size(); m++){
+  	Square sw = white_threat_squares[m]; 
+	int x = sw.x;
+	int y = sw.y; 
+
+	if(inCenter(x, y) && !inSemiCenter(x, y)){
+		pos_eval_white += 1.0; 
+	}else if(inSemiCenter(x, y)){
+		pos_eval_white += 0.75; 
+	}
+
+	if(inAttackZone(BLACK, x, y)){
+		pos_eval_white += 1.0; 
+	}
+
+  }
+
   for(int x=0; x<8; x++){
     for(int y=0; y<8; y++){
       int piece_code = position->the_board[x][y];
@@ -297,7 +366,7 @@ void Board::calc_final_eval(){
   }
 }
 double  Board::get_wb_ratio(){
-  return (mat_eval_white - mat_eval_black) + (0.25 * (pos_eval_white - pos_eval_black));
+  return (mat_eval_white + (0.125 * pos_eval_white)) - (mat_eval_black + (0.125*pos_eval_black)); 
 }
 double Board::get_black(){
   return mat_eval_black;

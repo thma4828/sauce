@@ -1,0 +1,289 @@
+./salsa.terminal.fast
+new chess game: you play as white.
+turn :1
+turn wb: 0
+your possible moves are: 
+d2-d4
+e2-e4
+e2-e3
+d2-d3
+Ng1-f3
+Nb1-c3
+h2-h4
+Ng1-h3
+Nb1-a3
+h2-h3
+g2-g3
+g2-g4
+a2-a3
+c2-c4
+a2-a4
+c2-c3
+b2-b4
+b2-b3
+f2-f4
+f2-f3
+enter your move: 
+Nb1-c3
+computer makes the move: d7-d5
+turn :2
+turn wb: 0
+your possible moves are: 
+Nc3-xd5
+d2-d4
+e2-e4
+e2-e3
+d2-d3
+Ng1-f3
+Nc3-e4
+g2-g4
+h2-h4
+Ra1-b1
+Ng1-h3
+h2-h3
+g2-g3
+a2-a4
+a2-a3
+b2-b4
+b2-b3
+Nc3-b5
+f2-f3
+f2-f4
+Nc3-a4
+Nc3-b1
+enter your move: 
+d2-d4
+computer makes the move: Bc8-f5
+turn :3
+turn wb: 0
+your possible moves are: 
+Nc3-xd5
+Qd1-d3
+Bc1-f4
+e2-e4
+Nc3-e4
+Bc1-g5
+Ng1-f3
+Bc1-e3
+Bc1-d2
+Bc1-h6
+Qd1-d2
+e2-e3
+g2-g4
+h2-h4
+Ng1-h3
+Ra1-b1
+Ke1-d2
+g2-g3
+h2-h3
+b2-b4
+b2-b3
+a2-a4
+a2-a3
+Nc3-b5
+Nc3-a4
+f2-f3
+Nc3-b1
+f2-f4
+enter your move: 
+Ng1-f3
+computer makes the move: Qd8-d6
+turn :4
+turn wb: 0
+your possible moves are: 
+Nc3-xd5
+Bc1-f4
+Qd1-d3
+Bc1-g5
+Nc3-e4
+Bc1-e3
+e2-e4
+Bc1-d2
+Bc1-h6
+Qd1-d2
+Nf3-e5
+g2-g4
+h2-h4
+Rh1-g1
+e2-e3
+Ra1-b1
+h2-h3
+Ke1-d2
+g2-g3
+b2-b4
+b2-b3
+a2-a3
+a2-a4
+Nc3-b5
+Nc3-a4
+Nf3-h4
+Nf3-g5
+Nc3-b1
+Nf3-g1
+Nf3-d2
+enter your move: 
+g2-g3
+computer makes the move: Nb8-d7
+turn :5
+turn wb: 0
+your possible moves are: 
+Nc3-xd5
+Bc1-f4
+Qd1-d3
+Bc1-g5
+Nc3-e4
+e2-e4
+Bc1-e3
+Bf1-g2
+Bc1-d2
+Bc1-h6
+Rh1-g1
+Qd1-d2
+Nf3-e5
+Bf1-h3
+g3-g4
+h2-h4
+e2-e3
+Ra1-b1
+Ke1-d2
+h2-h3
+b2-b3
+a2-a3
+b2-b4
+a2-a4
+Nc3-b5
+Nc3-a4
+Nf3-h4
+Nc3-b1
+Nf3-g5
+Nf3-g1
+Nf3-d2
+enter your move: 
+Bf1-g2
+computer makes the move: h7-h5
+turn :6
+turn wb: 0
+your possible moves are: 
+Nc3-xd5
+Bc1-f4
+Qd1-d3
+Nc3-e4
+Bc1-g5
+Bc1-h6
+Bc1-e3
+Ke1-d2
+Nf3-e5
+Bc1-d2
+Qd1-d2
+O-O
+g3-g4
+h2-h4
+e2-e4
+Rh1-g1
+Ra1-b1
+Ke1-f1
+Rh1-f1
+h2-h3
+a2-a4
+b2-b4
+a2-a3
+b2-b3
+Nc3-b5
+Nf3-h4
+Nf3-g5
+Bg2-h3
+Nc3-a4
+e2-e3
+Bg2-f1
+Nc3-b1
+Nf3-g1
+Nf3-d2
+enter your move: 
+Nc3-b5
+computer makes the move: Qd6-c6
+turn :7
+turn wb: 0
+your possible moves are: 
+Nb5-xc7+
+Qd1-d3
+Nb5-xa7
+Bc1-f4
+Nb5-d6+
+Bc1-g5
+Bc1-h6
+Bc1-e3
+Ke1-d2
+Bc1-d2
+Qd1-d2
+Nb5-c3
+O-O
+Nf3-e5
+g3-g4
+h2-h4
+e2-e4
+Rh1-g1
+Rh1-f1
+Ra1-b1
+Ke1-f1
+c2-c4
+h2-h3
+c2-c3
+b2-b3
+a2-a4
+b2-b4
+a2-a3
+Nf3-h4
+Nf3-g5
+Nb5-a3
+Bg2-h3
+e2-e3
+Bg2-f1
+Nf3-g1
+Nf3-d2
+enter your move: 
+a2-a4
+computer makes the move: a7-a6
+turn :8
+turn wb: 0
+your possible moves are: 
+Nb5-xc7+
+Qd1-d3
+Ra1-a3
+Bc1-f4
+Nb5-d6+
+Bc1-g5
+Bc1-h6
+Bc1-e3
+Ke1-d2
+Bc1-d2
+Qd1-d2
+Nb5-c3
+O-O
+Nf3-e5
+g3-g4
+h2-h4
+e2-e4
+a4-a5
+Rh1-f1
+Rh1-g1
+Ke1-f1
+h2-h3
+c2-c4
+c2-c3
+b2-b4
+Ra1-b1
+b2-b3
+Ra1-a2
+Nf3-g5
+Nf3-h4
+Nb5-a3
+Bg2-h3
+Nb5-a7
+e2-e3
+Bg2-f1
+Nf3-g1
+Nf3-d2
+enter your move: 
+Nb5-c3
+Killed
+
