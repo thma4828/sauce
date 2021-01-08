@@ -215,6 +215,14 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     b1->set_position(pnew);
     n1->set_board(b1);
     n1->assign_board_val(curr);
+   /** if(parent_color == WHITE){
+    	if(n1->node_pos->get_check_black())
+		n1->move_string.push_back('+');
+    }else{
+    	if(n1->node_pos->get_check_white())
+		n1->move_string.push_back('+'); 
+    }
+    ***/
     bool pin = false;
     if(parent_color == WHITE){
     	pin = n1->node_pos->get_check_white(); 
