@@ -17,6 +17,7 @@ Position::Position() {
 
 }
 
+
 Position::Position(int b) {
 
 	board_pos = b;

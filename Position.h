@@ -9,7 +9,7 @@ public:
 	Position();
 	Position(int);
 	~Position();
-	void read_board_file(std::string); 
+	void read_board_file(string); 
 
 	int the_board[8][8];
 
