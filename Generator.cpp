@@ -281,6 +281,8 @@ vector<Node*> filter_nodes(vector<Node*>nodes, int wb){
 	        string s = n->move_string; 
 		if(isPromote(s) || isCapture(s) || isCheck(n, wb)){
 			newNodes.push_back(n); 
+		}else{
+			delete n; 
 		}
 	        	
 

@@ -265,13 +265,13 @@ bool inSemiCenter(int x, int y){
 
 bool inAttackZone(int wb, int x, int y){
 	if(wb == WHITE){
-		if(x <= 2){
+		if(x >= 5 && (y > 0 && y < 7)){
 			return true;
 		}else{
 			return false;
 		}
 	}else{
-		if(x >= 5){
+		if(x <= 2 && (y > 0 && y < 7)){
 			return true;
 		}else{
 			return false; 
@@ -298,7 +298,7 @@ void Board::calc_final_eval(){
 	}
 
 	if(inAttackZone(WHITE, x, y)){
-		pos_eval_black += 1.0; 
+		pos_eval_black += 1.25; 
 	}
   }
   get_check_black(); 
@@ -314,7 +314,7 @@ void Board::calc_final_eval(){
 	}
 
 	if(inAttackZone(BLACK, x, y)){
-		pos_eval_white += 1.0; 
+		pos_eval_white += 1.25; 
 	}
 
   }
