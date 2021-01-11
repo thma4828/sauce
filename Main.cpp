@@ -32,12 +32,12 @@ int main(int argc, char**argv){
 
   Generator G(pstart, wb);
   Node *root = G.get_tree_root();
+  G.set_node_count(1); 
   double alpha = -1000; //min value WHITE player assured of getting
   //initially white is only gaurenteed to be checkmated at worst. 
   double beta  = 1000; //max value BLACK player assured of getting. 
   G.build_tree_2(root, 0, wb, atoi(argv[1]), false,  alpha, beta);
-  unsigned long ncount = G.count_tree_nodes(root, 0);
-  cout << "Tree has: " << ncount << " nodes at depth = " << argv[1] << "."  <<  endl;
+  cout << "Tree has: " << G.get_node_count() << " nodes at depth = " << argv[1] << "."  <<  endl;
   
 
 

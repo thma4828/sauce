@@ -5,6 +5,7 @@
 
 Generator::Generator(){
   srand(time(NULL));
+  node_count = 0; 
 }
 
 Generator::~Generator(){
@@ -36,6 +37,7 @@ Generator::Generator(Position *start, int start_color){
   //the default (naive) evaluation on the position.
   root->assign_board_val(NULL);//node now has naive evaluation.
   move_tree = new Tree(root);
+  node_count = 0; 
 }
 
 void Generator::eval_tree(Node *n, int depth, int color, int max){
@@ -92,17 +94,15 @@ void Generator::eval_tree(Node *n, int depth, int color, int max){
   }
 }
 
-
-
-
-unsigned long Generator::count_tree_nodes(Node *n, unsigned long c){
-	c = c + 1;
-	for(int j=0; j<n->children.size(); j++){
-		Node *child = n->children[j];
-		c = count_tree_nodes(child, c);
-	}
-	return c;
+void Generator::set_node_count(unsigned int nc){
+	node_count = nc;
 }
+
+unsigned int Generator::get_node_count(){
+	return node_count; 
+}
+
+
 
 int Generator::Partition(vector<Node*>&nodes, int p, int r, int wb){
 	int nonce = rand() % (r-p) + p; 
@@ -239,6 +239,7 @@ vector<Node*> Generator::get_nodes(vector<Move>moves, Position *p, Node *curr, i
     		nodes.push_back(n1);
     }
   }
+  node_count += nodes.size(); 
   return nodes;
 }
 
@@ -528,7 +529,6 @@ double Generator::build_tree_2(Node* curr, int depth, int wb, int max_depth, boo
 		if(check_w){
 			n1->move_string.push_back('+'); 
 		}
-
 		double temp = build_tree(n1, depth+1, !wb, max_depth, check_w, alpha, beta); 
 		if(temp < value)
 			value = temp;
