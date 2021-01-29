@@ -19,6 +19,7 @@ Node::Node(Node* p, int c, double w, double b) {
 	parent = p;
 	color = c;
 	wb_ratio = w - b;
+	move_string = "NULL"; 
 }
 
 void Node::set_values(double w, double b){
